@@ -1,0 +1,81 @@
+/* ============================================================
+   newsletter.css — Barra de newsletter
+   ============================================================ */
+
+.newsletter {
+  background-color: var(--ecom-color-secondary-800);
+  padding-block: var(--ecom-space-8);
+}
+
+.newsletter__inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--ecom-space-6);
+}
+
+@media (min-width: 768px) {
+  .newsletter__inner {
+    flex-direction: row;
+  }
+}
+
+.newsletter__content {
+  display: flex;
+  align-items: center;
+  gap: var(--ecom-space-4);
+}
+
+.newsletter__icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 3rem;
+  height: 3rem;
+  flex-shrink: 0;
+  color: var(--ecom-color-primary-500);
+}
+
+.newsletter__icon svg {
+  width: 2.5rem;
+  height: 2.5rem;
+}
+
+.newsletter__title {
+  font-size: var(--ecom-text-xl);
+  font-weight: var(--ecom-font-bold);
+  color: var(--ecom-color-neutral-0);
+  margin-bottom: var(--ecom-space-1);
+}
+
+.newsletter__text {
+  font-size: var(--ecom-text-sm);
+  color: var(--ecom-color-neutral-400);
+}
+
+.newsletter__form {
+  display: flex;
+  gap: var(--ecom-space-2);
+  width: 100%;
+  max-width: 24rem;
+}
+
+.newsletter__input {
+  flex: 1;
+  padding: var(--ecom-space-3) var(--ecom-space-4);
+  background-color: var(--ecom-color-secondary-700);
+  border: 1px solid var(--ecom-color-secondary-600);
+  border-radius: var(--ecom-radius-lg);
+  color: var(--ecom-color-neutral-0);
+  font-size: var(--ecom-text-sm);
+  min-width: 0;
+}
+
+.newsletter__input::placeholder {
+  color: var(--ecom-color-neutral-500);
+}
+
+.newsletter__input:focus {
+  border-color: var(--ecom-color-primary-500);
+}

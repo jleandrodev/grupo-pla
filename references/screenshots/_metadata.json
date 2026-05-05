@@ -1,0 +1,129 @@
+{
+  "01-home": {
+    "folds": 8,
+    "fold_files": [
+      "fold-01.png",
+      "fold-02.png",
+      "fold-03.png",
+      "fold-04.png",
+      "fold-05.png",
+      "fold-06.png",
+      "fold-07.png",
+      "fold-08.png"
+    ],
+    "has_full_page": true
+  },
+  "02-categoria": {
+    "folds": 4,
+    "fold_files": [
+      "fold-01.png",
+      "fold-02.png",
+      "fold-03.png",
+      "fold-04.png"
+    ],
+    "has_full_page": true
+  },
+  "03-detalhe-peca": {
+    "folds": 4,
+    "fold_files": [
+      "fold-01.png",
+      "fold-02.png",
+      "fold-03.png",
+      "fold-04.png"
+    ],
+    "has_full_page": true
+  },
+  "04-detalhe-filtro-modelo": {
+    "folds": 5,
+    "fold_files": [
+      "fold-01.png",
+      "fold-02.png",
+      "fold-03.png",
+      "fold-04.png",
+      "fold-05.png"
+    ],
+    "has_full_page": true
+  },
+  "05-detalhe-venda-maquinario": {
+    "folds": 5,
+    "fold_files": [
+      "fold-01.png",
+      "fold-02.png",
+      "fold-03.png",
+      "fold-04.png",
+      "fold-05.png"
+    ],
+    "has_full_page": true
+  },
+  "06-detalhe-popup-financiamento": {
+    "folds": 5,
+    "fold_files": [
+      "fold-01.png",
+      "fold-02.png",
+      "fold-03.png",
+      "fold-04.png",
+      "fold-05.png"
+    ],
+    "has_full_page": true
+  },
+  "07-locacao-grid": {
+    "folds": 4,
+    "fold_files": [
+      "fold-01.png",
+      "fold-02.png",
+      "fold-03.png",
+      "fold-04.png"
+    ],
+    "has_full_page": true
+  },
+  "08-locacao-lista": {
+    "folds": 4,
+    "fold_files": [
+      "fold-01.png",
+      "fold-02.png",
+      "fold-03.png",
+      "fold-04.png"
+    ],
+    "has_full_page": true
+  },
+  "09-contato": {
+    "folds": 3,
+    "fold_files": [
+      "fold-01.png",
+      "fold-02.png",
+      "fold-03.png"
+    ],
+    "has_full_page": true
+  },
+  "10-institucional": {
+    "folds": 3,
+    "fold_files": [
+      "fold-01.png",
+      "fold-02.png",
+      "fold-03.png"
+    ],
+    "has_full_page": true
+  },
+  "11-sobre-nos": {
+    "folds": 6,
+    "fold_files": [
+      "fold-01.png",
+      "fold-02.png",
+      "fold-03.png",
+      "fold-04.png",
+      "fold-05.png",
+      "fold-06.png"
+    ],
+    "has_full_page": true
+  },
+  "Category page": {
+    "folds": 0,
+    "fold_files": [],
+    "has_full_page": false
+  },
+  "home": {
+    "folds": 0,
+    "fold_files": [],
+    "has_full_page": false
+  }
+}

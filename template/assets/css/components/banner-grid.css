@@ -1,0 +1,82 @@
+/* ============================================================
+   banner-grid.css — Grid de banners promocionais
+   ============================================================ */
+
+.banner-grid__layout {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--ecom-space-4);
+}
+
+@media (min-width: 768px) {
+  .banner-grid__layout {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto;
+  }
+
+  .banner-grid__large {
+    grid-row: 1 / 3;
+  }
+}
+
+.banner-card {
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  border-radius: var(--ecom-radius-xl);
+  overflow: hidden;
+  min-height: 14rem;
+  text-decoration: none;
+}
+
+.banner-card--large {
+  min-height: 20rem;
+}
+
+@media (min-width: 768px) {
+  .banner-card--large {
+    min-height: 100%;
+  }
+}
+
+.banner-card__image {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--ecom-duration-slow) var(--ecom-ease-default);
+}
+
+.banner-card:hover .banner-card__image {
+  transform: scale(1.05);
+}
+
+.banner-card__overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgb(0 0 0 / 0.65) 0%, rgb(0 0 0 / 0.1) 60%);
+}
+
+.banner-card__content {
+  position: relative;
+  z-index: 1;
+  padding: var(--ecom-space-6);
+}
+
+.banner-card__title {
+  font-size: var(--ecom-text-xl);
+  font-weight: var(--ecom-font-bold);
+  color: var(--ecom-color-neutral-0);
+  line-height: var(--ecom-leading-snug);
+}
+
+.banner-card--large .banner-card__title {
+  font-size: var(--ecom-text-2xl);
+}
+
+.banner-card__text {
+  font-size: var(--ecom-text-sm);
+  color: var(--ecom-color-neutral-200);
+  margin-top: var(--ecom-space-1);
+}

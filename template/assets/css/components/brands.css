@@ -1,0 +1,43 @@
+/* ============================================================
+   brands.css — Seção de marcas parceiras
+   ============================================================ */
+
+.brands {
+  background-color: var(--ecom-bg-page);
+}
+
+.brands__title {
+  text-align: center;
+  margin-bottom: var(--ecom-space-8);
+}
+
+/* Grid removido — marcas agora usam carousel com scroll horizontal */
+
+.brand-card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--ecom-space-8) var(--ecom-space-6);
+  background-color: var(--ecom-bg-surface);
+  border-radius: var(--ecom-radius-xl);
+  border: 1px solid var(--ecom-border-default);
+  transition:
+    box-shadow var(--ecom-duration-fast) var(--ecom-ease-default),
+    border-color var(--ecom-duration-fast) var(--ecom-ease-default);
+}
+
+.brand-card:hover {
+  box-shadow: var(--ecom-shadow-lg);
+  border-color: var(--ecom-color-neutral-300);
+}
+
+.brand-card__image {
+  max-height: 4.5rem;
+  width: auto;
+  object-fit: contain;
+  transition: transform var(--ecom-duration-normal) var(--ecom-ease-default);
+}
+
+.brand-card:hover .brand-card__image {
+  transform: scale(1.08);
+}

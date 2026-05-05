@@ -1,0 +1,90 @@
+/* ============================================================
+   carousel.css — Componente de carousel com setas
+   ============================================================ */
+
+.carousel {
+  position: relative;
+}
+
+/* ── SETAS ── */
+
+.carousel__arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: var(--ecom-z-raised);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.75rem;
+  height: 2.75rem;
+  border-radius: var(--ecom-radius-full);
+  background-color: var(--ecom-bg-surface);
+  border: 1px solid var(--ecom-border-default);
+  box-shadow: var(--ecom-shadow-md);
+  color: var(--ecom-text-primary);
+  cursor: pointer;
+  transition:
+    background-color var(--ecom-duration-fast) var(--ecom-ease-default),
+    box-shadow var(--ecom-duration-fast) var(--ecom-ease-default),
+    opacity var(--ecom-duration-fast) var(--ecom-ease-default);
+}
+
+.carousel__arrow:hover {
+  background-color: var(--ecom-color-neutral-800);
+  color: var(--ecom-color-neutral-0);
+  box-shadow: var(--ecom-shadow-lg);
+}
+
+.carousel__arrow:disabled {
+  opacity: 0.3;
+  cursor: default;
+  pointer-events: none;
+}
+
+.carousel__arrow svg {
+  width: 1.25rem;
+  height: 1.25rem;
+}
+
+.carousel__arrow--prev {
+  left: -0.75rem;
+}
+
+.carousel__arrow--next {
+  right: -0.75rem;
+}
+
+/* Em telas menores, posicionar dentro do container */
+@media (max-width: 1023px) {
+  .carousel__arrow--prev {
+    left: var(--ecom-space-2);
+  }
+
+  .carousel__arrow--next {
+    right: var(--ecom-space-2);
+  }
+}
+
+/* ── TRACK ── */
+
+.carousel__track {
+  scroll-behavior: smooth;
+}
+
+/* ── MARCAS: items no scroll horizontal ── */
+
+.brands__track {
+  gap: var(--ecom-space-6);
+}
+
+.brands__track .brand-card {
+  flex-shrink: 0;
+  min-width: 11rem;
+}
+
+@media (min-width: 768px) {
+  .brands__track .brand-card {
+    min-width: 13rem;
+  }
+}

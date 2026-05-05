@@ -1,0 +1,167 @@
+/* ============================================================
+   machine-card.css — Card de máquinas agrícolas
+   ============================================================ */
+
+.machines {
+  background-color: var(--ecom-color-secondary-50);
+}
+
+/* ── TABS ── */
+
+.tabs {
+  display: flex;
+  gap: var(--ecom-space-2);
+  margin-bottom: var(--ecom-space-8);
+  overflow-x: auto;
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
+}
+
+.tabs::-webkit-scrollbar {
+  display: none;
+}
+
+.tabs__btn {
+  padding: var(--ecom-space-2) var(--ecom-space-5);
+  font-size: var(--ecom-text-sm);
+  font-weight: var(--ecom-font-medium);
+  color: var(--ecom-text-secondary);
+  background-color: var(--ecom-bg-surface);
+  border: 1px solid var(--ecom-border-default);
+  border-radius: var(--ecom-radius-lg);
+  white-space: nowrap;
+  transition:
+    background-color var(--ecom-duration-fast) var(--ecom-ease-default),
+    color var(--ecom-duration-fast) var(--ecom-ease-default),
+    border-color var(--ecom-duration-fast) var(--ecom-ease-default);
+}
+
+.tabs__btn:hover {
+  border-color: var(--ecom-color-neutral-400);
+  color: var(--ecom-text-primary);
+}
+
+.tabs__btn--active {
+  background-color: var(--ecom-color-secondary-900);
+  border-color: var(--ecom-color-secondary-900);
+  color: var(--ecom-color-neutral-0);
+}
+
+.tabs__btn--active:hover {
+  background-color: var(--ecom-color-secondary-800);
+  border-color: var(--ecom-color-secondary-800);
+  color: var(--ecom-color-neutral-0);
+}
+
+/* ── MACHINE CARD ── */
+
+.machine-card {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--ecom-bg-surface);
+  border-radius: var(--ecom-radius-xl);
+  border: 1px solid var(--ecom-border-default);
+  overflow: hidden;
+  transition: box-shadow var(--ecom-duration-normal) var(--ecom-ease-default);
+}
+
+.machine-card:hover {
+  box-shadow: var(--ecom-shadow-lg);
+}
+
+.machine-card__image-link {
+  display: block;
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+}
+
+.machine-card__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--ecom-duration-normal) var(--ecom-ease-default);
+}
+
+.machine-card:hover .machine-card__image {
+  transform: scale(1.05);
+}
+
+.machine-card__body {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  padding: var(--ecom-space-4);
+  gap: var(--ecom-space-2);
+}
+
+.machine-card__meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--ecom-space-2);
+}
+
+.machine-card__brand {
+  display: inline-block;
+  padding: var(--ecom-space-1) var(--ecom-space-3);
+  font-size: var(--ecom-text-xs);
+  font-weight: var(--ecom-font-semibold);
+  border-radius: var(--ecom-radius-full);
+  background-color: var(--ecom-color-primary-50);
+  color: var(--ecom-color-primary-700);
+}
+
+.machine-card__brand--john-deere {
+  background-color: #dcfce7;
+  color: #166534;
+}
+
+.machine-card__brand--massey {
+  background-color: #fee2e2;
+  color: #991b1b;
+}
+
+.machine-card__brand--new-holland {
+  background-color: #dbeafe;
+  color: #1e40af;
+}
+
+.machine-card__brand--valtra {
+  background-color: #f3e8ff;
+  color: #6b21a8;
+}
+
+.machine-card__year {
+  font-size: var(--ecom-text-sm);
+  font-weight: var(--ecom-font-semibold);
+  color: var(--ecom-text-secondary);
+}
+
+.machine-card__title {
+  font-size: var(--ecom-text-base);
+  font-weight: var(--ecom-font-semibold);
+  color: var(--ecom-text-primary);
+  line-height: var(--ecom-leading-snug);
+}
+
+.machine-card__rating {
+  display: flex;
+  gap: 1px;
+  color: var(--ecom-color-neutral-300);
+}
+
+.machine-card__rating svg {
+  width: 0.875rem;
+  height: 0.875rem;
+}
+
+.machine-card__price {
+  font-size: var(--ecom-text-xl);
+  font-weight: var(--ecom-font-bold);
+  color: var(--ecom-color-primary-600);
+  margin-top: auto;
+}
+
+.machine-card__cta {
+  margin-top: var(--ecom-space-3);
+}
