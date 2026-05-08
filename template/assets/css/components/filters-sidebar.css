@@ -1,0 +1,287 @@
+/* ============================================================
+   filters-sidebar.css — Sidebar de filtros
+   ============================================================ */
+
+.filters-sidebar {
+  background-color: var(--ecom-bg-surface);
+  border-radius: var(--ecom-radius-lg);
+  padding: var(--ecom-space-6);
+  position: sticky;
+  top: 10rem;
+  align-self: start;
+}
+
+.filters-sidebar__title {
+  font-size: var(--ecom-text-lg);
+  font-weight: var(--ecom-font-bold);
+  color: var(--ecom-text-primary);
+  margin-bottom: var(--ecom-space-4);
+}
+
+/* ── Filter Group ── */
+
+.filters-sidebar__group {
+  padding-block: var(--ecom-space-4);
+  border: none;
+  margin: 0;
+  padding-inline: 0;
+  min-width: 0; /* Fix fieldset default min-width:min-content overflow */
+}
+
+.filters-sidebar__group + .filters-sidebar__group {
+  border-top: 1px solid var(--ecom-border-default);
+}
+
+.filters-sidebar__group-title {
+  font-size: var(--ecom-text-sm);
+  font-weight: var(--ecom-font-semibold);
+  color: var(--ecom-text-primary);
+  margin-bottom: var(--ecom-space-3);
+  padding: 0;
+}
+
+.filters-sidebar__options {
+  display: flex;
+  flex-direction: column;
+  gap: var(--ecom-space-2);
+}
+
+/* ── Custom Checkbox ── */
+
+.filter-checkbox {
+  display: flex;
+  align-items: center;
+  gap: var(--ecom-space-3);
+  cursor: pointer;
+  font-size: var(--ecom-text-sm);
+  color: var(--ecom-text-primary);
+  user-select: none;
+}
+
+.filter-checkbox__input {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+  pointer-events: none;
+}
+
+.filter-checkbox__box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.125rem;
+  height: 1.125rem;
+  flex-shrink: 0;
+  border: 2px solid var(--ecom-border-default);
+  border-radius: var(--ecom-radius-sm);
+  background-color: var(--ecom-bg-surface);
+  transition:
+    background-color var(--ecom-duration-fast) var(--ecom-ease-default),
+    border-color var(--ecom-duration-fast) var(--ecom-ease-default);
+}
+
+.filter-checkbox__box svg {
+  width: 0.75rem;
+  height: 0.75rem;
+  color: var(--ecom-text-on-primary);
+  opacity: 0;
+  transition: opacity var(--ecom-duration-fast) var(--ecom-ease-default);
+}
+
+.filter-checkbox__input:checked + .filter-checkbox__box {
+  background-color: var(--ecom-action-primary);
+  border-color: var(--ecom-action-primary);
+}
+
+.filter-checkbox__input:checked + .filter-checkbox__box svg {
+  opacity: 1;
+}
+
+.filter-checkbox__input:focus-visible + .filter-checkbox__box {
+  outline: 2px solid var(--ecom-border-focus);
+  outline-offset: 2px;
+}
+
+.filter-checkbox__text {
+  flex: 1;
+}
+
+.filter-checkbox__count {
+  color: var(--ecom-text-muted);
+  font-size: var(--ecom-text-xs);
+}
+
+/* ── Price Range ── */
+
+.filters-sidebar__price-range {
+  display: flex;
+  align-items: center;
+  gap: var(--ecom-space-2);
+}
+
+.filters-sidebar__price-input {
+  flex: 1;
+  min-width: 0;
+  padding: var(--ecom-space-2) var(--ecom-space-3);
+  border: 1px solid var(--ecom-border-default);
+  border-radius: var(--ecom-radius-sm);
+  font-size: var(--ecom-text-sm);
+  color: var(--ecom-text-primary);
+  background-color: var(--ecom-bg-surface);
+  transition: border-color var(--ecom-duration-fast) var(--ecom-ease-default);
+}
+
+.filters-sidebar__price-input:focus {
+  border-color: var(--ecom-border-focus);
+}
+
+.filters-sidebar__price-input::placeholder {
+  color: var(--ecom-text-muted);
+}
+
+.filters-sidebar__price-separator {
+  color: var(--ecom-text-muted);
+  font-size: var(--ecom-text-sm);
+  flex-shrink: 0;
+}
+
+/* ── Actions ── */
+
+.filters-sidebar__actions {
+  display: flex;
+  flex-direction: column;
+  gap: var(--ecom-space-2);
+  margin-top: var(--ecom-space-4);
+}
+
+.filters-sidebar__apply {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: var(--ecom-space-3) var(--ecom-space-4);
+  background-color: var(--ecom-action-primary);
+  color: var(--ecom-text-on-primary);
+  font-size: var(--ecom-text-sm);
+  font-weight: var(--ecom-font-semibold);
+  border-radius: var(--ecom-radius-md);
+  border: none;
+  cursor: pointer;
+  transition: background-color var(--ecom-duration-fast) var(--ecom-ease-default);
+}
+
+.filters-sidebar__apply:hover {
+  background-color: var(--ecom-action-primary-hover);
+}
+
+.filters-sidebar__clear {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: var(--ecom-space-3) var(--ecom-space-4);
+  background-color: transparent;
+  color: var(--ecom-text-secondary);
+  font-size: var(--ecom-text-sm);
+  font-weight: var(--ecom-font-medium);
+  border-radius: var(--ecom-radius-md);
+  border: 1px solid var(--ecom-border-default);
+  cursor: pointer;
+  transition:
+    background-color var(--ecom-duration-fast) var(--ecom-ease-default),
+    border-color var(--ecom-duration-fast) var(--ecom-ease-default);
+}
+
+.filters-sidebar__clear:hover {
+  background-color: var(--ecom-bg-surface-alt);
+}
+
+/* ── Mobile: Filter Toggle Button ── */
+
+.filters-sidebar__mobile-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--ecom-space-2);
+  padding: var(--ecom-space-3) var(--ecom-space-4);
+  background-color: var(--ecom-bg-surface);
+  color: var(--ecom-text-primary);
+  font-size: var(--ecom-text-sm);
+  font-weight: var(--ecom-font-semibold);
+  border: 1px solid var(--ecom-border-default);
+  border-radius: var(--ecom-radius-md);
+  cursor: pointer;
+}
+
+.filters-sidebar__mobile-toggle svg {
+  width: 1.125rem;
+  height: 1.125rem;
+}
+
+@media (min-width: 1024px) {
+  .filters-sidebar__mobile-toggle {
+    display: none;
+  }
+}
+
+/* ── Mobile: Sidebar as Drawer ── */
+
+@media (max-width: 1023px) {
+  .filters-sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    max-width: 20rem;
+    z-index: var(--ecom-z-modal);
+    border-radius: 0;
+    overflow-y: auto;
+    transform: translateX(-100%);
+    transition: transform var(--ecom-duration-normal) var(--ecom-ease-default);
+  }
+
+  .filters-sidebar[data-state="open"] {
+    transform: translateX(0);
+  }
+
+  .filters-sidebar__overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background-color: rgb(0 0 0 / 0.5);
+    z-index: calc(var(--ecom-z-modal) - 1);
+  }
+
+  .filters-sidebar__overlay[data-state="open"] {
+    display: block;
+  }
+
+  .filters-sidebar__mobile-close {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: var(--ecom-space-4);
+    right: var(--ecom-space-4);
+    width: 2rem;
+    height: 2rem;
+    color: var(--ecom-text-secondary);
+  }
+
+  .filters-sidebar__mobile-close svg {
+    width: 1.25rem;
+    height: 1.25rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .filters-sidebar__overlay {
+    display: none;
+  }
+
+  .filters-sidebar__mobile-close {
+    display: none;
+  }
+}

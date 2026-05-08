@@ -1,0 +1,216 @@
+/* ============================================================
+   locacao.css — Layout da página de locação
+   ============================================================ */
+
+/* ── Page background ── */
+
+.locacao-content {
+  background-color: var(--ecom-bg-page);
+  padding-block: var(--ecom-space-8);
+}
+
+@media (min-width: 768px) {
+  .locacao-content {
+    padding-block: var(--ecom-space-10);
+  }
+}
+
+/* ── Two-column layout ── */
+
+.locacao-layout {
+  display: flex;
+  gap: var(--ecom-space-6);
+  align-items: flex-start;
+}
+
+.locacao-layout__sidebar {
+  display: none;
+  width: 260px;
+  flex-shrink: 0;
+  position: sticky;
+  top: var(--ecom-space-4);
+}
+
+.locacao-layout__main {
+  flex: 1;
+  min-width: 0;
+}
+
+@media (min-width: 1024px) {
+  .locacao-layout__sidebar {
+    display: block;
+  }
+}
+
+/* ── Results bar — Locação extensions ── */
+
+.locacao-results-bar {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--ecom-space-3);
+  padding: var(--ecom-space-3) var(--ecom-space-4);
+  background-color: var(--ecom-bg-surface);
+  border-radius: var(--ecom-radius-lg);
+  box-shadow: var(--ecom-shadow-sm);
+  margin-bottom: var(--ecom-space-6);
+}
+
+.locacao-results-bar__left {
+  display: flex;
+  align-items: center;
+  gap: var(--ecom-space-3);
+  flex-wrap: wrap;
+}
+
+.locacao-results-bar__count {
+  font-size: var(--ecom-text-sm);
+  font-weight: var(--ecom-font-medium);
+  color: var(--ecom-text-primary);
+  white-space: nowrap;
+}
+
+.locacao-results-bar__chip {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--ecom-space-1);
+  padding: var(--ecom-space-1) var(--ecom-space-3);
+  font-size: var(--ecom-text-xs);
+  font-weight: var(--ecom-font-semibold);
+  background-color: var(--ecom-action-primary);
+  color: var(--ecom-color-neutral-0);
+  border-radius: var(--ecom-radius-full);
+  border: none;
+  cursor: pointer;
+}
+
+.locacao-results-bar__chip svg {
+  width: 0.75rem;
+  height: 0.75rem;
+}
+
+.locacao-results-bar__right {
+  display: flex;
+  align-items: center;
+  gap: var(--ecom-space-3);
+  margin-left: auto;
+}
+
+.locacao-results-bar__dropdowns {
+  display: flex;
+  align-items: center;
+  gap: var(--ecom-space-2);
+}
+
+.locacao-results-bar__dropdown {
+  padding: var(--ecom-space-2) var(--ecom-space-8) var(--ecom-space-2) var(--ecom-space-3);
+  font-size: var(--ecom-text-sm);
+  color: var(--ecom-text-primary);
+  background-color: var(--ecom-bg-surface);
+  border: 1px solid var(--ecom-border-default);
+  border-radius: var(--ecom-radius-md);
+  cursor: pointer;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='none' stroke='%236b7280' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m2 4 4 4 4-4'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right var(--ecom-space-2) center;
+}
+
+.locacao-results-bar__filter-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--ecom-space-2);
+}
+
+.locacao-results-bar__filter-btn svg {
+  width: 1rem;
+  height: 1rem;
+}
+
+/* Mobile filter button */
+.locacao-results-bar__mobile-filter {
+  display: none;
+}
+
+@media (max-width: 1023px) {
+  .locacao-results-bar__mobile-filter {
+    display: inline-flex;
+  }
+
+  .locacao-results-bar__dropdowns {
+    display: none;
+  }
+
+  .locacao-results-bar__filter-btn {
+    display: none;
+  }
+}
+
+@media (max-width: 767px) {
+  .locacao-results-bar {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .locacao-results-bar__right {
+    margin-left: 0;
+    justify-content: space-between;
+  }
+}
+
+/* ── Truck list container ── */
+
+.truck-list {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: var(--ecom-space-4);
+}
+
+.truck-list[data-view="grid"] {
+  grid-template-columns: repeat(1, 1fr);
+  gap: var(--ecom-space-4);
+}
+
+@media (min-width: 480px) {
+  .truck-list[data-view="grid"] {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--ecom-space-5);
+  }
+}
+
+@media (min-width: 1024px) {
+  .truck-list[data-view="grid"] {
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--ecom-space-6);
+  }
+}
+
+.truck-list[data-view="list"] {
+  grid-template-columns: 1fr;
+  gap: var(--ecom-space-4);
+}
+
+/* ── Seo content — Locação centered variant ── */
+
+.locacao-seo {
+  text-align: center;
+}
+
+.locacao-seo .seo-content__text {
+  max-width: 48rem;
+  margin-inline: auto;
+}
+
+/* ── Filter overlay (mobile) ── */
+
+.locacao-filter-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background-color: rgb(0 0 0 / 0.5);
+  z-index: calc(var(--ecom-z-modal) - 1);
+}
+
+.locacao-filter-overlay[data-state="open"] {
+  display: block;
+}

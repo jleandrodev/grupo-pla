@@ -1,0 +1,52 @@
+/* ============================================================
+   view-toggle.css — Toggle entre visualização grid/lista
+   ============================================================ */
+
+.view-toggle {
+  display: inline-flex;
+  align-items: center;
+  border-radius: var(--ecom-radius-md);
+  overflow: hidden;
+  border: 1px solid var(--ecom-border-default);
+}
+
+.view-toggle__btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  background-color: var(--ecom-bg-surface);
+  border: none;
+  cursor: pointer;
+  color: var(--ecom-text-muted);
+  transition:
+    background-color var(--ecom-duration-fast) var(--ecom-ease-default),
+    color var(--ecom-duration-fast) var(--ecom-ease-default);
+}
+
+.view-toggle__btn:not(:first-child) {
+  border-left: 1px solid var(--ecom-border-default);
+}
+
+.view-toggle__btn:hover {
+  background-color: var(--ecom-color-neutral-100);
+  color: var(--ecom-text-secondary);
+}
+
+.view-toggle__btn[aria-pressed="true"] {
+  background-color: var(--ecom-color-secondary-800);
+  color: var(--ecom-color-neutral-0);
+}
+
+.view-toggle__btn svg {
+  width: 1.125rem;
+  height: 1.125rem;
+}
+
+/* Hide on mobile */
+@media (max-width: 767px) {
+  .view-toggle {
+    display: none;
+  }
+}

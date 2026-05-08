@@ -1,0 +1,54 @@
+/* ============================================================
+   seo-content.css — Seção de conteúdo SEO
+   ============================================================ */
+
+.seo-content {
+  padding-block: var(--ecom-space-12);
+}
+
+.seo-content__title {
+  font-size: var(--ecom-text-2xl);
+  font-weight: var(--ecom-font-bold);
+  color: var(--ecom-text-primary);
+  margin-bottom: var(--ecom-space-4);
+}
+
+.seo-content__text {
+  font-size: var(--ecom-text-base);
+  color: var(--ecom-text-secondary);
+  line-height: var(--ecom-leading-relaxed);
+  margin-bottom: var(--ecom-space-4);
+  max-width: 50rem;
+}
+
+.seo-content__btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--ecom-space-3) var(--ecom-space-6);
+  background-color: var(--ecom-color-neutral-900);
+  color: var(--ecom-text-inverse);
+  font-size: var(--ecom-text-sm);
+  font-weight: var(--ecom-font-semibold);
+  border-radius: var(--ecom-radius-md);
+  border: none;
+  cursor: pointer;
+  margin-top: var(--ecom-space-2);
+  transition:
+    background-color var(--ecom-duration-fast) var(--ecom-ease-default),
+    opacity var(--ecom-duration-fast) var(--ecom-ease-default);
+}
+
+.seo-content__btn:hover {
+  background-color: var(--ecom-color-neutral-800);
+}
+
+@media (min-width: 768px) {
+  .seo-content {
+    padding-block: var(--ecom-space-16);
+  }
+
+  .seo-content__title {
+    font-size: var(--ecom-text-3xl);
+  }
+}

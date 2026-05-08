@@ -1,0 +1,48 @@
+/* ============================================================
+   results-bar.css — Barra de resultados e ordenação
+   ============================================================ */
+
+.results-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--ecom-space-4);
+  margin-bottom: var(--ecom-space-4);
+  flex-wrap: wrap;
+}
+
+.results-bar__count {
+  font-size: var(--ecom-text-sm);
+  color: var(--ecom-text-secondary);
+}
+
+.results-bar__sort {
+  display: flex;
+  align-items: center;
+  gap: var(--ecom-space-2);
+}
+
+.results-bar__sort-label {
+  font-size: var(--ecom-text-sm);
+  color: var(--ecom-text-secondary);
+  white-space: nowrap;
+}
+
+.results-bar__sort-select {
+  padding: var(--ecom-space-2) var(--ecom-space-8) var(--ecom-space-2) var(--ecom-space-3);
+  border: 1px solid var(--ecom-border-default);
+  border-radius: var(--ecom-radius-sm);
+  background-color: var(--ecom-bg-surface);
+  font-size: var(--ecom-text-sm);
+  color: var(--ecom-text-primary);
+  cursor: pointer;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%236b7280' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right var(--ecom-space-2) center;
+  transition: border-color var(--ecom-duration-fast) var(--ecom-ease-default);
+}
+
+.results-bar__sort-select:focus {
+  border-color: var(--ecom-border-focus);
+}

@@ -1,0 +1,45 @@
+/* ============================================================
+   team-section.css — Cards de membros da equipe
+   ============================================================ */
+
+.team-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--ecom-space-6);
+}
+
+@media (min-width: 768px) {
+  .team-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.team-card {
+  background-color: var(--ecom-bg-surface);
+  border-radius: var(--ecom-radius-lg);
+  box-shadow: var(--ecom-shadow-sm);
+  overflow: hidden;
+}
+
+.team-card__image {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+}
+
+.team-card__body {
+  padding: var(--ecom-space-4);
+}
+
+.team-card__name {
+  font-size: var(--ecom-text-xl);
+  font-weight: var(--ecom-font-bold);
+  color: var(--ecom-text-primary);
+  margin-bottom: var(--ecom-space-1);
+}
+
+.team-card__role {
+  font-size: var(--ecom-text-sm);
+  color: var(--ecom-color-primary-500);
+  font-weight: var(--ecom-font-medium);
+}

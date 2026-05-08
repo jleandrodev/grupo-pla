@@ -1,0 +1,313 @@
+/* ============================================================
+   financing-modal.css — Modal de simulação de financiamento
+   ============================================================ */
+
+/* ── Overlay ── */
+
+.financing-modal {
+  position: fixed;
+  inset: 0;
+  z-index: var(--ecom-z-overlay);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(0 0 0 / 0.5);
+  padding: var(--ecom-space-4);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity var(--ecom-duration-normal) var(--ecom-ease-default),
+    visibility var(--ecom-duration-normal) var(--ecom-ease-default);
+}
+
+.financing-modal[data-state="open"] {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+/* ── Card do modal ── */
+
+.financing-modal__card {
+  position: relative;
+  width: 100%;
+  max-width: 30rem;
+  max-height: 90vh;
+  overflow-y: auto;
+  background-color: var(--ecom-bg-surface);
+  border-radius: var(--ecom-radius-2xl);
+  box-shadow: var(--ecom-shadow-xl);
+  padding: var(--ecom-space-6);
+  z-index: var(--ecom-z-modal);
+  transform: scale(0.95);
+  transition: transform var(--ecom-duration-normal) var(--ecom-ease-default);
+}
+
+@media (min-width: 480px) {
+  .financing-modal__card {
+    padding: var(--ecom-space-8);
+  }
+}
+
+.financing-modal[data-state="open"] .financing-modal__card {
+  transform: scale(1);
+}
+
+/* ── Cabeçalho ── */
+
+.financing-modal__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--ecom-space-2);
+}
+
+.financing-modal__title {
+  font-size: var(--ecom-text-xl);
+  font-weight: var(--ecom-font-bold);
+  font-family: var(--ecom-font-heading);
+  color: var(--ecom-text-primary);
+}
+
+@media (min-width: 480px) {
+  .financing-modal__title {
+    font-size: var(--ecom-text-2xl);
+  }
+}
+
+.financing-modal__close {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.75rem;
+  height: 2.75rem;
+  background: none;
+  border: none;
+  color: var(--ecom-text-secondary);
+  cursor: pointer;
+  border-radius: var(--ecom-radius-md);
+  flex-shrink: 0;
+  transition: color var(--ecom-duration-fast) var(--ecom-ease-default),
+    background-color var(--ecom-duration-fast) var(--ecom-ease-default);
+}
+
+.financing-modal__close:hover {
+  color: var(--ecom-text-primary);
+  background-color: var(--ecom-bg-surface-alt);
+}
+
+.financing-modal__close svg {
+  width: 1.25rem;
+  height: 1.25rem;
+}
+
+/* ── Subtítulo do produto ── */
+
+.financing-modal__product-name {
+  font-size: var(--ecom-text-sm);
+  color: var(--ecom-text-secondary);
+  margin-bottom: var(--ecom-space-6);
+}
+
+/* ── Campos de valor ── */
+
+.financing-modal__field-group {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--ecom-space-4);
+  margin-bottom: var(--ecom-space-6);
+}
+
+@media (min-width: 480px) {
+  .financing-modal__field-group {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.financing-modal__field {
+  display: flex;
+  flex-direction: column;
+  gap: var(--ecom-space-2);
+}
+
+.financing-modal__label {
+  font-size: var(--ecom-text-sm);
+  font-weight: var(--ecom-font-medium);
+  color: var(--ecom-text-primary);
+}
+
+.financing-modal__input {
+  width: 100%;
+  min-width: 0;
+  height: 2.75rem;
+  padding: var(--ecom-space-2) var(--ecom-space-3);
+  font-size: var(--ecom-text-base);
+  font-family: var(--ecom-font-body);
+  font-weight: var(--ecom-font-medium);
+  color: var(--ecom-text-primary);
+  background-color: var(--ecom-bg-surface);
+  border: 1px solid var(--ecom-border-default);
+  border-radius: var(--ecom-radius-sm);
+  box-sizing: border-box;
+  transition: border-color var(--ecom-duration-fast) var(--ecom-ease-default);
+}
+
+.financing-modal__input:focus-visible {
+  outline: 2px solid var(--ecom-border-focus);
+  outline-offset: 2px;
+}
+
+.financing-modal__input[aria-invalid="true"] {
+  border-color: var(--ecom-color-error);
+}
+
+.financing-modal__input-error {
+  font-size: var(--ecom-text-xs);
+  color: var(--ecom-color-error);
+}
+
+/* ── Parcelas ── */
+
+.financing-modal__installments {
+  border: none;
+  padding: 0;
+  margin: 0;
+  margin-bottom: var(--ecom-space-6);
+}
+
+.financing-modal__installments-label {
+  font-size: var(--ecom-text-sm);
+  font-weight: var(--ecom-font-medium);
+  color: var(--ecom-text-primary);
+  margin-bottom: var(--ecom-space-3);
+  display: block;
+}
+
+.financing-modal__installments-options {
+  display: flex;
+  gap: var(--ecom-space-2);
+  flex-wrap: wrap;
+}
+
+.financing-modal__installment-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 3.5rem;
+  padding: var(--ecom-space-2) var(--ecom-space-4);
+  font-size: var(--ecom-text-sm);
+  font-weight: var(--ecom-font-medium);
+  font-family: var(--ecom-font-body);
+  color: var(--ecom-color-neutral-0);
+  background-color: var(--ecom-color-neutral-800);
+  border: none;
+  border-radius: var(--ecom-radius-full);
+  cursor: pointer;
+  transition: background-color var(--ecom-duration-fast) var(--ecom-ease-default);
+}
+
+.financing-modal__installment-btn:hover {
+  background-color: var(--ecom-color-neutral-700);
+}
+
+.financing-modal__installment-btn:focus-visible {
+  outline: 2px solid var(--ecom-border-focus);
+  outline-offset: 2px;
+}
+
+.financing-modal__installment-btn--active {
+  background-color: var(--ecom-action-primary);
+}
+
+.financing-modal__installment-btn--active:hover {
+  background-color: var(--ecom-action-primary-hover);
+}
+
+/* ── Resultado ── */
+
+.financing-modal__result {
+  background-color: var(--ecom-color-primary-50);
+  border-radius: var(--ecom-radius-lg);
+  padding: var(--ecom-space-4);
+  margin-bottom: var(--ecom-space-6);
+}
+
+.financing-modal__result-label {
+  display: block;
+  font-size: var(--ecom-text-xs);
+  color: var(--ecom-text-secondary);
+  margin-bottom: var(--ecom-space-1);
+}
+
+.financing-modal__result-value {
+  display: block;
+  font-size: var(--ecom-text-2xl);
+  font-weight: var(--ecom-font-bold);
+  color: var(--ecom-color-primary-500);
+  line-height: var(--ecom-leading-tight);
+}
+
+@media (min-width: 480px) {
+  .financing-modal__result-value {
+    font-size: var(--ecom-text-3xl);
+  }
+}
+
+.financing-modal__result-detail {
+  display: block;
+  font-size: var(--ecom-text-sm);
+  color: var(--ecom-text-secondary);
+  margin-top: var(--ecom-space-1);
+}
+
+/* ── Botão CTA ── */
+
+.financing-modal__submit {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--ecom-space-2);
+  width: 100%;
+  height: 3rem;
+  font-size: var(--ecom-text-base);
+  font-weight: var(--ecom-font-semibold);
+  font-family: var(--ecom-font-body);
+  color: var(--ecom-text-on-primary);
+  background-color: var(--ecom-action-primary);
+  border: none;
+  border-radius: var(--ecom-radius-lg);
+  cursor: pointer;
+  transition: background-color var(--ecom-duration-fast) var(--ecom-ease-default);
+}
+
+.financing-modal__submit:hover {
+  background-color: var(--ecom-action-primary-hover);
+}
+
+.financing-modal__submit:focus-visible {
+  outline: 2px solid var(--ecom-border-focus);
+  outline-offset: 2px;
+}
+
+.financing-modal__submit svg {
+  width: 1.25rem;
+  height: 1.25rem;
+}
+
+/* ── Disclaimer ── */
+
+.financing-modal__disclaimer {
+  font-size: var(--ecom-text-xs);
+  color: var(--ecom-text-muted);
+  line-height: var(--ecom-leading-relaxed);
+  margin-top: var(--ecom-space-3);
+}
+
+/* ── Prefers reduced motion ── */
+
+@media (prefers-reduced-motion: reduce) {
+  .financing-modal,
+  .financing-modal__card {
+    transition-duration: 0.01ms;
+  }
+}

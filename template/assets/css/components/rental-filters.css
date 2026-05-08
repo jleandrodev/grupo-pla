@@ -1,0 +1,230 @@
+/* ============================================================
+   rental-filters.css — Sidebar de filtros para locação
+   ============================================================ */
+
+.rental-filters {
+  background-color: var(--ecom-bg-surface);
+  border-radius: var(--ecom-radius-lg);
+  box-shadow: var(--ecom-shadow-sm);
+  padding: var(--ecom-space-6);
+}
+
+.rental-filters__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--ecom-space-6);
+}
+
+.rental-filters__title {
+  font-size: var(--ecom-text-lg);
+  font-weight: var(--ecom-font-bold);
+  color: var(--ecom-text-primary);
+}
+
+.rental-filters__header-icon {
+  width: 1.25rem;
+  height: 1.25rem;
+  color: var(--ecom-text-secondary);
+}
+
+.rental-filters__section {
+  padding-block: var(--ecom-space-4);
+  border-top: 1px solid var(--ecom-border-default);
+}
+
+.rental-filters__section:first-of-type {
+  padding-top: 0;
+  border-top: none;
+}
+
+.rental-filters__label {
+  display: block;
+  font-size: var(--ecom-text-xs);
+  font-weight: var(--ecom-font-semibold);
+  letter-spacing: var(--ecom-tracking-widest);
+  text-transform: uppercase;
+  color: var(--ecom-text-secondary);
+  margin-bottom: var(--ecom-space-3);
+}
+
+/* ── Checkboxes ── */
+
+.rental-filters__checkbox {
+  display: flex;
+  align-items: center;
+  gap: var(--ecom-space-3);
+  padding-block: var(--ecom-space-2);
+  cursor: pointer;
+  font-size: var(--ecom-text-sm);
+  color: var(--ecom-text-primary);
+  transition: color var(--ecom-duration-fast) var(--ecom-ease-default);
+}
+
+.rental-filters__checkbox:hover {
+  color: var(--ecom-color-primary-500);
+}
+
+.rental-filters__checkbox input[type="checkbox"] {
+  appearance: none;
+  width: 1.125rem;
+  height: 1.125rem;
+  border: 2px solid var(--ecom-border-default);
+  border-radius: var(--ecom-radius-sm);
+  flex-shrink: 0;
+  cursor: pointer;
+  position: relative;
+  transition:
+    background-color var(--ecom-duration-fast) var(--ecom-ease-default),
+    border-color var(--ecom-duration-fast) var(--ecom-ease-default);
+}
+
+.rental-filters__checkbox input[type="checkbox"]:checked {
+  background-color: var(--ecom-action-primary);
+  border-color: var(--ecom-action-primary);
+}
+
+.rental-filters__checkbox input[type="checkbox"]:checked::after {
+  content: "";
+  position: absolute;
+  top: 1px;
+  left: 4px;
+  width: 5px;
+  height: 9px;
+  border: 2px solid var(--ecom-color-neutral-0);
+  border-top: none;
+  border-left: none;
+  transform: rotate(45deg);
+}
+
+/* ── Chips ── */
+
+.rental-filters__chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--ecom-space-2);
+}
+
+.rental-filters__chip {
+  display: inline-flex;
+  align-items: center;
+  padding: var(--ecom-space-2) var(--ecom-space-3);
+  font-size: var(--ecom-text-xs);
+  font-weight: var(--ecom-font-medium);
+  border-radius: var(--ecom-radius-full);
+  border: 1px solid var(--ecom-border-default);
+  background-color: var(--ecom-bg-surface);
+  color: var(--ecom-text-primary);
+  cursor: pointer;
+  transition:
+    background-color var(--ecom-duration-fast) var(--ecom-ease-default),
+    border-color var(--ecom-duration-fast) var(--ecom-ease-default),
+    color var(--ecom-duration-fast) var(--ecom-ease-default);
+}
+
+.rental-filters__chip:hover {
+  border-color: var(--ecom-color-primary-300);
+  color: var(--ecom-color-primary-600);
+}
+
+.rental-filters__chip--active,
+.rental-filters__chip[aria-pressed="true"] {
+  background-color: var(--ecom-action-primary);
+  border-color: var(--ecom-action-primary);
+  color: var(--ecom-color-neutral-0);
+}
+
+/* ── Toggle switch ── */
+
+.rental-filters__toggle {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-block: var(--ecom-space-4);
+  border-top: 1px solid var(--ecom-border-default);
+}
+
+.rental-filters__toggle-label {
+  font-size: var(--ecom-text-sm);
+  color: var(--ecom-text-primary);
+}
+
+.rental-filters__switch {
+  position: relative;
+  width: 2.75rem;
+  height: 1.5rem;
+  appearance: none;
+  background-color: var(--ecom-color-neutral-300);
+  border-radius: var(--ecom-radius-full);
+  cursor: pointer;
+  transition: background-color var(--ecom-duration-fast) var(--ecom-ease-default);
+  flex-shrink: 0;
+}
+
+.rental-filters__switch::after {
+  content: "";
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 1.25rem;
+  height: 1.25rem;
+  background-color: var(--ecom-color-neutral-0);
+  border-radius: var(--ecom-radius-full);
+  transition: transform var(--ecom-duration-fast) var(--ecom-ease-default);
+  box-shadow: var(--ecom-shadow-sm);
+}
+
+.rental-filters__switch:checked {
+  background-color: var(--ecom-action-primary);
+}
+
+.rental-filters__switch:checked::after {
+  transform: translateX(1.25rem);
+}
+
+/* ── Actions ── */
+
+.rental-filters__submit {
+  width: 100%;
+  margin-top: var(--ecom-space-4);
+}
+
+.rental-filters__clear {
+  display: block;
+  text-align: center;
+  margin-top: var(--ecom-space-3);
+  font-size: var(--ecom-text-sm);
+  color: var(--ecom-text-secondary);
+  background: none;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  transition: color var(--ecom-duration-fast) var(--ecom-ease-default);
+}
+
+.rental-filters__clear:hover {
+  color: var(--ecom-text-primary);
+  text-decoration: underline;
+}
+
+/* ── Mobile: slide-in drawer ── */
+
+@media (max-width: 1023px) {
+  .rental-filters {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 300px;
+    max-width: 85vw;
+    z-index: var(--ecom-z-modal);
+    transform: translateX(-100%);
+    transition: transform var(--ecom-duration-normal) var(--ecom-ease-default);
+    border-radius: 0;
+    overflow-y: auto;
+  }
+
+  .rental-filters[data-state="open"] {
+    transform: translateX(0);
+  }
+}

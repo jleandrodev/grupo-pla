@@ -1,0 +1,68 @@
+/* ============================================================
+   categoria.css — Layout da página de categoria
+   ============================================================ */
+
+/* ── Catalog Layout: sidebar + content area ── */
+
+.catalog-layout {
+  display: flex;
+  flex-direction: column;
+  gap: var(--ecom-space-6);
+  padding-top: var(--ecom-space-6);
+  padding-bottom: var(--ecom-space-6);
+}
+
+@media (min-width: 1024px) {
+  .catalog-layout {
+    display: grid;
+    grid-template-columns: 17.5rem 1fr;
+    gap: var(--ecom-space-8);
+    align-items: start;
+  }
+}
+
+/* ── Content Area (right side) ── */
+
+.catalog-content {
+  min-width: 0;
+}
+
+/* ── Products Grid ── */
+
+.catalog-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--ecom-space-4);
+}
+
+@media (min-width: 768px) {
+  .catalog-grid {
+    gap: var(--ecom-space-6);
+  }
+}
+
+@media (min-width: 1024px) {
+  .catalog-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* ── Product card adjustments on catalog page ── */
+
+.catalog-grid .product-card__price--current {
+  color: var(--ecom-action-primary);
+}
+
+/* ── Mobile filter toggle area ── */
+
+.catalog-mobile-actions {
+  display: flex;
+  gap: var(--ecom-space-3);
+  margin-bottom: var(--ecom-space-4);
+}
+
+@media (min-width: 1024px) {
+  .catalog-mobile-actions {
+    display: none;
+  }
+}

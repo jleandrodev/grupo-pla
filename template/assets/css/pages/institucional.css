@@ -1,0 +1,79 @@
+/* ============================================================
+   institucional.css — Layout da página institucional
+   ============================================================ */
+
+.institutional-section {
+  background-color: var(--ecom-bg-page);
+}
+
+.institutional-layout {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--ecom-space-8);
+}
+
+@media (min-width: 768px) {
+  .institutional-layout {
+    grid-template-columns: 15rem 1fr;
+  }
+}
+
+@media (min-width: 1024px) {
+  .institutional-layout {
+    grid-template-columns: 16rem 1fr;
+  }
+}
+
+/* ── Prose content area ── */
+
+.prose {
+  max-width: 48rem;
+}
+
+.prose h2 {
+  font-size: var(--ecom-text-3xl);
+  font-weight: var(--ecom-font-bold);
+  color: var(--ecom-text-primary);
+  margin-bottom: var(--ecom-space-6);
+}
+
+.prose h3 {
+  font-size: var(--ecom-text-xl);
+  font-weight: var(--ecom-font-bold);
+  color: var(--ecom-text-primary);
+  margin-top: var(--ecom-space-8);
+  margin-bottom: var(--ecom-space-4);
+}
+
+.prose p {
+  color: var(--ecom-text-primary);
+  font-size: var(--ecom-text-base);
+  line-height: var(--ecom-leading-relaxed);
+  margin-bottom: var(--ecom-space-4);
+}
+
+.prose ul {
+  margin-bottom: var(--ecom-space-4);
+  padding-left: var(--ecom-space-6);
+}
+
+.prose ul li {
+  font-size: var(--ecom-text-base);
+  color: var(--ecom-text-primary);
+  line-height: var(--ecom-leading-relaxed);
+  padding-bottom: var(--ecom-space-1);
+  list-style: none;
+}
+
+.prose strong {
+  font-weight: var(--ecom-font-bold);
+}
+
+.prose a {
+  color: var(--ecom-color-primary-500);
+  transition: color var(--ecom-duration-fast) var(--ecom-ease-default);
+}
+
+.prose a:hover {
+  color: var(--ecom-action-primary-hover);
+}

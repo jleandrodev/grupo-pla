@@ -1,0 +1,65 @@
+/* ============================================================
+   values-grid.css — Cards de valores da empresa
+   ============================================================ */
+
+.values-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--ecom-space-6);
+}
+
+@media (min-width: 768px) {
+  .values-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .values-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.value-card {
+  background-color: var(--ecom-bg-surface);
+  border: 1px solid var(--ecom-border-default);
+  border-radius: var(--ecom-radius-lg);
+  padding: var(--ecom-space-6);
+  box-shadow: var(--ecom-shadow-sm);
+}
+
+.value-card__icon {
+  width: 2rem;
+  height: 2rem;
+  margin-bottom: var(--ecom-space-3);
+}
+
+.value-card__icon svg {
+  width: 100%;
+  height: 100%;
+}
+
+.value-card__icon--blue {
+  color: var(--ecom-color-primary-700);
+}
+
+.value-card__icon--green {
+  color: var(--ecom-color-success);
+}
+
+.value-card__icon--orange {
+  color: var(--ecom-color-primary-500);
+}
+
+.value-card__title {
+  font-size: var(--ecom-text-lg);
+  font-weight: var(--ecom-font-bold);
+  color: var(--ecom-text-primary);
+  margin-bottom: var(--ecom-space-2);
+}
+
+.value-card__text {
+  font-size: var(--ecom-text-sm);
+  color: var(--ecom-text-secondary);
+  line-height: var(--ecom-leading-relaxed);
+}

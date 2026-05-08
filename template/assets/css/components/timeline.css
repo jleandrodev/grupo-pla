@@ -1,0 +1,157 @@
+/* ============================================================
+   timeline.css — Timeline horizontal (marcos históricos)
+   ============================================================ */
+
+.timeline {
+  position: relative;
+}
+
+/* Horizontal line */
+.timeline__line {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .timeline__line {
+    display: block;
+    position: absolute;
+    top: 0.375rem;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background-color: var(--ecom-border-default);
+  }
+}
+
+.timeline__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--ecom-space-8);
+}
+
+@media (min-width: 768px) {
+  .timeline__grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--ecom-space-6);
+  }
+}
+
+@media (min-width: 1024px) {
+  .timeline__grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.timeline__item {
+  position: relative;
+  padding-top: var(--ecom-space-6);
+}
+
+@media (min-width: 768px) {
+  .timeline__item {
+    padding-top: var(--ecom-space-8);
+  }
+}
+
+/* Dot on the timeline */
+.timeline__dot {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0.75rem;
+  height: 0.75rem;
+  background-color: var(--ecom-color-primary-500);
+  border-radius: var(--ecom-radius-full);
+}
+
+@media (min-width: 768px) {
+  .timeline__dot {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+
+.timeline__year {
+  font-size: var(--ecom-text-sm);
+  font-weight: var(--ecom-font-semibold);
+  color: var(--ecom-color-primary-500);
+  margin-bottom: var(--ecom-space-2);
+}
+
+.timeline__milestone-title {
+  font-size: var(--ecom-text-lg);
+  font-weight: var(--ecom-font-bold);
+  color: var(--ecom-text-primary);
+  margin-bottom: var(--ecom-space-2);
+}
+
+.timeline__milestone-text {
+  font-size: var(--ecom-text-sm);
+  color: var(--ecom-text-secondary);
+  line-height: var(--ecom-leading-relaxed);
+}
+
+/* ── MINI TIMELINE (vertical, used in history section) ── */
+
+.mini-timeline {
+  position: relative;
+  padding-left: var(--ecom-space-8);
+  margin-top: var(--ecom-space-8);
+}
+
+.mini-timeline::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 1.25rem;
+  bottom: 0;
+  width: 2px;
+  background-color: var(--ecom-border-default);
+}
+
+.mini-timeline__item {
+  position: relative;
+  padding-bottom: var(--ecom-space-6);
+}
+
+.mini-timeline__item:last-child {
+  padding-bottom: 0;
+}
+
+.mini-timeline__icon {
+  position: absolute;
+  top: 0;
+  left: calc(-1 * var(--ecom-space-8));
+  width: 2.5rem;
+  height: 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid var(--ecom-color-primary-700);
+  border-radius: var(--ecom-radius-full);
+  background-color: var(--ecom-bg-surface);
+}
+
+.mini-timeline__icon svg {
+  width: 1.125rem;
+  height: 1.125rem;
+  color: var(--ecom-color-primary-700);
+}
+
+.mini-timeline__year {
+  font-weight: var(--ecom-font-bold);
+  color: var(--ecom-text-primary);
+  font-size: var(--ecom-text-base);
+}
+
+.mini-timeline__title {
+  font-weight: var(--ecom-font-bold);
+  color: var(--ecom-text-primary);
+  font-size: var(--ecom-text-base);
+}
+
+.mini-timeline__text {
+  font-size: var(--ecom-text-sm);
+  color: var(--ecom-text-secondary);
+  margin-top: var(--ecom-space-1);
+}

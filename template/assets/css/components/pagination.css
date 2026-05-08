@@ -1,0 +1,72 @@
+/* ============================================================
+   pagination.css — Paginação numérica
+   ============================================================ */
+
+.pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--ecom-space-2);
+  margin-top: var(--ecom-space-8);
+  margin-bottom: var(--ecom-space-8);
+}
+
+.pagination__list {
+  display: flex;
+  align-items: center;
+  gap: var(--ecom-space-1);
+}
+
+.pagination__item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 2.5rem;
+  height: 2.5rem;
+  padding-inline: var(--ecom-space-2);
+  font-size: var(--ecom-text-sm);
+  font-weight: var(--ecom-font-medium);
+  color: var(--ecom-text-primary);
+  background-color: var(--ecom-bg-surface);
+  border: 1px solid var(--ecom-border-default);
+  border-radius: var(--ecom-radius-md);
+  text-decoration: none;
+  transition:
+    background-color var(--ecom-duration-fast) var(--ecom-ease-default),
+    color var(--ecom-duration-fast) var(--ecom-ease-default),
+    border-color var(--ecom-duration-fast) var(--ecom-ease-default);
+}
+
+.pagination__item:hover:not(.pagination__item--active):not(.pagination__item--disabled):not(.pagination__item--ellipsis) {
+  background-color: var(--ecom-bg-surface-alt);
+}
+
+.pagination__item--active {
+  background-color: var(--ecom-action-primary);
+  color: var(--ecom-text-on-primary);
+  border-color: var(--ecom-action-primary);
+}
+
+.pagination__item--disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.pagination__item--ellipsis {
+  border: none;
+  background: none;
+  cursor: default;
+  color: var(--ecom-text-muted);
+  min-width: auto;
+  padding-inline: var(--ecom-space-1);
+}
+
+.pagination__item--arrow {
+  color: var(--ecom-text-secondary);
+}
+
+.pagination__item--arrow svg {
+  width: 1rem;
+  height: 1rem;
+}

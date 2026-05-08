@@ -1,0 +1,45 @@
+{
+  "html": "template/pages/detalhe-filtro-modelo.html",
+  "reference": "04-detalhe-filtro-modelo",
+  "viewport": {
+    "width": 1280,
+    "height": 800
+  },
+  "timestamp": "2026-05-05T17:04:55.562Z",
+  "totalHeight": 4133,
+  "referenceFolds": 5,
+  "actualFolds": 6,
+  "folds": [
+    {
+      "fold": 1,
+      "actual": "fold-01-actual.png",
+      "reference": "fold-01-reference.png"
+    },
+    {
+      "fold": 2,
+      "actual": "fold-02-actual.png",
+      "reference": "fold-02-reference.png"
+    },
+    {
+      "fold": 3,
+      "actual": "fold-03-actual.png",
+      "reference": "fold-03-reference.png"
+    },
+    {
+      "fold": 4,
+      "actual": "fold-04-actual.png",
+      "reference": "fold-04-reference.png"
+    },
+    {
+      "fold": 5,
+      "actual": "fold-05-actual.png",
+      "reference": "fold-05-reference.png"
+    },
+    {
+      "fold": 6,
+      "actual": "fold-06-actual.png",
+      "reference": null,
+      "issue": "EXTRA_IN_ACTUAL"
+    }
+  ]
+}

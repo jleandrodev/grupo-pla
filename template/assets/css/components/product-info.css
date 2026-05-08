@@ -1,0 +1,328 @@
+/* ============================================================
+   product-info.css — Informações do produto (detalhe)
+   ============================================================ */
+
+.product-info {
+  display: flex;
+  flex-direction: column;
+  gap: var(--ecom-space-5);
+}
+
+/* ── Título ── */
+
+.product-info__title {
+  font-size: var(--ecom-text-2xl);
+  font-weight: var(--ecom-font-bold);
+  font-family: var(--ecom-font-heading);
+  color: var(--ecom-text-primary);
+  line-height: var(--ecom-leading-tight);
+}
+
+@media (min-width: 768px) {
+  .product-info__title {
+    font-size: var(--ecom-text-3xl);
+  }
+}
+
+/* ── Metadados ── */
+
+.product-info__meta {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--ecom-space-2);
+  font-size: var(--ecom-text-sm);
+  color: var(--ecom-text-secondary);
+}
+
+.product-info__meta-separator {
+  color: var(--ecom-text-muted);
+  user-select: none;
+}
+
+.product-info__meta-value {
+  font-weight: var(--ecom-font-medium);
+}
+
+/* ── Estrelas ── */
+
+.product-info__rating {
+  display: flex;
+  align-items: center;
+  gap: var(--ecom-space-1);
+}
+
+.product-info__rating svg {
+  width: 1.125rem;
+  height: 1.125rem;
+}
+
+.product-info__star--empty {
+  color: var(--ecom-color-primary-300);
+}
+
+.product-info__star--filled {
+  color: var(--ecom-color-primary-500);
+}
+
+/* ── Disponibilidade ── */
+
+.product-info__availability {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--ecom-space-2);
+  padding: var(--ecom-space-2) var(--ecom-space-4);
+  background-color: var(--ecom-color-success-light);
+  border: 1px solid var(--ecom-color-success);
+  border-radius: var(--ecom-radius-full);
+  font-size: var(--ecom-text-sm);
+  font-weight: var(--ecom-font-medium);
+  color: var(--ecom-color-success);
+}
+
+.product-info__availability-icon {
+  width: 1rem;
+  height: 1rem;
+  flex-shrink: 0;
+}
+
+/* ── Bloco de Preço ── */
+
+.product-info__pricing {
+  display: flex;
+  flex-direction: column;
+  gap: var(--ecom-space-2);
+}
+
+.product-info__price-row {
+  display: flex;
+  align-items: center;
+  gap: var(--ecom-space-3);
+  flex-wrap: wrap;
+}
+
+.product-info__discount-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: var(--ecom-space-1) var(--ecom-space-3);
+  background-color: var(--ecom-action-primary);
+  color: var(--ecom-text-on-primary);
+  font-size: var(--ecom-text-xs);
+  font-weight: var(--ecom-font-bold);
+  border-radius: var(--ecom-radius-sm);
+  line-height: var(--ecom-leading-normal);
+}
+
+.product-info__price--original {
+  font-size: var(--ecom-text-sm);
+  color: var(--ecom-text-muted);
+  text-decoration: line-through;
+}
+
+.product-info__price--current {
+  font-size: var(--ecom-text-3xl);
+  font-weight: var(--ecom-font-bold);
+  color: var(--ecom-text-primary);
+  line-height: var(--ecom-leading-tight);
+}
+
+@media (min-width: 768px) {
+  .product-info__price--current {
+    font-size: var(--ecom-text-4xl);
+  }
+}
+
+.product-info__installments {
+  font-size: var(--ecom-text-sm);
+  color: var(--ecom-text-secondary);
+}
+
+.product-info__pix-price {
+  font-size: var(--ecom-text-sm);
+  font-weight: var(--ecom-font-semibold);
+  color: var(--ecom-color-primary-500);
+}
+
+/* ── Seletor de Quantidade ── */
+
+.product-info__quantity {
+  display: flex;
+  align-items: center;
+  gap: var(--ecom-space-4);
+  flex-wrap: wrap;
+}
+
+.product-info__quantity-label {
+  font-size: var(--ecom-text-sm);
+  font-weight: var(--ecom-font-medium);
+  color: var(--ecom-text-primary);
+}
+
+.quantity-input {
+  display: inline-flex;
+  align-items: center;
+  border: 1px solid var(--ecom-border-default);
+  border-radius: var(--ecom-radius-md);
+  overflow: hidden;
+}
+
+.quantity-input__btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  background-color: var(--ecom-bg-surface);
+  border: none;
+  color: var(--ecom-text-secondary);
+  font-size: var(--ecom-text-lg);
+  cursor: pointer;
+  transition: background-color var(--ecom-duration-fast) var(--ecom-ease-default);
+}
+
+.quantity-input__btn:hover {
+  background-color: var(--ecom-bg-surface-alt);
+}
+
+.quantity-input__value {
+  width: 3rem;
+  height: 2.5rem;
+  text-align: center;
+  border: none;
+  border-inline: 1px solid var(--ecom-border-default);
+  font-size: var(--ecom-text-base);
+  font-weight: var(--ecom-font-medium);
+  color: var(--ecom-text-primary);
+  background-color: var(--ecom-bg-surface);
+  -moz-appearance: textfield;
+}
+
+.quantity-input__value::-webkit-outer-spin-button,
+.quantity-input__value::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.product-info__quantity-note {
+  font-size: var(--ecom-text-sm);
+  color: var(--ecom-text-secondary);
+}
+
+.product-info__quantity-highlight {
+  font-weight: var(--ecom-font-bold);
+  color: var(--ecom-color-primary-500);
+}
+
+/* ── Botões de Ação ── */
+
+.product-info__actions {
+  display: flex;
+  gap: var(--ecom-space-3);
+  flex-wrap: wrap;
+}
+
+.product-info__actions .btn {
+  flex: 1;
+  min-width: 12rem;
+}
+
+.btn--outline-primary {
+  background-color: transparent;
+  color: var(--ecom-color-primary-500);
+  border-color: var(--ecom-color-primary-500);
+}
+
+.btn--outline-primary:hover {
+  background-color: var(--ecom-color-primary-50);
+  border-color: var(--ecom-action-primary-hover);
+  color: var(--ecom-action-primary-hover);
+}
+
+/* ── Informação de Frete ── */
+
+.product-info__shipping {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--ecom-space-3);
+  padding: var(--ecom-space-4);
+  background-color: var(--ecom-bg-surface-alt);
+  border-radius: var(--ecom-radius-lg);
+  border: 1px solid var(--ecom-border-default);
+}
+
+.product-info__shipping-icon {
+  width: 1.5rem;
+  height: 1.5rem;
+  flex-shrink: 0;
+  color: var(--ecom-color-primary-500);
+  margin-top: 2px;
+}
+
+.product-info__shipping-text {
+  font-size: var(--ecom-text-sm);
+  font-weight: var(--ecom-font-semibold);
+  color: var(--ecom-text-primary);
+}
+
+.product-info__shipping-subtext {
+  font-size: var(--ecom-text-xs);
+  color: var(--ecom-text-secondary);
+  margin-top: var(--ecom-space-1);
+}
+
+/* ── Barra de Compartilhar ── */
+
+.product-info__share {
+  display: flex;
+  align-items: center;
+  gap: var(--ecom-space-3);
+  padding-top: var(--ecom-space-4);
+  border-top: 1px solid var(--ecom-border-default);
+}
+
+.product-info__share-label {
+  font-size: var(--ecom-text-sm);
+  color: var(--ecom-text-secondary);
+}
+
+.product-info__share-actions {
+  display: flex;
+  align-items: center;
+  gap: var(--ecom-space-2);
+}
+
+.product-info__share-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.25rem;
+  height: 2.25rem;
+  border: none;
+  background: none;
+  color: var(--ecom-text-secondary);
+  border-radius: var(--ecom-radius-md);
+  cursor: pointer;
+  transition: color var(--ecom-duration-fast) var(--ecom-ease-default),
+    background-color var(--ecom-duration-fast) var(--ecom-ease-default);
+}
+
+.product-info__share-btn:hover {
+  color: var(--ecom-color-primary-500);
+  background-color: var(--ecom-color-primary-50);
+}
+
+.product-info__share-btn svg {
+  width: 1.125rem;
+  height: 1.125rem;
+}
+
+.product-info__share-link {
+  font-size: var(--ecom-text-sm);
+  color: var(--ecom-text-secondary);
+  text-decoration: none;
+  transition: color var(--ecom-duration-fast) var(--ecom-ease-default);
+}
+
+.product-info__share-link:hover {
+  color: var(--ecom-color-primary-500);
+}

@@ -1,0 +1,57 @@
+/* ============================================================
+   breadcrumb.css — Navegação hierárquica
+   ============================================================ */
+
+.breadcrumb {
+  margin-bottom: var(--ecom-space-3);
+}
+
+.breadcrumb__list {
+  display: flex;
+  align-items: center;
+  gap: var(--ecom-space-2);
+  flex-wrap: wrap;
+}
+
+.breadcrumb__item {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--ecom-space-2);
+  font-size: var(--ecom-text-sm);
+}
+
+.breadcrumb__item a {
+  color: rgb(255 255 255 / 0.7);
+  transition: color var(--ecom-duration-fast) var(--ecom-ease-default);
+}
+
+.breadcrumb__item a:hover {
+  color: var(--ecom-color-neutral-0);
+}
+
+.breadcrumb__item--active {
+  color: rgb(255 255 255 / 0.7);
+}
+
+.breadcrumb__separator {
+  color: rgb(255 255 255 / 0.4);
+  font-size: var(--ecom-text-xs);
+  user-select: none;
+}
+
+/* Variante sobre fundo claro */
+.breadcrumb--light .breadcrumb__item a {
+  color: var(--ecom-text-secondary);
+}
+
+.breadcrumb--light .breadcrumb__item a:hover {
+  color: var(--ecom-text-primary);
+}
+
+.breadcrumb--light .breadcrumb__item--active {
+  color: var(--ecom-text-muted);
+}
+
+.breadcrumb--light .breadcrumb__separator {
+  color: var(--ecom-text-muted);
+}

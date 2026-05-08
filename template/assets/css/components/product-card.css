@@ -5,6 +5,7 @@
 .product-card {
   display: flex;
   flex-direction: column;
+  position: relative;
   background-color: var(--ecom-bg-surface);
   border-radius: var(--ecom-radius-xl);
   border: 1px solid var(--ecom-border-default);
@@ -38,7 +39,7 @@
 
 .product-card__badge {
   position: absolute;
-  top: var(--ecom-space-3);
+  bottom: var(--ecom-space-3);
   left: var(--ecom-space-3);
   padding: var(--ecom-space-1) var(--ecom-space-3);
   font-size: var(--ecom-text-xs);
@@ -136,6 +137,22 @@
   color: var(--ecom-text-primary);
 }
 
+.product-card__discount-badge {
+  position: absolute;
+  top: var(--ecom-space-3);
+  left: var(--ecom-space-3);
+  z-index: var(--ecom-z-raised);
+  display: inline-flex;
+  align-items: center;
+  padding: var(--ecom-space-1) var(--ecom-space-2);
+  font-size: var(--ecom-text-xs);
+  font-weight: var(--ecom-font-bold);
+  background-color: var(--ecom-color-error);
+  color: var(--ecom-color-neutral-0);
+  border-radius: var(--ecom-radius-sm);
+  line-height: 1;
+}
+
 .product-card__actions {
   display: flex;
   gap: var(--ecom-space-2);
@@ -147,26 +164,33 @@
 }
 
 .product-card__wishlist {
+  position: absolute;
+  top: var(--ecom-space-3);
+  right: var(--ecom-space-3);
+  z-index: var(--ecom-z-raised);
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 2.75rem;
-  height: 2.75rem;
-  flex-shrink: 0;
-  border: 1px solid var(--ecom-border-default);
-  border-radius: var(--ecom-radius-lg);
+  width: 2rem;
+  height: 2rem;
+  background-color: var(--ecom-color-neutral-0);
+  border: none;
+  border-radius: var(--ecom-radius-full);
+  box-shadow: var(--ecom-shadow-md);
   color: var(--ecom-text-muted);
-  transition: color var(--ecom-duration-fast) var(--ecom-ease-default);
+  cursor: pointer;
+  transition: color var(--ecom-duration-fast) var(--ecom-ease-default),
+    box-shadow var(--ecom-duration-fast) var(--ecom-ease-default);
 }
 
 .product-card__wishlist:hover {
   color: var(--ecom-color-error);
-  border-color: var(--ecom-color-error);
+  box-shadow: var(--ecom-shadow-lg);
 }
 
 .product-card__wishlist svg {
-  width: 1.25rem;
-  height: 1.25rem;
+  width: 1rem;
+  height: 1rem;
 }
 
 /* ── PROMO BANNER (primeiro slot — apenas imagem) ── */

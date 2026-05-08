@@ -1,0 +1,117 @@
+/* ============================================================
+   contact-form.css — Formulário de contato
+   ============================================================ */
+
+.contact-form__group {
+  margin-bottom: var(--ecom-space-4);
+}
+
+.contact-form__label {
+  display: block;
+  font-size: var(--ecom-text-sm);
+  font-weight: var(--ecom-font-semibold);
+  color: var(--ecom-color-primary-500);
+  margin-bottom: var(--ecom-space-2);
+}
+
+.contact-form__input,
+.contact-form__textarea {
+  width: 100%;
+  padding: var(--ecom-space-3) var(--ecom-space-4);
+  border: 1px solid var(--ecom-border-default);
+  border-radius: var(--ecom-radius-md);
+  font-size: var(--ecom-text-base);
+  color: var(--ecom-text-primary);
+  background-color: var(--ecom-bg-surface);
+  transition: border-color var(--ecom-duration-fast) var(--ecom-ease-default);
+}
+
+.contact-form__input::placeholder,
+.contact-form__textarea::placeholder {
+  color: var(--ecom-text-muted);
+}
+
+.contact-form__input:focus,
+.contact-form__textarea:focus {
+  border-color: var(--ecom-color-primary-500);
+  outline: none;
+}
+
+.contact-form__textarea {
+  resize: vertical;
+  min-height: 7.5rem;
+}
+
+.contact-form__error {
+  font-size: var(--ecom-text-sm);
+  color: var(--ecom-color-error);
+  margin-top: var(--ecom-space-1);
+}
+
+.contact-form__submit {
+  margin-top: var(--ecom-space-4);
+}
+
+.contact-form__submit .btn {
+  border-radius: var(--ecom-radius-full);
+}
+
+/* ── Sidebar card ── */
+
+.specialist-card {
+  background-color: var(--ecom-bg-page);
+  border-radius: var(--ecom-radius-lg);
+  padding: var(--ecom-space-6);
+}
+
+.specialist-card__title {
+  font-size: var(--ecom-text-xl);
+  font-weight: var(--ecom-font-bold);
+  color: var(--ecom-text-primary);
+  margin-bottom: var(--ecom-space-3);
+}
+
+.specialist-card__text {
+  font-size: var(--ecom-text-sm);
+  color: var(--ecom-text-secondary);
+  line-height: var(--ecom-leading-relaxed);
+  margin-bottom: var(--ecom-space-4);
+}
+
+.specialist-card__list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--ecom-space-3);
+}
+
+.specialist-card__item {
+  font-size: var(--ecom-text-sm);
+  color: var(--ecom-text-secondary);
+}
+
+.specialist-card__item strong {
+  color: var(--ecom-text-primary);
+  font-weight: var(--ecom-font-bold);
+}
+
+/* ── Map embed ── */
+
+.map-embed {
+  margin-top: var(--ecom-space-6);
+  border-radius: var(--ecom-radius-lg);
+  overflow: hidden;
+  aspect-ratio: 16 / 10;
+}
+
+.map-embed iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+@media (max-width: 767px) {
+  .map-embed {
+    aspect-ratio: 16 / 12;
+    min-height: 15.625rem;
+  }
+}

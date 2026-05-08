@@ -99,7 +99,7 @@ async function main() {
   const browser = await chromium.launch({ headless: true });
   const context = await browser.newContext({
     viewport: { width: viewportWidth, height: viewportHeight },
-    deviceScaleFactor: 2,
+    deviceScaleFactor: 1,
     locale: 'pt-BR',
   });
 
@@ -108,8 +108,17 @@ async function main() {
   // Navegar para o HTML local
   const fileUrl = `file://${htmlPath}`;
   console.log(`   Loading: ${fileUrl}`);
-  await page.goto(fileUrl, { waitUntil: 'networkidle', timeout: 30000 });
-  await page.waitForTimeout(1000);
+  // Block external requests (Google Maps, Fonts) that cause networkidle timeout on file://
+  await page.route('**/*', (route) => {
+    const url = route.request().url();
+    if (url.startsWith('file://') || url.startsWith('data:')) {
+      route.continue();
+    } else {
+      route.abort();
+    }
+  });
+  await page.goto(fileUrl, { waitUntil: 'load', timeout: 60000 });
+  await page.waitForTimeout(1500);
 
   // Obter altura total
   const totalHeight = await page.evaluate(() =>
@@ -130,23 +139,27 @@ async function main() {
     folds: [],
   };
 
-  // Screenshot de cada fold e copiar referência
+  // Tirar screenshot full-page primeiro (mais robusto que clip individual)
+  const fullActual = join(qaDir, 'full-page-actual.png');
+  await page.screenshot({ path: fullActual, fullPage: true });
+  console.log(`   ✓ full-page-actual.png captured`);
+
+  // Recortar folds a partir do full-page usando sharp ou canvas
+  // Como não temos sharp, usamos screenshots individuais com scroll
   const maxFolds = Math.max(refFolds.length, actualFoldCount);
 
   for (let i = 0; i < maxFolds; i++) {
     const num = String(i + 1).padStart(2, '0');
     const foldEntry = { fold: i + 1 };
 
-    // Screenshot atual
+    // Screenshot atual via scroll + viewport screenshot
     if (i < actualFoldCount) {
       const y = i * viewportHeight;
-      const height = Math.min(viewportHeight, totalHeight - y);
-      const actualPath = join(qaDir, `fold-${num}-actual.png`);
+      await page.evaluate((scrollY) => window.scrollTo(0, scrollY), y);
+      await page.waitForTimeout(100);
 
-      await page.screenshot({
-        path: actualPath,
-        clip: { x: 0, y, width: viewportWidth, height },
-      });
+      const actualPath = join(qaDir, `fold-${num}-actual.png`);
+      await page.screenshot({ path: actualPath });
       foldEntry.actual = `fold-${num}-actual.png`;
       console.log(`   ✓ fold-${num}-actual.png captured`);
     } else {
@@ -171,11 +184,6 @@ async function main() {
 
     report.folds.push(foldEntry);
   }
-
-  // Screenshot full-page
-  const fullActual = join(qaDir, 'full-page-actual.png');
-  await page.screenshot({ path: fullActual, fullPage: true });
-  console.log(`   ✓ full-page-actual.png captured`);
 
   // Salvar relatório
   const reportPath = join(qaDir, 'qa-report.json');

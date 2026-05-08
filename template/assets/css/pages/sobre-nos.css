@@ -1,0 +1,158 @@
+/* ============================================================
+   sobre-nos.css — Layout da página Sobre Nós
+   ============================================================ */
+
+/* ── History section (text + image) ── */
+
+.history-section {
+  background-color: var(--ecom-bg-surface);
+}
+
+.history-layout {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--ecom-space-8);
+  align-items: center;
+}
+
+@media (min-width: 768px) {
+  .history-layout {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (min-width: 1024px) {
+  .history-layout {
+    grid-template-columns: 55fr 45fr;
+  }
+}
+
+.history-layout__image img {
+  width: 100%;
+  border-radius: var(--ecom-radius-xl);
+  object-fit: cover;
+}
+
+/* ── Timeline section ── */
+
+.timeline-section {
+  background-color: var(--ecom-bg-page);
+}
+
+/* ── Full-width text+image section ── */
+
+.fullwidth-section {
+  background-color: var(--ecom-bg-surface);
+}
+
+.fullwidth-layout {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--ecom-space-8);
+  align-items: center;
+}
+
+@media (min-width: 768px) {
+  .fullwidth-layout {
+    grid-template-columns: 45fr 55fr;
+  }
+}
+
+.fullwidth-layout__image img {
+  width: 100%;
+  border-radius: var(--ecom-radius-xl);
+  object-fit: cover;
+}
+
+/* ── Values section ── */
+
+.values-section {
+  background-color: var(--ecom-bg-page);
+}
+
+/* ── CTA dark section ── */
+
+.cta-dark {
+  position: relative;
+  background-color: var(--ecom-color-secondary-900);
+  padding-block: var(--ecom-space-16);
+  text-align: center;
+  overflow: hidden;
+}
+
+.cta-dark__content {
+  position: relative;
+  z-index: 1;
+  max-width: 40rem;
+  margin-inline: auto;
+}
+
+.cta-dark__badge {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--ecom-space-2);
+  padding: var(--ecom-space-2) var(--ecom-space-4);
+  background-color: rgb(249 115 22 / 0.15);
+  border: 1px solid rgb(249 115 22 / 0.3);
+  border-radius: var(--ecom-radius-full);
+  font-size: var(--ecom-text-xs);
+  font-weight: var(--ecom-font-semibold);
+  color: var(--ecom-color-primary-400);
+  margin-bottom: var(--ecom-space-6);
+}
+
+.cta-dark__badge-dot {
+  width: 0.5rem;
+  height: 0.5rem;
+  background-color: var(--ecom-color-primary-500);
+  border-radius: var(--ecom-radius-full);
+  flex-shrink: 0;
+}
+
+.cta-dark__title {
+  font-size: var(--ecom-text-3xl);
+  font-weight: var(--ecom-font-bold);
+  color: var(--ecom-color-neutral-0);
+  margin-bottom: var(--ecom-space-4);
+  line-height: var(--ecom-leading-tight);
+}
+
+@media (min-width: 768px) {
+  .cta-dark__title {
+    font-size: var(--ecom-text-4xl);
+  }
+}
+
+.cta-dark__text {
+  font-size: var(--ecom-text-base);
+  color: rgb(255 255 255 / 0.7);
+  line-height: var(--ecom-leading-relaxed);
+  margin-bottom: var(--ecom-space-8);
+}
+
+.cta-dark__actions {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: var(--ecom-space-4);
+}
+
+@media (min-width: 480px) {
+  .cta-dark__actions {
+    flex-direction: row;
+  }
+}
+
+.cta-dark__actions .btn--primary {
+  border-radius: var(--ecom-radius-full);
+}
+
+.cta-dark__actions .btn--secondary {
+  border-radius: var(--ecom-radius-full);
+}
+
+/* ── Team section ── */
+
+.team-section {
+  background-color: var(--ecom-bg-page);
+}

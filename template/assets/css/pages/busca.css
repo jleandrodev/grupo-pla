@@ -1,0 +1,146 @@
+/* ============================================================
+   busca.css — Layout da página de resultados de busca
+   ============================================================ */
+
+/* ── Search Page Header ── */
+
+.search-page-header {
+  background-color: var(--ecom-bg-surface);
+  border-bottom: 1px solid var(--ecom-border-default);
+  padding: var(--ecom-space-6) 0 var(--ecom-space-4);
+}
+
+.search-page-header__title {
+  font-size: var(--ecom-text-2xl);
+  font-weight: var(--ecom-font-bold);
+  color: var(--ecom-text-primary);
+  line-height: var(--ecom-leading-tight);
+  margin-bottom: var(--ecom-space-2);
+}
+
+@media (min-width: 768px) {
+  .search-page-header__title {
+    font-size: var(--ecom-text-3xl);
+  }
+}
+
+.search-page-header__count {
+  font-size: var(--ecom-text-sm);
+  color: var(--ecom-text-secondary);
+}
+
+/* ── Empty State ── */
+
+.search-empty {
+  padding: var(--ecom-space-16) 0;
+}
+
+.search-empty__inner {
+  max-width: 560px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.search-empty__icon {
+  width: 64px;
+  height: 64px;
+  color: var(--ecom-text-muted);
+  margin: 0 auto var(--ecom-space-6);
+  display: block;
+}
+
+.search-empty__title {
+  font-size: var(--ecom-text-xl);
+  font-weight: var(--ecom-font-semibold);
+  color: var(--ecom-text-primary);
+  margin-bottom: var(--ecom-space-4);
+  line-height: var(--ecom-leading-snug);
+}
+
+.search-empty__tips {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 var(--ecom-space-8);
+  display: flex;
+  flex-direction: column;
+  gap: var(--ecom-space-2);
+}
+
+.search-empty__tips li {
+  font-size: var(--ecom-text-sm);
+  color: var(--ecom-text-secondary);
+  padding-left: var(--ecom-space-4);
+  position: relative;
+}
+
+.search-empty__tips li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: var(--ecom-action-primary);
+}
+
+.search-empty__suggestion-label {
+  font-size: var(--ecom-text-sm);
+  font-weight: var(--ecom-font-semibold);
+  color: var(--ecom-text-primary);
+  margin-bottom: var(--ecom-space-4);
+}
+
+.search-empty__categories {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--ecom-space-3);
+  justify-content: center;
+}
+
+.search-empty__category-link {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--ecom-space-2);
+  padding: var(--ecom-space-3);
+  background-color: var(--ecom-bg-surface);
+  border: 1px solid var(--ecom-border-default);
+  border-radius: var(--ecom-radius-lg);
+  font-size: var(--ecom-text-sm);
+  font-weight: var(--ecom-font-medium);
+  color: var(--ecom-text-primary);
+  text-decoration: none;
+  transition: border-color var(--ecom-duration-fast) var(--ecom-ease-default),
+              box-shadow var(--ecom-duration-fast) var(--ecom-ease-default);
+  min-width: 100px;
+}
+
+.search-empty__category-link:hover {
+  border-color: var(--ecom-action-primary);
+  box-shadow: var(--ecom-shadow-md);
+}
+
+.search-empty__category-link img {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: var(--ecom-radius-md);
+}
+
+/* ── Type badges for mixed results ── */
+
+.product-card__category--maquinario {
+  background-color: var(--ecom-color-secondary-100);
+  color: var(--ecom-color-secondary-700);
+}
+
+.product-card__category--locacao {
+  background-color: var(--ecom-color-success-light);
+  color: var(--ecom-color-success);
+}
+
+/* ── Price unit (per day for locação) ── */
+
+.product-card__price-unit {
+  font-size: var(--ecom-text-xs);
+  font-weight: var(--ecom-font-regular);
+  color: var(--ecom-text-secondary);
+  margin-left: var(--ecom-space-1);
+}

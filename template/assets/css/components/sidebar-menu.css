@@ -1,0 +1,75 @@
+/* ============================================================
+   sidebar-menu.css — Menu lateral para páginas institucionais
+   ============================================================ */
+
+.sidebar-menu {
+  background-color: var(--ecom-bg-surface);
+  border-radius: var(--ecom-radius-lg);
+  box-shadow: var(--ecom-shadow-sm);
+  padding: var(--ecom-space-4);
+}
+
+.sidebar-menu__title {
+  font-size: var(--ecom-text-base);
+  font-weight: var(--ecom-font-semibold);
+  color: var(--ecom-text-primary);
+  margin-bottom: var(--ecom-space-4);
+}
+
+.sidebar-menu__list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--ecom-space-1);
+}
+
+.sidebar-menu__item {
+  display: block;
+  padding: var(--ecom-space-3) var(--ecom-space-4);
+  font-size: var(--ecom-text-sm);
+  color: var(--ecom-text-primary);
+  border-radius: var(--ecom-radius-md);
+  transition: background-color var(--ecom-duration-fast) var(--ecom-ease-default);
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.sidebar-menu__item:hover {
+  background-color: var(--ecom-bg-surface-alt);
+}
+
+.sidebar-menu__item--active {
+  background-color: var(--ecom-color-primary-500);
+  color: var(--ecom-text-on-primary);
+  font-weight: var(--ecom-font-medium);
+}
+
+.sidebar-menu__item--active:hover {
+  background-color: var(--ecom-action-primary-hover);
+}
+
+/* Mobile: horizontal scrollable menu */
+@media (max-width: 767px) {
+  .sidebar-menu {
+    border-radius: var(--ecom-radius-md);
+    padding: var(--ecom-space-3);
+  }
+
+  .sidebar-menu__list {
+    flex-direction: row;
+    gap: var(--ecom-space-2);
+    overflow-x: auto;
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .sidebar-menu__list::-webkit-scrollbar {
+    display: none;
+  }
+
+  .sidebar-menu__item {
+    white-space: nowrap;
+    flex-shrink: 0;
+    font-size: var(--ecom-text-xs);
+    padding: var(--ecom-space-2) var(--ecom-space-3);
+  }
+}

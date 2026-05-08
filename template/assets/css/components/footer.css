@@ -183,7 +183,36 @@
 
 .footer-payment__methods {
   display: flex;
+  align-items: center;
+  gap: var(--ecom-space-4);
+  flex-wrap: wrap;
+}
+
+.footer-payment__list {
+  display: flex;
+  align-items: center;
   gap: var(--ecom-space-2);
+  flex-wrap: wrap;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.footer-payment__list li {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 32px;
+  padding: 4px;
+  background-color: var(--ecom-color-neutral-0);
+  border-radius: var(--ecom-radius-sm);
+}
+
+.footer-payment__list li img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
 }
 
 .payment-badge {

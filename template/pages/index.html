@@ -276,11 +276,11 @@
     <!-- Main header -->
     <div class="main-header">
       <div class="container main-header__inner">
-        <a href="/" class="main-header__logo" aria-label="Grupo PLA - Página inicial">
+        <a href="index.html" class="main-header__logo" aria-label="Grupo PLA - Página inicial">
           <img src="../assets/images/logo/logo.png" alt="Grupo PLA" width="160" height="40">
         </a>
 
-        <form class="main-header__search search-form" role="search" action="/busca" method="get">
+        <form class="main-header__search search-form" role="search" action="categoria.html" method="get">
           <div class="search-form__icon">
             <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
               stroke-linecap="round" stroke-linejoin="round">
@@ -301,6 +301,14 @@
             </svg>
             WhatsApp
           </a>
+          <button type="button" class="header__search-toggle" aria-label="Abrir busca" aria-expanded="false"
+            data-action="toggle-search">
+            <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="11" cy="11" r="8" />
+              <path d="m21 21-4.3-4.3" />
+            </svg>
+          </button>
           <button type="button" class="header-cart" aria-label="Abrir carrinho de compras, 0 itens" data-action="open-cart">
             <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
               <circle cx="8" cy="21" r="1"/>
@@ -309,6 +317,13 @@
             </svg>
             <span class="header-cart__count" aria-hidden="true">0</span>
           </button>
+          <a href="minha-conta.html" class="header__action-btn" aria-label="Minha conta">
+            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <circle cx="12" cy="8" r="4"/>
+              <path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/>
+            </svg>
+            <span class="sr-only">Minha conta</span>
+          </a>
           <button type="button" class="mobile-menu-toggle" aria-label="Abrir menu de navegação" aria-expanded="false"
             data-action="toggle-menu">
             <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
@@ -326,13 +341,13 @@
     <nav class="site-nav" aria-label="Navegação principal">
       <div class="container">
         <ul class="site-nav__list" role="list">
-          <li><a href="/pecas" class="site-nav__link site-nav__link--active" aria-current="page">Peças</a></li>
-          <li><a href="/estoque" class="site-nav__link">Estoque</a></li>
-          <li><a href="/novos" class="site-nav__link">Novos</a></li>
-          <li><a href="/marcas" class="site-nav__link">Marcas</a></li>
-          <li><a href="/locacao" class="site-nav__link">Locação</a></li>
-          <li><a href="/clientes" class="site-nav__link">Meus Clientes</a></li>
-          <li><a href="/contato" class="site-nav__link">Contato</a></li>
+          <li><a href="categoria.html" class="site-nav__link site-nav__link--active" aria-current="page">Peças</a></li>
+          <li><a href="categoria.html" class="site-nav__link">Estoque</a></li>
+          <li><a href="categoria.html" class="site-nav__link">Novos</a></li>
+          <li><a href="categoria.html" class="site-nav__link">Marcas</a></li>
+          <li><a href="locacao.html" class="site-nav__link">Locação</a></li>
+          <li><a href="#" class="site-nav__link">Meus Clientes</a></li>
+          <li><a href="contato.html" class="site-nav__link">Contato</a></li>
         </ul>
       </div>
     </nav>
@@ -359,7 +374,7 @@
           <p class="hero__description">Mais de 15.000 itens em estoque. Peças originais e remanufaturadas para tratores,
             colheitadeiras e implementos agrícolas. Entrega para todo o Brasil.</p>
           <div class="hero__actions">
-            <a href="/pecas" class="btn btn--primary btn--lg">
+            <a href="categoria.html" class="btn btn--primary btn--lg">
               Ver Peças Agrícolas
               <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                 stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -447,12 +462,16 @@
             <h2 id="featured-title" class="section__title">Produtos em Destaque</h2>
             <p class="section__description">Peças selecionadas com qualidade garantida para seu maquinário agrícola</p>
           </div>
-          <a href="/pecas" class="btn btn--outline">Ver Todos os Produtos</a>
+          <a href="categoria.html" class="btn btn--outline">Ver Todos os Produtos</a>
         </div>
 
-        <div class="grid grid--4">
+        <div class="carousel" data-component="carousel">
+          <button type="button" class="carousel__arrow carousel__arrow--prev" data-action="carousel-prev" aria-label="Anterior">
+            <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+          </button>
+          <div class="carousel__track scroll-container products__track" data-role="carousel-track">
           <!-- Banner promocional -->
-          <a href="/ofertas" class="promo-banner" aria-label="Ofertas especiais em peças agrícolas">
+          <a href="./categoria.html" class="promo-banner" aria-label="Ofertas especiais em peças agrícolas">
             <img src="../assets/images/destaques/destaques.png"
               alt="Promoção de peças agrícolas com até 30% de desconto" class="promo-banner__image" width="300"
               height="400" loading="lazy">
@@ -460,7 +479,7 @@
 
           <!-- Product card 1 -->
           <article class="product-card" data-product-id="101">
-            <a href="/produto/bomba-hidraulica-massey-ferguson-4275" class="product-card__image-link" tabindex="-1"
+            <a href="./detalhe-peca.html" class="product-card__image-link" tabindex="-1"
               aria-hidden="true">
               <img src="../assets/images/produtos/pc2Img.png" alt="" class="product-card__image" width="300"
                 height="300" loading="lazy">
@@ -468,7 +487,7 @@
             </a>
             <div class="product-card__body">
               <h3 class="product-card__title">
-                <a href="/produto/bomba-hidraulica-massey-ferguson-4275" class="product-card__title-link">Bomba
+                <a href="./detalhe-peca.html" class="product-card__title-link">Bomba
                   Hidráulica Massey Ferguson 4275</a>
               </h3>
               <div class="product-card__rating" aria-label="Sem avaliações">
@@ -499,7 +518,7 @@
                 <span class="product-card__price product-card__price--current">R$ 1.290,00</span>
               </div>
               <div class="product-card__actions">
-                <a href="/produto/bomba-hidraulica-massey-ferguson-4275" class="btn btn--primary btn--sm">Comprar</a>
+                <a href="./detalhe-peca.html" class="btn btn--primary btn--sm">Comprar</a>
                 <button type="button" class="product-card__wishlist"
                   aria-label="Adicionar Bomba Hidráulica Massey Ferguson 4275 aos favoritos" data-action="add-wishlist"
                   data-product-id="101">
@@ -515,15 +534,16 @@
 
           <!-- Product card 2 -->
           <article class="product-card" data-product-id="102">
-            <a href="/produto/kit-reparo-motor-valtra-bt150" class="product-card__image-link" tabindex="-1"
+            <a href="./detalhe-peca.html" class="product-card__image-link" tabindex="-1"
               aria-hidden="true">
               <img src="../assets/images/produtos/pc3Img.png" alt="" class="product-card__image" width="300"
                 height="300" loading="lazy">
               <span class="product-card__badge product-card__badge--motor">Motor</span>
+              <span class="product-card__discount-badge" aria-label="10% de desconto">10% OFF</span>
             </a>
             <div class="product-card__body">
               <h3 class="product-card__title">
-                <a href="/produto/kit-reparo-motor-valtra-bt150" class="product-card__title-link">Kit Reparo Motor
+                <a href="./detalhe-peca.html" class="product-card__title-link">Kit Reparo Motor
                   Valtra BT150</a>
               </h3>
               <div class="product-card__rating" aria-label="Sem avaliações">
@@ -557,7 +577,7 @@
                   890,00</span>
               </div>
               <div class="product-card__actions">
-                <a href="/produto/kit-reparo-motor-valtra-bt150" class="btn btn--primary btn--sm">Comprar</a>
+                <a href="./detalhe-peca.html" class="btn btn--primary btn--sm">Comprar</a>
                 <button type="button" class="product-card__wishlist"
                   aria-label="Adicionar Kit Reparo Motor Valtra BT150 aos favoritos" data-action="add-wishlist"
                   data-product-id="102">
@@ -573,7 +593,7 @@
 
           <!-- Product card 3 -->
           <article class="product-card" data-product-id="103">
-            <a href="/produto/embreagem-completa-new-holland-t7205" class="product-card__image-link" tabindex="-1"
+            <a href="./detalhe-peca.html" class="product-card__image-link" tabindex="-1"
               aria-hidden="true">
               <img src="../assets/images/produtos/pc4Img.png" alt="" class="product-card__image" width="300"
                 height="300" loading="lazy">
@@ -581,7 +601,7 @@
             </a>
             <div class="product-card__body">
               <h3 class="product-card__title">
-                <a href="/produto/embreagem-completa-new-holland-t7205" class="product-card__title-link">Embreagem
+                <a href="./detalhe-peca.html" class="product-card__title-link">Embreagem
                   Completa New Holland T7.205</a>
               </h3>
               <div class="product-card__rating" aria-label="Sem avaliações">
@@ -612,7 +632,7 @@
                 <span class="product-card__price product-card__price--current">R$ 2.450,00</span>
               </div>
               <div class="product-card__actions">
-                <a href="/produto/embreagem-completa-new-holland-t7205" class="btn btn--primary btn--sm">Comprar</a>
+                <a href="./detalhe-peca.html" class="btn btn--primary btn--sm">Comprar</a>
                 <button type="button" class="product-card__wishlist"
                   aria-label="Adicionar Embreagem Completa New Holland T7.205 aos favoritos" data-action="add-wishlist"
                   data-product-id="103">
@@ -625,7 +645,11 @@
               </div>
             </div>
           </article>
-        </div>
+          </div><!-- /.carousel__track -->
+          <button type="button" class="carousel__arrow carousel__arrow--next" data-action="carousel-next" aria-label="Próximo">
+            <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+          </button>
+        </div><!-- /.carousel -->
       </div>
     </section>
 
@@ -642,27 +666,27 @@
             </svg>
           </button>
           <div class="carousel__track scroll-container brands__track" data-role="carousel-track">
-            <a href="/marcas/john-deere" class="brand-card" aria-label="Ver peças John Deere">
+            <a href="./categoria.html" class="brand-card" aria-label="Ver peças John Deere">
               <img src="../assets/images/marcas/download.png" alt="John Deere" class="brand-card__image" width="120"
                 height="48" loading="lazy">
             </a>
-            <a href="/marcas/massey-ferguson" class="brand-card" aria-label="Ver peças Massey Ferguson">
+            <a href="./categoria.html" class="brand-card" aria-label="Ver peças Massey Ferguson">
               <img src="../assets/images/marcas/download.jpeg" alt="Massey Ferguson" class="brand-card__image"
                 width="120" height="48" loading="lazy">
             </a>
-            <a href="/marcas/new-holland" class="brand-card" aria-label="Ver peças New Holland">
+            <a href="./categoria.html" class="brand-card" aria-label="Ver peças New Holland">
               <img src="../assets/images/marcas/download (1).jpeg" alt="New Holland" class="brand-card__image"
                 width="120" height="48" loading="lazy">
             </a>
-            <a href="/marcas/valtra" class="brand-card" aria-label="Ver peças Valtra">
+            <a href="./categoria.html" class="brand-card" aria-label="Ver peças Valtra">
               <img src="../assets/images/marcas/download (1).png" alt="Valtra" class="brand-card__image" width="120"
                 height="48" loading="lazy">
             </a>
-            <a href="/marcas/case-ih" class="brand-card" aria-label="Ver peças Case IH">
+            <a href="./categoria.html" class="brand-card" aria-label="Ver peças Case IH">
               <img src="../assets/images/marcas/download (2).png" alt="Case IH" class="brand-card__image" width="120"
                 height="48" loading="lazy">
             </a>
-            <a href="/marcas/fendt" class="brand-card" aria-label="Ver peças Fendt">
+            <a href="./categoria.html" class="brand-card" aria-label="Ver peças Fendt">
               <img src="../assets/images/marcas/download (3).png" alt="Fendt" class="brand-card__image" width="120"
                 height="48" loading="lazy">
             </a>
@@ -687,7 +711,7 @@
             <p class="section__description">Tratores e colheitadeiras selecionados com qualidade e procedência
               garantidas</p>
           </div>
-          <a href="/maquinas" class="btn btn--outline">Ver Máquinas Disponíveis</a>
+          <a href="./detalhe-maquinario.html" class="btn btn--outline">Ver Máquinas Disponíveis</a>
         </div>
 
         <!-- Tabs — conteúdo de todos os painéis está no HTML estático -->
@@ -705,9 +729,14 @@
         </div>
 
         <!-- Painel: Tratores -->
-        <div class="grid grid--4" role="tabpanel" data-tab-panel="tratores" aria-label="Tratores">
+        <div role="tabpanel" data-tab-panel="tratores" aria-label="Tratores">
+          <div class="carousel" data-component="carousel">
+            <button type="button" class="carousel__arrow carousel__arrow--prev" data-action="carousel-prev" aria-label="Anterior">
+              <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+            </button>
+            <div class="carousel__track scroll-container machines__track" data-role="carousel-track">
           <article class="machine-card" data-product-id="201">
-            <a href="/maquina/john-deere-6110j-4x4" class="machine-card__image-link">
+            <a href="./detalhe-maquinario.html" class="machine-card__image-link">
               <img src="../assets/images/maquinas/vc1Img.png"
                 alt="Trator John Deere 6110J 4x4 verde no campo ao pôr do sol" class="machine-card__image" width="400"
                 height="250" loading="lazy">
@@ -717,7 +746,7 @@
                 <span class="machine-card__brand machine-card__brand--john-deere">John Deere</span>
                 <span class="machine-card__year"><time datetime="2022">2022</time></span>
               </div>
-              <h3 class="machine-card__title"><a href="/maquina/john-deere-6110j-4x4">John Deere 6110J 4×4</a></h3>
+              <h3 class="machine-card__title"><a href="./detalhe-maquinario.html">John Deere 6110J 4×4</a></h3>
               <div class="machine-card__rating" aria-label="Sem avaliações">
                 <svg aria-hidden="true" viewBox="0 0 24 24" fill="currentColor">
                   <polygon
@@ -741,13 +770,13 @@
                 </svg>
               </div>
               <p class="machine-card__price">R$ 189.000</p>
-              <a href="/maquina/john-deere-6110j-4x4" class="btn btn--primary btn--full machine-card__cta">Ver
+              <a href="./detalhe-maquinario.html" class="btn btn--primary btn--full machine-card__cta">Ver
                 Detalhes</a>
             </div>
           </article>
 
           <article class="machine-card" data-product-id="202">
-            <a href="/maquina/massey-ferguson-7270-dyna-6" class="machine-card__image-link">
+            <a href="./detalhe-maquinario.html" class="machine-card__image-link">
               <img src="../assets/images/maquinas/vc2Img.png"
                 alt="Trator Massey Ferguson 7270 Dyna-6 vermelho em campo arado" class="machine-card__image" width="400"
                 height="250" loading="lazy">
@@ -757,7 +786,7 @@
                 <span class="machine-card__brand machine-card__brand--massey">Massey Ferguson</span>
                 <span class="machine-card__year"><time datetime="2021">2021</time></span>
               </div>
-              <h3 class="machine-card__title"><a href="/maquina/massey-ferguson-7270-dyna-6">Massey Ferguson 7270
+              <h3 class="machine-card__title"><a href="./detalhe-maquinario.html">Massey Ferguson 7270
                   Dyna-6</a></h3>
               <div class="machine-card__rating" aria-label="Sem avaliações">
                 <svg aria-hidden="true" viewBox="0 0 24 24" fill="currentColor">
@@ -782,13 +811,13 @@
                 </svg>
               </div>
               <p class="machine-card__price">R$ 245.000</p>
-              <a href="/maquina/massey-ferguson-7270-dyna-6" class="btn btn--primary btn--full machine-card__cta">Ver
+              <a href="./detalhe-maquinario.html" class="btn btn--primary btn--full machine-card__cta">Ver
                 Detalhes</a>
             </div>
           </article>
 
           <article class="machine-card" data-product-id="203">
-            <a href="/maquina/new-holland-t7205-autocommand" class="machine-card__image-link">
+            <a href="./detalhe-maquinario.html" class="machine-card__image-link">
               <img src="../assets/images/maquinas/vc3Img.png"
                 alt="Trator New Holland T7.205 AutoCommand azul com implemento de aração" class="machine-card__image"
                 width="400" height="250" loading="lazy">
@@ -798,7 +827,7 @@
                 <span class="machine-card__brand machine-card__brand--new-holland">New Holland</span>
                 <span class="machine-card__year"><time datetime="2023">2023</time></span>
               </div>
-              <h3 class="machine-card__title"><a href="/maquina/new-holland-t7205-autocommand">New Holland T7.205
+              <h3 class="machine-card__title"><a href="./detalhe-maquinario.html">New Holland T7.205
                   AutoCommand</a></h3>
               <div class="machine-card__rating" aria-label="Sem avaliações">
                 <svg aria-hidden="true" viewBox="0 0 24 24" fill="currentColor">
@@ -823,13 +852,13 @@
                 </svg>
               </div>
               <p class="machine-card__price">R$ 320.000</p>
-              <a href="/maquina/new-holland-t7205-autocommand" class="btn btn--primary btn--full machine-card__cta">Ver
+              <a href="./detalhe-maquinario.html" class="btn btn--primary btn--full machine-card__cta">Ver
                 Detalhes</a>
             </div>
           </article>
 
           <article class="machine-card" data-product-id="204">
-            <a href="/maquina/valtra-bm125i-4x4-turbo" class="machine-card__image-link">
+            <a href="./detalhe-maquinario.html" class="machine-card__image-link">
               <img src="../assets/images/maquinas/vc4Img.png"
                 alt="Trator Valtra BM125i 4x4 Turbo vermelho em operação no campo" class="machine-card__image"
                 width="400" height="250" loading="lazy">
@@ -839,7 +868,7 @@
                 <span class="machine-card__brand machine-card__brand--valtra">Valtra</span>
                 <span class="machine-card__year"><time datetime="2020">2020</time></span>
               </div>
-              <h3 class="machine-card__title"><a href="/maquina/valtra-bm125i-4x4-turbo">Valtra BM125i 4×4 Turbo</a>
+              <h3 class="machine-card__title"><a href="./detalhe-maquinario.html">Valtra BM125i 4×4 Turbo</a>
               </h3>
               <div class="machine-card__rating" aria-label="Sem avaliações">
                 <svg aria-hidden="true" viewBox="0 0 24 24" fill="currentColor">
@@ -864,33 +893,38 @@
                 </svg>
               </div>
               <p class="machine-card__price">R$ 165.000</p>
-              <a href="/maquina/valtra-bm125i-4x4-turbo" class="btn btn--primary btn--full machine-card__cta">Ver
+              <a href="./detalhe-maquinario.html" class="btn btn--primary btn--full machine-card__cta">Ver
                 Detalhes</a>
             </div>
           </article>
-        </div>
+            </div><!-- /.carousel__track -->
+            <button type="button" class="carousel__arrow carousel__arrow--next" data-action="carousel-next" aria-label="Próximo">
+              <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+            </button>
+          </div><!-- /.carousel -->
+        </div><!-- /tabpanel tratores -->
 
         <!-- Painel: Colheitadeiras (no HTML estático, oculto via hidden) -->
-        <div class="grid grid--4" role="tabpanel" data-tab-panel="colheitadeiras" aria-label="Colheitadeiras" hidden>
-          <p class="section__description">Em breve novas colheitadeiras disponíveis. <a href="/contato">Entre em
+        <div role="tabpanel" data-tab-panel="colheitadeiras" aria-label="Colheitadeiras" hidden>
+          <p class="section__description">Em breve novas colheitadeiras disponíveis. <a href="contato.html">Entre em
               contato</a> para consultar disponibilidade.</p>
         </div>
 
         <!-- Painel: Plantadeiras -->
-        <div class="grid grid--4" role="tabpanel" data-tab-panel="plantadeiras" aria-label="Plantadeiras" hidden>
-          <p class="section__description">Em breve novas plantadeiras disponíveis. <a href="/contato">Entre em
+        <div role="tabpanel" data-tab-panel="plantadeiras" aria-label="Plantadeiras" hidden>
+          <p class="section__description">Em breve novas plantadeiras disponíveis. <a href="contato.html">Entre em
               contato</a> para consultar disponibilidade.</p>
         </div>
 
         <!-- Painel: Pulverizadores -->
-        <div class="grid grid--4" role="tabpanel" data-tab-panel="pulverizadores" aria-label="Pulverizadores" hidden>
-          <p class="section__description">Em breve novos pulverizadores disponíveis. <a href="/contato">Entre em
+        <div role="tabpanel" data-tab-panel="pulverizadores" aria-label="Pulverizadores" hidden>
+          <p class="section__description">Em breve novos pulverizadores disponíveis. <a href="contato.html">Entre em
               contato</a> para consultar disponibilidade.</p>
         </div>
 
         <!-- Painel: Seminovos -->
-        <div class="grid grid--4" role="tabpanel" data-tab-panel="seminovos" aria-label="Seminovos" hidden>
-          <p class="section__description">Em breve novos seminovos disponíveis. <a href="/contato">Entre em contato</a>
+        <div role="tabpanel" data-tab-panel="seminovos" aria-label="Seminovos" hidden>
+          <p class="section__description">Em breve novos seminovos disponíveis. <a href="contato.html">Entre em contato</a>
             para consultar disponibilidade.</p>
         </div>
       </div>
@@ -901,7 +935,7 @@
       <div class="container">
         <div class="categories__header">
           <h2 id="categories-title" class="section__title">Navegue por Categoria</h2>
-          <a href="/categorias" class="btn btn--ghost">Ver Todas</a>
+          <a href="./categoria.html" class="btn btn--ghost">Ver Todas</a>
         </div>
         <div class="carousel" data-component="carousel">
           <button type="button" class="carousel__arrow carousel__arrow--prev" data-action="carousel-prev"
@@ -912,21 +946,21 @@
             </svg>
           </button>
           <div class="carousel__track scroll-container" data-role="carousel-track">
-            <a href="/categoria/filtros-de-ar" class="category-card">
+            <a href="./categoria.html" class="category-card">
               <div class="category-card__image-wrapper">
                 <img src="../assets/images/categorias/filtros-de-ar.jpeg" alt="Filtros de ar para máquinas agrícolas"
                   class="category-card__image" width="224" height="224" loading="lazy">
               </div>
               <span class="category-card__name">Filtros de Ar</span>
             </a>
-            <a href="/categoria/correias-e-rolamentos" class="category-card">
+            <a href="./categoria.html" class="category-card">
               <div class="category-card__image-wrapper">
                 <img src="../assets/images/categorias/correias-e-rolamentos.jpeg" alt="Correias e rolamentos agrícolas"
                   class="category-card__image" width="224" height="224" loading="lazy">
               </div>
               <span class="category-card__name">Correias e Rolamentos</span>
             </a>
-            <a href="/categoria/pneus-agricolas" class="category-card">
+            <a href="./categoria.html" class="category-card">
               <div class="category-card__image-wrapper">
                 <img src="../assets/images/categorias/pneus-agricolas.jpeg"
                   alt="Pneus para tratores e máquinas agrícolas" class="category-card__image" width="224" height="224"
@@ -934,7 +968,7 @@
               </div>
               <span class="category-card__name">Pneus Agrícolas</span>
             </a>
-            <a href="/categoria/discos-de-arado" class="category-card">
+            <a href="./categoria.html" class="category-card">
               <div class="category-card__image-wrapper">
                 <img src="../assets/images/categorias/discos-de-arado.jpeg"
                   alt="Discos de arado para implementos agrícolas" class="category-card__image" width="224" height="224"
@@ -942,7 +976,7 @@
               </div>
               <span class="category-card__name">Discos de Arado</span>
             </a>
-            <a href="/categoria/sistema-eletrico" class="category-card">
+            <a href="./categoria.html" class="category-card">
               <div class="category-card__image-wrapper">
                 <img src="../assets/images/categorias/sistema-eletrico.jpeg"
                   alt="Componentes do sistema elétrico agrícola" class="category-card__image" width="224" height="224"
@@ -950,7 +984,7 @@
               </div>
               <span class="category-card__name">Sistema Elétrico</span>
             </a>
-            <a href="/categoria/bancos" class="category-card">
+            <a href="./categoria.html" class="category-card">
               <div class="category-card__image-wrapper">
                 <img src="../assets/images/categorias/bancos.jpeg" alt="Bancos e assentos para tratores"
                   class="category-card__image" width="224" height="224" loading="lazy">
@@ -1101,20 +1135,20 @@
       <div class="container">
         <div class="section__header">
           <h2 id="banners-title" class="section__title">Ofertas e campanhas</h2>
-          <a href="/ofertas" class="btn btn--ghost">Ver todas</a>
+          <a href="./categoria.html" class="btn btn--ghost">Ver todas</a>
         </div>
         <div class="banner-grid__layout">
-          <a href="/ofertas/tratores-linha-pesada" class="banner-card banner-card--large banner-grid__large"
+          <a href="./categoria.html" class="banner-card banner-card--large banner-grid__large"
             aria-label="Condição especial para tratores linha pesada">
-            <img src="../assets/images/banners/tratores-linha-pesada.svg" alt="" class="banner-card__image" width="640"
+            <img src="../assets/images/hero/hero-home.jpg" alt="" class="banner-card__image" width="640"
               height="480" loading="lazy">
             <div class="banner-card__overlay"></div>
             <div class="banner-card__content">
               <h3 class="banner-card__title">Condição especial para tratores<br>Linha pesada</h3>
             </div>
           </a>
-          <a href="/ofertas/frete-gratis" class="banner-card" aria-label="Frete grátis em pedidos acima de R$ 2.500">
-            <img src="../assets/images/banners/frete-gratis.svg" alt="" class="banner-card__image" width="640"
+          <a href="./categoria.html" class="banner-card" aria-label="Frete grátis em pedidos acima de R$ 2.500">
+            <img src="../assets/images/hero/hero-home.jpg" alt="" class="banner-card__image" width="640"
               height="230" loading="lazy">
             <div class="banner-card__overlay"></div>
             <div class="banner-card__content">
@@ -1122,9 +1156,9 @@
               <p class="banner-card__text">em pedidos acima de R$ 2.500</p>
             </div>
           </a>
-          <a href="/ofertas/queima-estoque" class="banner-card"
+          <a href="./categoria.html" class="banner-card"
             aria-label="Queima de estoque de componentes selecionados">
-            <img src="../assets/images/banners/queima-estoque.svg" alt="" class="banner-card__image" width="640"
+            <img src="../assets/images/hero/hero-home.jpg" alt="" class="banner-card__image" width="640"
               height="230" loading="lazy">
             <div class="banner-card__overlay"></div>
             <div class="banner-card__content">
@@ -1158,7 +1192,7 @@
               </svg>
               Chamar no WhatsApp
             </a>
-            <a href="/catalogo" class="btn btn--secondary">
+            <a href="./categoria.html" class="btn btn--secondary">
               <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                 stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <circle cx="12" cy="12" r="10" />
@@ -1352,12 +1386,12 @@
           <nav aria-label="Links institucionais">
             <h3 class="footer-nav__title">Institucional</h3>
             <ul class="footer-nav__list" role="list">
-              <li><a href="/sobre" class="footer-nav__link">Sobre nós</a></li>
-              <li><a href="/politicas-de-troca" class="footer-nav__link">Políticas de Troca</a></li>
-              <li><a href="/politicas-de-frete" class="footer-nav__link">Políticas de Frete</a></li>
-              <li><a href="/politicas-de-cookies" class="footer-nav__link">Políticas de Cookies</a></li>
-              <li><a href="/assistencia-tecnica" class="footer-nav__link">Assistência técnica</a></li>
-              <li><a href="/blog" class="footer-nav__link">Blog</a></li>
+              <li><a href="sobre-nos.html" class="footer-nav__link">Sobre nós</a></li>
+              <li><a href="institucional.html#troca" class="footer-nav__link">Políticas de Troca</a></li>
+              <li><a href="institucional.html#frete" class="footer-nav__link">Políticas de Frete</a></li>
+              <li><a href="institucional.html#cookies" class="footer-nav__link">Políticas de Cookies</a></li>
+              <li><a href="contato.html" class="footer-nav__link">Assistência técnica</a></li>
+              <li><a href="#" class="footer-nav__link">Blog</a></li>
             </ul>
           </nav>
 
@@ -1365,12 +1399,12 @@
           <nav aria-label="Categorias de produtos">
             <h3 class="footer-nav__title">Categorias</h3>
             <ul class="footer-nav__list" role="list">
-              <li><a href="/pecas" class="footer-nav__link">Peças</a></li>
-              <li><a href="/estoque" class="footer-nav__link">Estoque</a></li>
-              <li><a href="/novos" class="footer-nav__link">Novos</a></li>
-              <li><a href="/marcas" class="footer-nav__link">Marcas</a></li>
-              <li><a href="/locacao" class="footer-nav__link">Locação</a></li>
-              <li><a href="/contato" class="footer-nav__link">Contato</a></li>
+              <li><a href="categoria.html" class="footer-nav__link">Peças</a></li>
+              <li><a href="categoria.html" class="footer-nav__link">Estoque</a></li>
+              <li><a href="categoria.html" class="footer-nav__link">Novos</a></li>
+              <li><a href="categoria.html" class="footer-nav__link">Marcas</a></li>
+              <li><a href="locacao.html" class="footer-nav__link">Locação</a></li>
+              <li><a href="contato.html" class="footer-nav__link">Contato</a></li>
             </ul>
           </nav>
 
@@ -1441,12 +1475,17 @@
     <!-- Payment methods -->
     <div class="footer-payment">
       <div class="container footer-payment__inner">
-        <span class="footer-payment__label">Formas de Pagamento</span>
         <div class="footer-payment__methods">
-          <span class="payment-badge payment-badge--pix">PIX</span>
-          <span class="payment-badge payment-badge--visa">VISA</span>
-          <span class="payment-badge payment-badge--master">MASTER</span>
-          <span class="payment-badge payment-badge--boleto">BOLETO</span>
+          <p class="footer-payment__label">Meios de Pagamento</p>
+          <ul class="footer-payment__list">
+            <li><img src="../assets/images/pagamento/pix.png" alt="Pix" width="48" height="30" loading="lazy"></li>
+            <li><img src="../assets/images/pagamento/visa.png" alt="Visa" width="48" height="30" loading="lazy"></li>
+            <li><img src="../assets/images/pagamento/mastercard.png" alt="Mastercard" width="48" height="30" loading="lazy"></li>
+            <li><img src="../assets/images/pagamento/boleto.png" alt="Boleto Bancário" width="48" height="30" loading="lazy"></li>
+            <li><img src="../assets/images/pagamento/elo.png" alt="Elo" width="48" height="30" loading="lazy"></li>
+            <li><img src="../assets/images/pagamento/americanexpress.png" alt="American Express" width="48" height="30" loading="lazy"></li>
+            <li><img src="../assets/images/pagamento/dinnersclub.png" alt="Diners Club" width="48" height="30" loading="lazy"></li>
+          </ul>
         </div>
       </div>
     </div>
@@ -1456,9 +1495,9 @@
       <div class="container footer-copyright__inner">
         <p><small>&copy; <time datetime="2025">2025</time> Grupo PLA. Todos os direitos reservados.</small></p>
         <div class="footer-copyright__links">
-          <a href="/politica-de-privacidade" class="footer-copyright__link">Política de Privacidade</a>
+          <a href="institucional.html#privacidade" class="footer-copyright__link">Política de Privacidade</a>
           <span aria-hidden="true">|</span>
-          <a href="/termos-de-uso" class="footer-copyright__link">Termos de Uso</a>
+          <a href="institucional.html" class="footer-copyright__link">Termos de Uso</a>
         </div>
       </div>
     </div>
@@ -1486,7 +1525,7 @@
         </svg>
         <p class="cart-drawer__empty-text">Seu carrinho está vazio</p>
         <p class="cart-drawer__empty-subtext">Adicione peças e equipamentos para continuar</p>
-        <a href="/pecas" class="btn btn--primary">Ver Produtos</a>
+        <a href="categoria.html" class="btn btn--primary">Ver Produtos</a>
       </div>
 
       <!-- Itens do carrinho (exemplo estático para demonstração) -->
@@ -1519,8 +1558,8 @@
       </div>
       <p class="cart-drawer__shipping-note">Frete calculado no checkout</p>
       <div class="cart-drawer__actions">
-        <a href="/carrinho" class="btn btn--primary btn--full">Ver Carrinho Completo</a>
-        <a href="/checkout" class="btn btn--outline btn--full">Finalizar Compra</a>
+        <a href="./cart.html" class="btn btn--primary btn--full">Ver Carrinho Completo</a>
+        <a href="#" class="btn btn--outline btn--full">Finalizar Compra</a>
       </div>
     </div>
   </aside>

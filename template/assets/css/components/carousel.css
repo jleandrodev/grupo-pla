@@ -88,3 +88,52 @@
     min-width: 13rem;
   }
 }
+
+/* ── PRODUTOS: vitrine em slider ── */
+
+.products__track {
+  gap: var(--ecom-space-5);
+  padding-bottom: var(--ecom-space-4);
+}
+
+.products__track > * {
+  width: 16rem;
+}
+
+.products__track .promo-banner {
+  width: 14rem;
+  flex-shrink: 0;
+}
+
+.products__track .promo-banner__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: var(--ecom-radius-xl);
+}
+
+@media (min-width: 1024px) {
+  .products__track > * {
+    width: calc((100% - var(--ecom-space-5) * 3) / 4);
+    min-width: 15rem;
+  }
+}
+
+/* ── MÁQUINAS: vitrine em slider ── */
+
+.machines__track {
+  gap: var(--ecom-space-5);
+  padding-bottom: var(--ecom-space-4);
+}
+
+.machines__track > * {
+  width: 20rem;
+  flex-shrink: 0;
+}
+
+@media (min-width: 1024px) {
+  .machines__track > * {
+    width: calc((100% - var(--ecom-space-5) * 3) / 4);
+    min-width: 18rem;
+  }
+}

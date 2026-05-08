@@ -1,0 +1,39 @@
+/* ============================================================
+   contato.css — Layout da página de contato
+   ============================================================ */
+
+/* ── Seção central de atendimento ── */
+
+.contact-section {
+  background-color: var(--ecom-bg-page);
+}
+
+/* ── Seção formulário + sidebar ── */
+
+.contact-form-section {
+  background-color: var(--ecom-bg-surface);
+}
+
+.contact-form-layout {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--ecom-space-8);
+}
+
+@media (min-width: 768px) {
+  .contact-form-layout {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (min-width: 1024px) {
+  .contact-form-layout {
+    grid-template-columns: 55fr 45fr;
+  }
+}
+
+.contact-form-layout__sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
