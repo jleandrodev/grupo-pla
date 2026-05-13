@@ -19,13 +19,13 @@
 
 .product-detail__grid {
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: minmax(0, 1fr);
   gap: var(--ecom-space-8);
 }
 
 @media (min-width: 768px) {
   .product-detail__grid {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
     gap: var(--ecom-space-10);
   }
 }
@@ -90,4 +90,11 @@
 
 .similar-products__cta {
   flex-shrink: 0;
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .similar-products__cta {
+    display: inline-flex;
+  }
 }

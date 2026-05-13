@@ -361,18 +361,82 @@
   }
 }
 
-/* ── RESPONSIVE ── */
+/* ── RESPONSIVE (mobile override na seção abaixo) ── */
+
+/* ══════════════════════════════════════════════════════════
+   MOBILE HEADER EXCLUSIVO — < 768px
+   Layout: [logo] ←→ [search-icon][cart][menu]
+   ══════════════════════════════════════════════════════════ */
 
 @media (max-width: 767px) {
+  /* Top bar e nav escondidos */
   .top-bar {
     display: none;
   }
 
-  .main-header__logo img {
-    height: 2rem;
+  .site-nav {
+    display: none;
   }
 
+  /* Header compacto */
   .main-header {
+    padding-block: var(--ecom-space-3);
     position: relative;
+  }
+
+  .main-header__inner {
+    gap: var(--ecom-space-2);
+    justify-content: space-between;
+    /* Desfazer qualquer position/order herdado */
+    position: static;
+  }
+
+  /* Logo: esquerda, normal no flow */
+  .main-header__logo {
+    position: static;
+    transform: none;
+    order: unset;
+    flex-shrink: 0;
+  }
+
+  .main-header__logo img {
+    height: 2rem;
+    width: auto;
+  }
+
+  /* Search form (input): completamente oculto no mobile */
+  .main-header__search {
+    display: none;
+  }
+
+  /* Actions: direita — mostra só search-icon, cart, hamburger */
+  .main-header__actions {
+    order: unset;
+    margin-left: auto;
+    gap: var(--ecom-space-2);
+    flex-shrink: 0;
+  }
+
+  /* Ocultar WhatsApp e ícone de usuário */
+  .btn--whatsapp {
+    display: none;
+  }
+
+  .header__action-btn {
+    display: none;
+  }
+}
+
+/* ══════════════════════════════════════════════════════════
+   TABLET HEADER — 768px a 1023px
+   ══════════════════════════════════════════════════════════ */
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .mobile-menu-toggle {
+    display: flex;
+  }
+
+  .btn--whatsapp {
+    display: none;
   }
 }

@@ -6,20 +6,44 @@
   background-color: var(--ecom-color-success-light);
 }
 
-.testimonials__grid {
-  display: grid;
-  grid-template-columns: 1fr;
+/* Mobile: carrossel */
+.testimonials__track {
+  display: flex;
   gap: var(--ecom-space-6);
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  padding-bottom: var(--ecom-space-2);
 }
 
+.testimonials__track::-webkit-scrollbar {
+  display: none;
+}
+
+.testimonials__track > * {
+  flex-shrink: 0;
+  width: calc(100vw - var(--ecom-space-8));
+  scroll-snap-align: start;
+}
+
+/* Tablet: 2 por tela */
 @media (min-width: 768px) {
-  .testimonials__grid {
+  .testimonials__track {
+    display: grid;
     grid-template-columns: repeat(2, 1fr);
+    overflow: visible;
+    scroll-snap-type: none;
+  }
+
+  .testimonials__track > * {
+    width: auto;
   }
 }
 
+/* Desktop: 3 por tela */
 @media (min-width: 1024px) {
-  .testimonials__grid {
+  .testimonials__track {
     grid-template-columns: repeat(3, 1fr);
   }
 }

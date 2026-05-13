@@ -33,6 +33,16 @@
   transition: transform var(--ecom-duration-normal) var(--ecom-ease-default);
 }
 
+@media (max-width: 767px) {
+  .product-card__image-link {
+    aspect-ratio: 4 / 3;
+  }
+
+  .product-card__image {
+    padding: var(--ecom-space-2);
+  }
+}
+
 .product-card:hover .product-card__image {
   transform: scale(1.05);
 }

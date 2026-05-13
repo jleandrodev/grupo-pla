@@ -13,14 +13,18 @@
   aspect-ratio: 1 / 1;
   border-radius: var(--ecom-radius-lg);
   overflow: hidden;
-  background-color: var(--ecom-bg-surface-alt);
 }
 
 .product-gallery__main-image {
   width: 100%;
   height: 100%;
   object-fit: contain;
+  cursor: pointer;
   transition: opacity var(--ecom-duration-normal) var(--ecom-ease-default);
+}
+
+.product-gallery__main-image:hover {
+  opacity: 0.9;
 }
 
 .product-gallery__thumbs {
@@ -62,6 +66,41 @@
   object-fit: contain;
 }
 
+/* Botão de vídeo — exibido abaixo das miniaturas */
+.product-gallery__video-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--ecom-space-2);
+  padding: var(--ecom-space-2) var(--ecom-space-4);
+  background-color: var(--ecom-color-neutral-800);
+  color: var(--ecom-color-neutral-0);
+  border: 1px solid var(--ecom-color-neutral-600);
+  border-radius: var(--ecom-radius-lg);
+  font-size: var(--ecom-text-sm);
+  font-weight: var(--ecom-font-medium);
+  cursor: pointer;
+  transition:
+    background-color var(--ecom-duration-fast) var(--ecom-ease-default),
+    border-color var(--ecom-duration-fast) var(--ecom-ease-default);
+}
+
+.product-gallery__video-btn:hover {
+  background-color: var(--ecom-color-neutral-700);
+  border-color: var(--ecom-color-neutral-400);
+}
+
+.product-gallery__video-btn:focus-visible {
+  outline: 2px solid var(--ecom-border-focus);
+  outline-offset: 2px;
+}
+
+/* YouTube embed area */
+.product-gallery__video-embed {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
 @media (min-width: 768px) {
   .product-gallery__main {
     aspect-ratio: 4 / 3;
@@ -71,4 +110,126 @@
     width: 5.5rem;
     height: 5.5rem;
   }
+}
+
+/* ============================================================
+   Lightbox
+   ============================================================ */
+
+.gallery-lightbox {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: var(--ecom-z-modal);
+  align-items: center;
+  justify-content: center;
+}
+
+.gallery-lightbox--open {
+  display: flex;
+}
+
+.gallery-lightbox__overlay {
+  position: absolute;
+  inset: 0;
+  background: rgb(0 0 0 / 0.85);
+}
+
+.gallery-lightbox__panel {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  padding: var(--ecom-space-12) var(--ecom-space-8);
+}
+
+.gallery-lightbox__img {
+  max-width: 90vw;
+  max-height: 90vh;
+  object-fit: contain;
+  border-radius: var(--ecom-radius-lg);
+  display: block;
+}
+
+/* Iframe de vídeo dentro do lightbox — proporção 16:9 responsiva */
+.gallery-lightbox__video-embed {
+  width: min(90vw, 64rem);
+  aspect-ratio: 16 / 9;
+  height: auto;
+  border: none;
+  border-radius: var(--ecom-radius-lg);
+  display: block;
+}
+
+.gallery-lightbox__close {
+  position: fixed;
+  top: var(--ecom-space-4);
+  right: var(--ecom-space-4);
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: var(--ecom-radius-full);
+  border: none;
+  background: rgb(255 255 255 / 0.15);
+  color: var(--ecom-color-neutral-0);
+  font-size: var(--ecom-text-xl);
+  line-height: 1;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background var(--ecom-duration-fast) var(--ecom-ease-default);
+  z-index: 2;
+}
+
+.gallery-lightbox__close:hover {
+  background: rgb(255 255 255 / 0.3);
+}
+
+.gallery-lightbox__close:focus-visible {
+  outline: 2px solid var(--ecom-border-focus);
+  outline-offset: 2px;
+}
+
+.gallery-lightbox__arrow {
+  position: fixed;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 2.75rem;
+  height: 2.75rem;
+  border-radius: var(--ecom-radius-full);
+  border: none;
+  background: rgb(255 255 255 / 0.15);
+  color: var(--ecom-color-neutral-0);
+  font-size: var(--ecom-text-xl);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background var(--ecom-duration-fast) var(--ecom-ease-default);
+  z-index: 2;
+}
+
+.gallery-lightbox__arrow:hover {
+  background: rgb(255 255 255 / 0.3);
+}
+
+.gallery-lightbox__arrow:focus-visible {
+  outline: 2px solid var(--ecom-border-focus);
+  outline-offset: 2px;
+}
+
+.gallery-lightbox__arrow--prev {
+  left: var(--ecom-space-4);
+}
+
+.gallery-lightbox__arrow--next {
+  right: var(--ecom-space-4);
+}
+
+/* Body scroll lock */
+body.lightbox-open {
+  overflow: hidden;
 }

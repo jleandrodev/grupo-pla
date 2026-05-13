@@ -1,0 +1,261 @@
+/* ============================================================
+   search-modal.css — Modal de busca (mobile-first, < 768px)
+   No desktop o campo de busca está visível no header.
+   ============================================================ */
+
+/* ── WRAPPER ── */
+.search-modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: var(--ecom-z-modal);
+}
+
+.search-modal--open {
+  display: block;
+}
+
+/* ── OVERLAY ── */
+.search-modal__overlay {
+  position: absolute;
+  inset: 0;
+  background-color: rgb(0 0 0 / 0.55);
+  animation: sm-overlay-in var(--ecom-duration-normal) var(--ecom-ease-default) both;
+}
+
+@keyframes sm-overlay-in {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+/* ── PANEL ── */
+.search-modal__panel {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: var(--ecom-bg-surface);
+  max-height: 92vh;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  animation: sm-panel-in var(--ecom-duration-normal) var(--ecom-ease-default) both;
+}
+
+@keyframes sm-panel-in {
+  from { transform: translateY(-0.75rem); opacity: 0; }
+  to   { transform: translateY(0); opacity: 1; }
+}
+
+/* ── HEADER: campo de busca ── */
+.search-modal__header {
+  background-color: var(--ecom-color-secondary-900);
+  padding: var(--ecom-space-3) var(--ecom-space-4);
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+.search-modal__form {
+  display: flex;
+  align-items: center;
+  gap: var(--ecom-space-2);
+  background-color: var(--ecom-color-secondary-700);
+  border: 1px solid var(--ecom-color-secondary-600);
+  border-radius: var(--ecom-radius-lg);
+  padding-inline: var(--ecom-space-3);
+  transition: border-color var(--ecom-duration-fast) var(--ecom-ease-default);
+  min-height: 3rem;
+}
+
+.search-modal__form:focus-within {
+  border-color: var(--ecom-color-primary-500);
+}
+
+/* Botão voltar (← fechar) */
+.search-modal__back {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2rem;
+  height: 2rem;
+  color: var(--ecom-color-neutral-400);
+  flex-shrink: 0;
+  transition: color var(--ecom-duration-fast) var(--ecom-ease-default);
+}
+
+.search-modal__back:hover {
+  color: var(--ecom-color-neutral-0);
+}
+
+.search-modal__back svg {
+  width: 1.25rem;
+  height: 1.25rem;
+}
+
+/* Input */
+.search-modal__input {
+  flex: 1;
+  padding: var(--ecom-space-3) var(--ecom-space-2);
+  background: transparent;
+  border: none;
+  color: var(--ecom-color-neutral-0);
+  font-size: var(--ecom-text-base);
+  min-width: 0;
+}
+
+.search-modal__input::placeholder {
+  color: var(--ecom-color-neutral-400);
+}
+
+.search-modal__input:focus {
+  outline: none;
+}
+
+/* Botão submit */
+.search-modal__submit {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.25rem;
+  height: 2.25rem;
+  background-color: var(--ecom-color-primary-500);
+  color: var(--ecom-color-neutral-0);
+  border-radius: var(--ecom-radius-md);
+  flex-shrink: 0;
+  transition: background-color var(--ecom-duration-fast) var(--ecom-ease-default);
+}
+
+.search-modal__submit:hover {
+  background-color: var(--ecom-color-primary-600);
+}
+
+.search-modal__submit svg {
+  width: 1.125rem;
+  height: 1.125rem;
+}
+
+/* ── BODY ── */
+.search-modal__body {
+  padding: var(--ecom-space-6) var(--ecom-space-4);
+  display: flex;
+  flex-direction: column;
+  gap: var(--ecom-space-8);
+}
+
+.search-modal__section-title {
+  font-size: var(--ecom-text-xs);
+  font-weight: var(--ecom-font-bold);
+  letter-spacing: var(--ecom-tracking-widest);
+  text-transform: uppercase;
+  color: var(--ecom-text-muted);
+  margin-bottom: var(--ecom-space-4);
+}
+
+/* Tags buscas populares */
+.search-modal__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--ecom-space-2);
+}
+
+.search-modal__tag {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--ecom-space-2);
+  padding: var(--ecom-space-2) var(--ecom-space-4);
+  background-color: var(--ecom-bg-surface-alt);
+  border: 1px solid var(--ecom-border-default);
+  border-radius: var(--ecom-radius-full);
+  font-size: var(--ecom-text-sm);
+  color: var(--ecom-text-primary);
+  transition:
+    background-color var(--ecom-duration-fast) var(--ecom-ease-default),
+    border-color var(--ecom-duration-fast) var(--ecom-ease-default),
+    color var(--ecom-duration-fast) var(--ecom-ease-default);
+}
+
+.search-modal__tag:hover {
+  background-color: var(--ecom-color-primary-50);
+  border-color: var(--ecom-color-primary-300);
+  color: var(--ecom-color-primary-700);
+}
+
+.search-modal__tag svg {
+  width: 0.875rem;
+  height: 0.875rem;
+  color: var(--ecom-text-muted);
+  flex-shrink: 0;
+}
+
+/* Lista categorias */
+.search-modal__category-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--ecom-space-1);
+}
+
+.search-modal__category-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--ecom-space-4);
+  border-radius: var(--ecom-radius-lg);
+  color: var(--ecom-text-primary);
+  font-size: var(--ecom-text-sm);
+  font-weight: var(--ecom-font-medium);
+  border: 1px solid transparent;
+  transition:
+    background-color var(--ecom-duration-fast) var(--ecom-ease-default),
+    border-color var(--ecom-duration-fast) var(--ecom-ease-default);
+}
+
+.search-modal__category-item:hover {
+  background-color: var(--ecom-bg-surface-alt);
+  border-color: var(--ecom-border-default);
+}
+
+.search-modal__category-item svg {
+  width: 1rem;
+  height: 1rem;
+  color: var(--ecom-text-muted);
+  flex-shrink: 0;
+}
+
+/* Scroll lock */
+body.search-modal-open {
+  overflow: hidden;
+}
+
+/* Desktop: modal fullscreen nunca aparece via toggle mobile */
+@media (min-width: 768px) {
+  .search-modal:not(.search-modal--dropdown) {
+    display: none;
+  }
+}
+
+/* ── DROPDOWN MODE (desktop) ── */
+@media (min-width: 768px) {
+  /* Overlay mais suave */
+  .search-modal--dropdown .search-modal__overlay {
+    background-color: rgb(0 0 0 / 0.25);
+  }
+
+  /* Painel: top é definido via JS (abaixo do header); sem altura máx da viewport toda */
+  .search-modal--dropdown .search-modal__panel {
+    /* top é sobrescrito pelo JS */
+    border-top: 3px solid var(--ecom-action-primary);
+    box-shadow: var(--ecom-shadow-xl);
+    max-height: 72vh;
+    animation: sm-dropdown-in var(--ecom-duration-normal) var(--ecom-ease-default) both;
+  }
+
+  @keyframes sm-dropdown-in {
+    from { transform: translateY(-0.5rem); opacity: 0; }
+    to   { transform: translateY(0); opacity: 1; }
+  }
+
+  /* Esconde o header do modal (campo de busca duplicado) */
+  .search-modal--dropdown .search-modal__header {
+    display: none;
+  }
+}

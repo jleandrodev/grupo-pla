@@ -54,6 +54,8 @@
   <link rel="stylesheet" href="../assets/css/layout.css">
   <link rel="stylesheet" href="../assets/css/components/buttons.css">
   <link rel="stylesheet" href="../assets/css/components/header.css">
+  <link rel="stylesheet" href="../assets/css/components/mobile-drawer.css">
+  <link rel="stylesheet" href="../assets/css/components/search-modal.css">
   <link rel="stylesheet" href="../assets/css/components/hero.css">
   <link rel="stylesheet" href="../assets/css/components/benefits.css">
   <link rel="stylesheet" href="../assets/css/components/product-card.css">
@@ -288,7 +290,7 @@
               <path d="m21 21-4.3-4.3" />
             </svg>
           </div>
-          <input type="search" name="q" class="search-form__input" aria-label="Buscar peças, veículos, marcas"
+          <input type="search" name="q" id="header-search-input" class="search-form__input" aria-label="Buscar peças, veículos, marcas"
             placeholder="Buscar peças, veículos, marcas..." autocomplete="off">
         </form>
 
@@ -353,6 +355,126 @@
     </nav>
   </header>
 
+  <!-- Mobile Navigation Drawer -->
+  <div class="mobile-drawer" id="mobile-drawer" role="dialog" aria-modal="true" aria-label="Menu de navegação" tabindex="-1">
+    <div class="mobile-drawer__header">
+      <a href="index.html" class="mobile-drawer__logo" aria-label="Grupo PLA - Página inicial">
+        <img src="../assets/images/logo/logo.png" alt="Grupo PLA" width="120" height="30">
+      </a>
+      <button type="button" class="mobile-drawer__close" aria-label="Fechar menu" data-action="close-drawer">
+        <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="18" y1="6" x2="6" y2="18"/>
+          <line x1="6" y1="6" x2="18" y2="18"/>
+        </svg>
+      </button>
+    </div>
+
+    <div class="mobile-drawer__search">
+      <form class="search-form" role="search" action="categoria.html" method="get">
+        <div class="search-form__icon">
+          <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="11" cy="11" r="8"/>
+            <path d="m21 21-4.3-4.3"/>
+          </svg>
+        </div>
+        <input type="search" name="q" class="search-form__input" aria-label="Buscar peças, veículos, marcas" placeholder="Buscar peças..." autocomplete="off">
+      </form>
+    </div>
+
+    <nav class="mobile-drawer__nav" aria-label="Menu principal">
+      <ul role="list">
+        <li><a href="categoria.html" class="mobile-drawer__link">Peças</a></li>
+        <li><a href="categoria.html" class="mobile-drawer__link">Estoque</a></li>
+        <li><a href="categoria.html" class="mobile-drawer__link">Novos</a></li>
+        <li><a href="categoria.html" class="mobile-drawer__link">Marcas</a></li>
+        <li><a href="locacao.html" class="mobile-drawer__link">Locação</a></li>
+        <li><a href="#" class="mobile-drawer__link">Meus Clientes</a></li>
+        <li><a href="contato.html" class="mobile-drawer__link">Contato</a></li>
+      </ul>
+    </nav>
+
+    <div class="mobile-drawer__footer">
+      <p class="mobile-drawer__contact-title">Fale conosco</p>
+      <a href="tel:+551140028922" class="mobile-drawer__contact-item">
+        <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/>
+        </svg>
+        (11) 4002-8922
+      </a>
+      <a href="https://wa.me/5511999990000" class="mobile-drawer__contact-item" target="_blank" rel="noopener noreferrer">
+        <svg aria-hidden="true" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/>
+        </svg>
+        WhatsApp: (11) 99999-0000
+      </a>
+      <a href="mailto:contato@grupopla.com.br" class="mobile-drawer__contact-item">
+        <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <rect width="20" height="16" x="2" y="4" rx="2"/>
+          <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
+        </svg>
+        contato@grupopla.com.br
+      </a>
+      <div class="mobile-drawer__social">
+        <a href="https://www.facebook.com/grupopla" class="mobile-drawer__social-link" target="_blank" rel="noopener noreferrer" aria-label="Facebook do Grupo PLA">
+          <svg aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+        </a>
+        <a href="https://www.instagram.com/grupopla" class="mobile-drawer__social-link" target="_blank" rel="noopener noreferrer" aria-label="Instagram do Grupo PLA">
+          <svg aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/></svg>
+        </a>
+        <a href="https://www.youtube.com/@grupopla" class="mobile-drawer__social-link" target="_blank" rel="noopener noreferrer" aria-label="YouTube do Grupo PLA">
+          <svg aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+  <div class="mobile-drawer__overlay" id="mobile-drawer-overlay" aria-hidden="true"></div>
+  <!-- Modal de Busca -->
+  <div class="search-modal" id="search-modal" role="dialog" aria-modal="true" aria-label="Buscar produtos" aria-hidden="true">
+    <div class="search-modal__overlay" data-action="close-search-modal" aria-hidden="true"></div>
+    <div class="search-modal__panel">
+      <div class="search-modal__header">
+        <form class="search-modal__form" role="search" action="busca.html" method="get">
+          <button type="button" class="search-modal__back" aria-label="Fechar busca" data-action="close-search-modal">
+            <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M19 12H5"/><path d="m12 5-7 7 7 7"/>
+            </svg>
+          </button>
+          <input type="search" name="q" class="search-modal__input" aria-label="Buscar peças, veículos, marcas" placeholder="Buscar peças, veículos, marcas..." autocomplete="off">
+          <button type="submit" class="search-modal__submit" aria-label="Buscar">
+            <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/>
+            </svg>
+          </button>
+        </form>
+      </div>
+      <div class="search-modal__body">
+        <div class="search-modal__suggestions">
+          <h2 class="search-modal__section-title">Buscas Populares</h2>
+          <ul class="search-modal__tags">
+            <li><a href="busca.html?q=filtro+de+ar" class="search-modal__tag"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>Filtro de ar</a></li>
+            <li><a href="busca.html?q=bomba+hidraulica" class="search-modal__tag"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>Bomba hidráulica</a></li>
+            <li><a href="busca.html?q=embreagem" class="search-modal__tag"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>Embreagem</a></li>
+            <li><a href="busca.html?q=correia+alternador" class="search-modal__tag"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>Correia alternador</a></li>
+            <li><a href="busca.html?q=rolamento" class="search-modal__tag"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>Rolamento</a></li>
+            <li><a href="busca.html?q=john+deere" class="search-modal__tag"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>John Deere</a></li>
+            <li><a href="busca.html?q=massey+ferguson" class="search-modal__tag"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>Massey Ferguson</a></li>
+            <li><a href="busca.html?q=kit+reparo+motor" class="search-modal__tag"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>Kit reparo motor</a></li>
+          </ul>
+        </div>
+        <div class="search-modal__categories">
+          <h2 class="search-modal__section-title">Categorias</h2>
+          <ul class="search-modal__category-list">
+            <li><a href="categoria.html" class="search-modal__category-item"><span>Peças Motor</span><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></a></li>
+            <li><a href="categoria.html" class="search-modal__category-item"><span>Sistema Hidráulico</span><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></a></li>
+            <li><a href="categoria.html" class="search-modal__category-item"><span>Transmissão e Embreagem</span><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></a></li>
+            <li><a href="categoria.html" class="search-modal__category-item"><span>Filtros e Lubrificantes</span><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></a></li>
+            <li><a href="locacao.html" class="search-modal__category-item"><span>Máquinas para Locação</span><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <!-- ════════════════════════════════════════════════════════
        MAIN CONTENT
        ════════════════════════════════════════════════════════ -->
@@ -393,7 +515,8 @@
     <section class="benefits section" aria-labelledby="benefits-title">
       <div class="container">
         <h2 id="benefits-title" class="sr-only">Nossos diferenciais</h2>
-        <div class="benefits__grid">
+        <div class="carousel" data-component="carousel" data-autoplay="3500">
+          <div class="carousel__track benefits__track" data-role="carousel-track">
           <div class="benefit-card">
             <div class="benefit-card__icon" aria-hidden="true">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
@@ -450,6 +573,7 @@
               <p class="benefit-card__text">Suporte técnico 24h e manutenção autorizada</p>
             </div>
           </div>
+          </div>
         </div>
       </div>
     </section>
@@ -465,7 +589,7 @@
           <a href="categoria.html" class="btn btn--outline">Ver Todos os Produtos</a>
         </div>
 
-        <div class="carousel" data-component="carousel">
+        <div class="carousel carousel--grid-desktop" data-component="carousel" data-autoplay="3500">
           <button type="button" class="carousel__arrow carousel__arrow--prev" data-action="carousel-prev" aria-label="Anterior">
             <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
           </button>
@@ -645,11 +769,139 @@
               </div>
             </div>
           </article>
+          <!-- Product card 4 -->
+          <article class="product-card" data-product-id="104">
+            <a href="./detalhe-peca.html" class="product-card__image-link" tabindex="-1" aria-hidden="true">
+              <img src="../assets/images/produtos/pc2Img.png" alt="" class="product-card__image" width="300" height="300" loading="lazy">
+              <span class="product-card__badge product-card__badge--motor">Filtros</span>
+              <span class="product-card__discount-badge" aria-label="15% de desconto">15% OFF</span>
+            </a>
+            <div class="product-card__body">
+              <h3 class="product-card__title">
+                <a href="./detalhe-peca.html" class="product-card__title-link">Filtro de Ar John Deere 6110J</a>
+              </h3>
+              <div class="product-card__rating" aria-label="Sem avaliações">
+                <div class="product-card__stars">
+                  <svg aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                  <svg aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                  <svg aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                  <svg aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                  <svg aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                </div>
+              </div>
+              <div class="product-card__pricing" aria-label="Preço: R$ 185,00">
+                <span class="product-card__price product-card__price--current">R$ 185,00</span>
+              </div>
+              <div class="product-card__actions">
+                <a href="./detalhe-peca.html" class="btn btn--primary btn--sm">Comprar</a>
+                <button type="button" class="product-card__wishlist" aria-label="Adicionar Filtro de Ar John Deere 6110J aos favoritos" data-action="add-wishlist" data-product-id="104">
+                  <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Product card 5 -->
+          <article class="product-card" data-product-id="105">
+            <a href="./detalhe-peca.html" class="product-card__image-link" tabindex="-1" aria-hidden="true">
+              <img src="../assets/images/produtos/pc3Img.png" alt="" class="product-card__image" width="300" height="300" loading="lazy">
+              <span class="product-card__badge product-card__badge--motor">Motor</span>
+            </a>
+            <div class="product-card__body">
+              <h3 class="product-card__title">
+                <a href="./detalhe-peca.html" class="product-card__title-link">Correia Alternador Case IH Maxxum</a>
+              </h3>
+              <div class="product-card__rating" aria-label="Sem avaliações">
+                <div class="product-card__stars">
+                  <svg aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                  <svg aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                  <svg aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                  <svg aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                  <svg aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                </div>
+              </div>
+              <div class="product-card__pricing" aria-label="Preço: R$ 95,00">
+                <span class="product-card__price product-card__price--current">R$ 95,00</span>
+              </div>
+              <div class="product-card__actions">
+                <a href="./detalhe-peca.html" class="btn btn--primary btn--sm">Comprar</a>
+                <button type="button" class="product-card__wishlist" aria-label="Adicionar Correia Alternador Case IH Maxxum aos favoritos" data-action="add-wishlist" data-product-id="105">
+                  <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Product card 6 -->
+          <article class="product-card" data-product-id="106">
+            <a href="./detalhe-peca.html" class="product-card__image-link" tabindex="-1" aria-hidden="true">
+              <img src="../assets/images/produtos/pc4Img.png" alt="" class="product-card__image" width="300" height="300" loading="lazy">
+              <span class="product-card__badge product-card__badge--hydraulic">Hidráulica</span>
+            </a>
+            <div class="product-card__body">
+              <h3 class="product-card__title">
+                <a href="./detalhe-peca.html" class="product-card__title-link">Bomba d'Água Massey Ferguson 4292</a>
+              </h3>
+              <div class="product-card__rating" aria-label="Sem avaliações">
+                <div class="product-card__stars">
+                  <svg aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                  <svg aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                  <svg aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                  <svg aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                  <svg aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                </div>
+              </div>
+              <div class="product-card__pricing" aria-label="Preço: R$ 420,00">
+                <span class="product-card__price product-card__price--current">R$ 420,00</span>
+              </div>
+              <div class="product-card__actions">
+                <a href="./detalhe-peca.html" class="btn btn--primary btn--sm">Comprar</a>
+                <button type="button" class="product-card__wishlist" aria-label="Adicionar Bomba d'Água Massey Ferguson 4292 aos favoritos" data-action="add-wishlist" data-product-id="106">
+                  <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Product card 7 -->
+          <article class="product-card" data-product-id="107">
+            <a href="./detalhe-peca.html" class="product-card__image-link" tabindex="-1" aria-hidden="true">
+              <img src="../assets/images/produtos/pc2Img.png" alt="" class="product-card__image" width="300" height="300" loading="lazy">
+              <span class="product-card__badge product-card__badge--transmission">Transmissão</span>
+            </a>
+            <div class="product-card__body">
+              <h3 class="product-card__title">
+                <a href="./detalhe-peca.html" class="product-card__title-link">Rolamento de Roda Valtra A950</a>
+              </h3>
+              <div class="product-card__rating" aria-label="Sem avaliações">
+                <div class="product-card__stars">
+                  <svg aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                  <svg aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                  <svg aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                  <svg aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                  <svg aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                </div>
+              </div>
+              <div class="product-card__pricing" aria-label="Preço: R$ 280,00">
+                <span class="product-card__price product-card__price--current">R$ 280,00</span>
+              </div>
+              <div class="product-card__actions">
+                <a href="./detalhe-peca.html" class="btn btn--primary btn--sm">Comprar</a>
+                <button type="button" class="product-card__wishlist" aria-label="Adicionar Rolamento de Roda Valtra A950 aos favoritos" data-action="add-wishlist" data-product-id="107">
+                  <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>
+                </button>
+              </div>
+            </div>
+          </article>
+
           </div><!-- /.carousel__track -->
           <button type="button" class="carousel__arrow carousel__arrow--next" data-action="carousel-next" aria-label="Próximo">
             <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
           </button>
         </div><!-- /.carousel -->
+        <div class="section__cta-mobile">
+          <a href="categoria.html" class="btn btn--outline">Ver Todos os Produtos</a>
+        </div>
       </div>
     </section>
 
@@ -657,7 +909,7 @@
     <section class="brands section" aria-labelledby="brands-title">
       <div class="container">
         <h2 id="brands-title" class="brands__title">Marcas que Atendemos</h2>
-        <div class="carousel" data-component="carousel">
+        <div class="carousel" data-component="carousel" data-autoplay="4000">
           <button type="button" class="carousel__arrow carousel__arrow--prev" data-action="carousel-prev"
             aria-label="Anterior">
             <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
@@ -730,7 +982,7 @@
 
         <!-- Painel: Tratores -->
         <div role="tabpanel" data-tab-panel="tratores" aria-label="Tratores">
-          <div class="carousel" data-component="carousel">
+          <div class="carousel" data-component="carousel" data-autoplay="4000">
             <button type="button" class="carousel__arrow carousel__arrow--prev" data-action="carousel-prev" aria-label="Anterior">
               <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
             </button>
@@ -897,6 +1149,73 @@
                 Detalhes</a>
             </div>
           </article>
+
+          <article class="machine-card" data-product-id="205">
+            <a href="./detalhe-maquinario.html" class="machine-card__image-link">
+              <img src="../assets/images/maquinas/vc1Img.png" alt="Trator Case IH Puma 165 vermelho em campo" class="machine-card__image" width="400" height="250" loading="lazy">
+            </a>
+            <div class="machine-card__body">
+              <div class="machine-card__meta">
+                <span class="machine-card__brand machine-card__brand--valtra">Case IH</span>
+                <span class="machine-card__year"><time datetime="2022">2022</time></span>
+              </div>
+              <h3 class="machine-card__title"><a href="./detalhe-maquinario.html">Case IH Puma 165</a></h3>
+              <div class="machine-card__rating" aria-label="Sem avaliações">
+                <svg aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                <svg aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                <svg aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                <svg aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                <svg aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              </div>
+              <p class="machine-card__price">R$ 275.000</p>
+              <a href="./detalhe-maquinario.html" class="btn btn--primary btn--full machine-card__cta">Ver Detalhes</a>
+            </div>
+          </article>
+
+          <article class="machine-card" data-product-id="206">
+            <a href="./detalhe-maquinario.html" class="machine-card__image-link">
+              <img src="../assets/images/maquinas/vc2Img.png" alt="Trator Fendt 516 Vario verde em operação" class="machine-card__image" width="400" height="250" loading="lazy">
+            </a>
+            <div class="machine-card__body">
+              <div class="machine-card__meta">
+                <span class="machine-card__brand machine-card__brand--new-holland">Fendt</span>
+                <span class="machine-card__year"><time datetime="2023">2023</time></span>
+              </div>
+              <h3 class="machine-card__title"><a href="./detalhe-maquinario.html">Fendt 516 Vario</a></h3>
+              <div class="machine-card__rating" aria-label="Sem avaliações">
+                <svg aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                <svg aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                <svg aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                <svg aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                <svg aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              </div>
+              <p class="machine-card__price">R$ 485.000</p>
+              <a href="./detalhe-maquinario.html" class="btn btn--primary btn--full machine-card__cta">Ver Detalhes</a>
+            </div>
+          </article>
+
+          <article class="machine-card" data-product-id="207">
+            <a href="./detalhe-maquinario.html" class="machine-card__image-link">
+              <img src="../assets/images/maquinas/vc3Img.png" alt="Trator John Deere 5075E verde compacto" class="machine-card__image" width="400" height="250" loading="lazy">
+            </a>
+            <div class="machine-card__body">
+              <div class="machine-card__meta">
+                <span class="machine-card__brand machine-card__brand--john-deere">John Deere</span>
+                <span class="machine-card__year"><time datetime="2021">2021</time></span>
+              </div>
+              <h3 class="machine-card__title"><a href="./detalhe-maquinario.html">John Deere 5075E</a></h3>
+              <div class="machine-card__rating" aria-label="Sem avaliações">
+                <svg aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                <svg aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                <svg aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                <svg aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                <svg aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              </div>
+              <p class="machine-card__price">R$ 142.000</p>
+              <a href="./detalhe-maquinario.html" class="btn btn--primary btn--full machine-card__cta">Ver Detalhes</a>
+            </div>
+          </article>
+
             </div><!-- /.carousel__track -->
             <button type="button" class="carousel__arrow carousel__arrow--next" data-action="carousel-next" aria-label="Próximo">
               <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
@@ -927,6 +1246,9 @@
           <p class="section__description">Em breve novos seminovos disponíveis. <a href="contato.html">Entre em contato</a>
             para consultar disponibilidade.</p>
         </div>
+        <div class="section__cta-mobile">
+          <a href="detalhe-maquinario.html" class="btn btn--outline">Ver Máquinas Disponíveis</a>
+        </div>
       </div>
     </section>
 
@@ -937,7 +1259,7 @@
           <h2 id="categories-title" class="section__title">Navegue por Categoria</h2>
           <a href="./categoria.html" class="btn btn--ghost">Ver Todas</a>
         </div>
-        <div class="carousel" data-component="carousel">
+        <div class="carousel" data-component="carousel" data-autoplay="4000">
           <button type="button" class="carousel__arrow carousel__arrow--prev" data-action="carousel-prev"
             aria-label="Anterior">
             <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
@@ -1015,7 +1337,8 @@
           </div>
         </div>
 
-        <div class="testimonials__grid">
+        <div class="carousel" data-component="carousel" data-autoplay="4000">
+          <div class="carousel__track testimonials__track" data-role="carousel-track">
           <article class="testimonial-card">
             <blockquote class="testimonial-card__quote">
               "Depois que passamos a comprar peças do Grupo PLA, o tempo de máquina parada na safra caiu muito.
@@ -1126,7 +1449,8 @@
               </svg>
             </div>
           </article>
-        </div>
+          </div><!-- /.carousel__track -->
+        </div><!-- /.carousel -->
       </div>
     </section>
 

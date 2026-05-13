@@ -11,3 +11,31 @@
 .featured-products + .featured-products {
   border-top: 1px solid var(--ecom-border-default);
 }
+
+/* ── MOBILE: section__header em coluna (título full-width) ── */
+@media (max-width: 767px) {
+  .section__header {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .section__header .btn--outline {
+    display: none; /* Esconder botão no header — aparece abaixo do carousel */
+  }
+
+  .section__cta-mobile {
+    display: flex;
+    justify-content: center;
+    margin-top: var(--ecom-space-6);
+  }
+
+  .section__cta-mobile .btn {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+/* Esconder CTA mobile no desktop */
+.section__cta-mobile {
+  display: none;
+}

@@ -8,9 +8,10 @@
 
 /* ── SETAS ── */
 
+/* Calcula o topo aproximado do track (exclui dots ≈ 2rem abaixo) */
 .carousel__arrow {
   position: absolute;
-  top: 50%;
+  top: calc(50% - 1.25rem);
   transform: translateY(-50%);
   z-index: var(--ecom-z-raised);
   display: flex;
@@ -97,7 +98,15 @@
 }
 
 .products__track > * {
-  width: 16rem;
+  width: calc(100vw - var(--ecom-space-8));
+  flex-shrink: 0;
+  scroll-snap-align: start;
+}
+
+@media (min-width: 640px) {
+  .products__track > * {
+    width: 20rem;
+  }
 }
 
 .products__track .promo-banner {
@@ -112,12 +121,18 @@
   border-radius: var(--ecom-radius-xl);
 }
 
+/* ── DESKTOP: products com largura fixa de 320px (slider mantido) ── */
 @media (min-width: 1024px) {
   .products__track > * {
-    width: calc((100% - var(--ecom-space-5) * 3) / 4);
-    min-width: 15rem;
+    width: 320px;
+    min-width: 320px;
+  }
+
+  .products__track .promo-banner {
+    width: 320px;
   }
 }
+
 
 /* ── MÁQUINAS: vitrine em slider ── */
 
@@ -127,8 +142,15 @@
 }
 
 .machines__track > * {
-  width: 20rem;
+  width: calc(100vw - var(--ecom-space-8));
   flex-shrink: 0;
+  scroll-snap-align: start;
+}
+
+@media (min-width: 640px) {
+  .machines__track > * {
+    width: 22rem;
+  }
 }
 
 @media (min-width: 1024px) {
@@ -136,4 +158,52 @@
     width: calc((100% - var(--ecom-space-5) * 3) / 4);
     min-width: 18rem;
   }
+}
+
+/* ── MOBILE: setas menores, dentro do container ── */
+@media (max-width: 767px) {
+  .carousel__arrow {
+    width: 2rem;
+    height: 2rem;
+    background-color: rgb(255 255 255 / 0.92);
+    box-shadow: var(--ecom-shadow-sm);
+  }
+
+  .carousel__arrow svg {
+    width: 1rem;
+    height: 1rem;
+  }
+}
+
+/* ── DOTS ── */
+
+.carousel__dots {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: var(--ecom-space-2);
+  margin-top: var(--ecom-space-4);
+}
+
+.carousel__dot {
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: var(--ecom-radius-full);
+  background-color: var(--ecom-color-neutral-300);
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  flex-shrink: 0;
+  transition:
+    background-color var(--ecom-duration-fast) var(--ecom-ease-default),
+    width var(--ecom-duration-fast) var(--ecom-ease-default);
+}
+
+.carousel__dot:hover {
+  background-color: var(--ecom-color-neutral-400);
+}
+
+.carousel__dot--active {
+  background-color: var(--ecom-color-primary-500);
+  width: 1.5rem;
 }

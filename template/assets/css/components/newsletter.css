@@ -59,6 +59,11 @@
   gap: var(--ecom-space-2);
   width: 100%;
   max-width: 24rem;
+  overflow: hidden;
+}
+
+.newsletter__form .btn {
+  flex-shrink: 0;
 }
 
 .newsletter__input {

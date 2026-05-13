@@ -4,17 +4,21 @@
 
 import { init as initGallery } from '../components/product-gallery.js';
 import { init as initQuantity } from '../components/quantity-input.js';
-import { init as initCartDrawer } from '../components/cart-drawer.js';
+import { init as initCartManager } from '../components/cart-manager.js';
 import { init as initFinancingModal } from '../components/financing-modal.js';
-import { init as initMobileMenu } from '../components/mobile-menu.js';
+import { init as initMobileMenu } from '../components/mobile-drawer.js';
+import { init as initSearchModal } from '../components/search-modal.js';
+import { init as initCarousel } from '../components/carousel.js';
 import { getWhatsAppUrl } from '../core/whatsapp.js';
 
 document.addEventListener('DOMContentLoaded', () => {
   initGallery();
   initQuantity();
-  initCartDrawer();
+  initCartManager();
   initFinancingModal();
   initMobileMenu();
+  initSearchModal();
+  initCarousel();
   initProductTabs();
   initWhatsAppRandom();
 });

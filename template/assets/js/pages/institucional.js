@@ -8,8 +8,9 @@
  *   - Active class: sidebar-menu__item--active
  */
 
-import { init as initCartDrawer } from '../components/cart-drawer.js';
-import { init as initMobileMenu } from '../components/mobile-menu.js';
+import { init as initCartManager } from '../components/cart-manager.js';
+import { init as initMobileMenu } from '../components/mobile-drawer.js';
+import { init as initSearchModal } from '../components/search-modal.js';
 
 const MENU_SELECTOR = '[data-action="switch-section"]';
 const CONTENT_SELECTOR = '[data-component="institutional-content"]';
@@ -119,6 +120,7 @@ function switchToSection(targetId) {
 
 document.addEventListener('DOMContentLoaded', () => {
   init();
-  initCartDrawer();
+  initCartManager();
   initMobileMenu();
+  initSearchModal();
 });

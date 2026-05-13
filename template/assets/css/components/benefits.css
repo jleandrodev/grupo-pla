@@ -6,20 +6,50 @@
   padding-block: var(--ecom-space-8);
 }
 
-.benefits__grid {
-  display: grid;
-  grid-template-columns: 1fr;
+/* Mobile: carrossel horizontal com snap */
+.benefits__track {
+  display: flex;
   gap: var(--ecom-space-4);
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  padding-bottom: var(--ecom-space-2);
 }
 
+.benefits__track::-webkit-scrollbar {
+  display: none;
+}
+
+.benefits__track > * {
+  flex-shrink: 0;
+  width: calc(100vw - var(--ecom-space-8));
+  scroll-snap-align: start;
+}
+
+/* Tablet: 2 por tela */
 @media (min-width: 480px) {
-  .benefits__grid {
+  .benefits__track > * {
+    width: calc(50% - var(--ecom-space-2));
+  }
+}
+
+/* Desktop: grid 4 colunas */
+@media (min-width: 768px) {
+  .benefits__track {
+    display: grid;
     grid-template-columns: repeat(2, 1fr);
+    overflow: visible;
+    scroll-snap-type: none;
+  }
+
+  .benefits__track > * {
+    width: auto;
   }
 }
 
 @media (min-width: 1024px) {
-  .benefits__grid {
+  .benefits__track {
     grid-template-columns: repeat(4, 1fr);
   }
 }

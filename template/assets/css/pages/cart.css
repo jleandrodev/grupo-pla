@@ -12,13 +12,13 @@
 
 .cart-layout {
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: minmax(0, 1fr);
   gap: var(--ecom-space-8);
 }
 
 @media (min-width: 1024px) {
   .cart-layout {
-    grid-template-columns: 1fr 22rem;
+    grid-template-columns: minmax(0, 1fr) 22rem;
     align-items: start;
   }
 }
@@ -334,8 +334,13 @@
   gap: var(--ecom-space-2);
 }
 
+.cart-summary__cep-field .btn {
+  flex-shrink: 0;
+}
+
 .cart-summary__cep-input {
   flex: 1;
+  min-width: 0;
   height: 2.25rem;
   padding: 0 var(--ecom-space-3);
   border: 1px solid var(--ecom-border-default);
