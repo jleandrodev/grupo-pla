@@ -316,6 +316,12 @@
             </svg>
             <span class="header-cart__count" aria-hidden="true">0</span>
           </button>
+          <a href="./wishlist.html" class="header-wishlist" aria-label="Lista de desejos">
+            <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+            </svg>
+            <span class="header-wishlist__count" data-role="wishlist-count" aria-hidden="true" hidden>0</span>
+          </a>
           <a href="./minha-conta.html" class="header__action-btn" aria-label="Minha conta">
             <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
               <circle cx="12" cy="8" r="4"/>
@@ -343,9 +349,9 @@
           <li><a href="categoria.html" class="site-nav__link site-nav__link--active" aria-current="true">Peças</a></li>
           <li><a href="categoria.html" class="site-nav__link">Estoque</a></li>
           <li><a href="categoria.html" class="site-nav__link">Novos</a></li>
-          <li><a href="categoria.html" class="site-nav__link">Marcas</a></li>
+          <li><a href="marcas.html" class="site-nav__link">Marcas</a></li>
           <li><a href="locacao.html" class="site-nav__link">Locação</a></li>
-          <li><a href="#" class="site-nav__link">Meus Clientes</a></li>
+          <li><a href="nossos-clientes.html" class="site-nav__link">Nossos Clientes</a></li>
           <li><a href="contato.html" class="site-nav__link">Contato</a></li>
         </ul>
       </div>
@@ -383,9 +389,9 @@
         <li><a href="categoria.html" class="mobile-drawer__link">Peças</a></li>
         <li><a href="categoria.html" class="mobile-drawer__link">Estoque</a></li>
         <li><a href="categoria.html" class="mobile-drawer__link">Novos</a></li>
-        <li><a href="categoria.html" class="mobile-drawer__link">Marcas</a></li>
+        <li><a href="marcas.html" class="mobile-drawer__link">Marcas</a></li>
         <li><a href="locacao.html" class="mobile-drawer__link">Locação</a></li>
-        <li><a href="#" class="mobile-drawer__link">Meus Clientes</a></li>
+        <li><a href="nossos-clientes.html" class="mobile-drawer__link">Nossos Clientes</a></li>
         <li><a href="contato.html" class="mobile-drawer__link">Contato</a></li>
       </ul>
     </nav>
@@ -669,7 +675,7 @@
                 Adicionar ao Carrinho
               </button>
               <a href="https://wa.me/5511999990000?text=Olá! Tenho interesse no Trator John Deere 5E 105cv 4x4 2024 (REF: JD5E-105-4x4)"
-                class="btn btn--outline-primary btn--lg" target="_blank" rel="noopener noreferrer"
+                class="btn btn--whatsapp btn--lg" target="_blank" rel="noopener noreferrer"
                 data-action="whatsapp-random"
                 data-whatsapp-message="Olá! Tenho interesse no Trator John Deere 5E 105cv 4x4 2024 (REF: JD5E-105-4x4)">
                 <svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
@@ -677,6 +683,18 @@
                 </svg>
                 Pedir via WhatsApp
               </a>
+              <button type="button"
+                class="btn btn--outline btn--lg product-info__wishlist-btn"
+                data-action="toggle-wishlist"
+                data-product-id="JD5E105"
+                data-product-name="Trator John Deere 5E 105cv 4x4 2024"
+                aria-pressed="false"
+                aria-label="Salvar Trator John Deere 5E na lista de desejos">
+                <svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+                </svg>
+                Salvar na Lista de Desejos
+              </button>
             </div>
 
             <!-- Botão de Financiamento (linha 2, full-width) -->
@@ -776,57 +794,69 @@
           <!-- Painel: Especificações -->
           <div role="tabpanel" id="tab-especificacoes" aria-labelledby="tab-btn-especificacoes"
             class="product-tabs__panel" hidden>
-            <table class="product-tabs__specs">
-              <caption class="sr-only">Especificações técnicas do Trator John Deere 5E 105cv 4x4 2024</caption>
-              <tbody>
-                <tr>
-                  <th scope="row">Referência</th>
-                  <td>JD5E-105-4x4</td>
-                </tr>
-                <tr>
-                  <th scope="row">Marca</th>
-                  <td>John Deere</td>
-                </tr>
-                <tr>
-                  <th scope="row">Motor</th>
-                  <td>4 cilindros turbo diesel, 105 cv (77 kW)</td>
-                </tr>
-                <tr>
-                  <th scope="row">Tração</th>
-                  <td>4x4 com tração dianteira assistida</td>
-                </tr>
-                <tr>
-                  <th scope="row">Transmissão</th>
-                  <td>PowerShift 12F / 12R</td>
-                </tr>
-                <tr>
-                  <th scope="row">Levante hidráulico</th>
-                  <td>3.500 kg (Categoria II)</td>
-                </tr>
-                <tr>
-                  <th scope="row">Cabine</th>
-                  <td>Pressurizada com A/C</td>
-                </tr>
-                <tr>
-                  <th scope="row">Ano</th>
-                  <td>2024</td>
-                </tr>
-                <tr>
-                  <th scope="row">Condição</th>
-                  <td>Novo</td>
-                </tr>
-                <tr>
-                  <th scope="row">Garantia</th>
-                  <td>12 meses de garantia de fábrica</td>
-                </tr>
-              </tbody>
-            </table>
+            <h3 class="product-tabs__specs-heading">Especificações Técnicas</h3>
+            <div class="product-tabs__specs-wrapper">
+              <table class="product-tabs__specs">
+                <caption class="sr-only">Especificações técnicas do Trator John Deere 5E 105cv 4x4 2024</caption>
+                <tbody>
+                  <tr>
+                    <th scope="row">Referência</th>
+                    <td>JD5E-105-4x4</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Marca</th>
+                    <td>John Deere</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Motor</th>
+                    <td>4 cilindros turbo diesel, 105 cv (77 kW)</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Tração</th>
+                    <td>4x4 com tração dianteira assistida</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Transmissão</th>
+                    <td>PowerShift 12F / 12R</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Levante hidráulico</th>
+                    <td>3.500 kg (Categoria II)</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Peso (c/ implementos)</th>
+                    <td>4.750 kg</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Bitola dianteira</th>
+                    <td>1.460 mm – 2.020 mm (ajustável)</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Cabine</th>
+                    <td>Pressurizada com A/C</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Ano</th>
+                    <td>2024</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Condição</th>
+                    <td>Novo</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Garantia</th>
+                    <td>12 meses de garantia de fábrica</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
           </div>
 
           <!-- Painel: Entrega e Devolução -->
           <div role="tabpanel" id="tab-entrega" aria-labelledby="tab-btn-entrega"
             class="product-tabs__panel" hidden>
             <div class="product-tabs__content">
+
               <div class="product-tabs__delivery-item">
                 <svg class="product-tabs__delivery-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                   stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
@@ -838,9 +868,52 @@
                 </svg>
                 <div>
                   <p class="product-tabs__delivery-title">Transporte especializado</p>
-                  <p class="product-tabs__delivery-text">A entrega de maquinário inclui transporte especializado com veículo adequado. O prazo é calculado conforme a localidade e disponibilidade de frota.</p>
+                  <p class="product-tabs__delivery-text">A entrega de maquinário inclui transporte especializado com
+                    prancha ou caminhão cegonha conforme o equipamento. Nosso time logístico entra em contato para
+                    agendar a entrega após a confirmação do pedido.</p>
                 </div>
               </div>
+
+              <div class="product-tabs__delivery-table-wrapper">
+                <h4 class="product-tabs__delivery-subtitle">Estimativa de entrega por região</h4>
+                <table class="product-tabs__delivery-table">
+                  <thead>
+                    <tr>
+                      <th>Região</th>
+                      <th>Prazo estimado</th>
+                      <th>Frete</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>Sudeste (SP, RJ, MG, ES)</td>
+                      <td>5 a 10 dias úteis</td>
+                      <td>Consultar</td>
+                    </tr>
+                    <tr>
+                      <td>Sul (PR, SC, RS)</td>
+                      <td>7 a 12 dias úteis</td>
+                      <td>Consultar</td>
+                    </tr>
+                    <tr>
+                      <td>Centro-Oeste</td>
+                      <td>8 a 15 dias úteis</td>
+                      <td>Consultar</td>
+                    </tr>
+                    <tr>
+                      <td>Nordeste</td>
+                      <td>10 a 20 dias úteis</td>
+                      <td>Consultar</td>
+                    </tr>
+                    <tr>
+                      <td>Norte</td>
+                      <td>15 a 25 dias úteis</td>
+                      <td>Consultar</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
               <div class="product-tabs__delivery-item">
                 <svg class="product-tabs__delivery-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                   stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
@@ -849,9 +922,23 @@
                 </svg>
                 <div>
                   <p class="product-tabs__delivery-title">Entrega em todo o Brasil</p>
-                  <p class="product-tabs__delivery-text">Realizamos entregas em todo o território nacional. Consulte-nos para obter o prazo e custo de transporte para sua região.</p>
+                  <p class="product-tabs__delivery-text">Realizamos entregas em todo o território nacional. O custo de
+                    transporte de maquinário é calculado conforme distância, tipo de equipamento e acesso à
+                    propriedade. Consulte nossa equipe via WhatsApp para orçamento.</p>
                 </div>
               </div>
+
+              <div class="product-tabs__payment">
+                <h4 class="product-tabs__delivery-subtitle">Formas de pagamento aceitas</h4>
+                <ul class="product-tabs__payment-list">
+                  <li>Pix — 5% de desconto</li>
+                  <li>Boleto bancário — 5% de desconto</li>
+                  <li>Cartão de crédito em até 12x sem juros</li>
+                  <li>Financiamento bancário</li>
+                  <li>Transferência bancária (TED/DOC)</li>
+                </ul>
+              </div>
+
               <div class="product-tabs__delivery-item">
                 <svg class="product-tabs__delivery-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                   stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
@@ -860,9 +947,23 @@
                 </svg>
                 <div>
                   <p class="product-tabs__delivery-title">Política de devolução</p>
-                  <p class="product-tabs__delivery-text">Você pode solicitar a troca ou devolução em até 30 dias após o recebimento do produto. O item deve estar em condições originais. Entre em contato pelo nosso WhatsApp ou pela área Minha Conta.</p>
+                  <p class="product-tabs__delivery-text">Você pode solicitar a troca ou devolução em até 30 dias após
+                    o recebimento do produto. O item deve estar em condições originais, sem sinais de uso ou desgaste
+                    operacional.</p>
                 </div>
               </div>
+
+              <div class="product-tabs__return-steps">
+                <h4 class="product-tabs__delivery-subtitle">Como solicitar devolução</h4>
+                <ol class="product-tabs__return-list">
+                  <li>Acesse a área <strong>Minha Conta</strong> e selecione o pedido que deseja devolver.</li>
+                  <li>Clique em <strong>Solicitar Devolução</strong> e informe o motivo detalhadamente.</li>
+                  <li>Nossa equipe realizará uma vistoria agendada na máquina em até 5 dias úteis.</li>
+                  <li>Aprovada a devolução, o reembolso é processado em até 10 dias úteis no método de
+                    pagamento original.</li>
+                </ol>
+              </div>
+
             </div>
           </div>
 
@@ -1160,11 +1261,12 @@
             <h3 class="footer-nav__title">Institucional</h3>
             <ul class="footer-nav__list" role="list">
               <li><a href="sobre-nos.html" class="footer-nav__link">Sobre nós</a></li>
+              <li><a href="nossos-clientes.html" class="footer-nav__link">Nossos Clientes</a></li>
+              <li><a href="parceiros.html" class="footer-nav__link">Parceiros</a></li>
               <li><a href="institucional.html#troca" class="footer-nav__link">Políticas de Troca</a></li>
               <li><a href="institucional.html#frete" class="footer-nav__link">Políticas de Frete</a></li>
               <li><a href="institucional.html#cookies" class="footer-nav__link">Políticas de Cookies</a></li>
               <li><a href="contato.html" class="footer-nav__link">Assistência técnica</a></li>
-              <li><a href="#" class="footer-nav__link">Blog</a></li>
             </ul>
           </nav>
           <nav aria-label="Categorias de produtos">
@@ -1173,7 +1275,7 @@
               <li><a href="categoria.html" class="footer-nav__link">Peças</a></li>
               <li><a href="categoria.html" class="footer-nav__link">Estoque</a></li>
               <li><a href="categoria.html" class="footer-nav__link">Novos</a></li>
-              <li><a href="categoria.html" class="footer-nav__link">Marcas</a></li>
+              <li><a href="marcas.html" class="footer-nav__link">Marcas</a></li>
               <li><a href="locacao.html" class="footer-nav__link">Locação</a></li>
               <li><a href="contato.html" class="footer-nav__link">Contato</a></li>
             </ul>
@@ -1366,5 +1468,6 @@
   <!-- JS ao final do body — progressive enhancement apenas -->
   <script type="module" src="../assets/js/pages/detalhe-maquinario.js"></script>
 
+  <script src="../assets/js/components/sticky-header.js"></script>
 </body>
 </html>

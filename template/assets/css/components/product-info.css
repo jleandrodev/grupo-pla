@@ -226,6 +226,19 @@
   min-width: 12rem;
 }
 
+.product-info__wishlist-btn svg {
+  transition: fill var(--ecom-duration-fast) var(--ecom-ease-default);
+}
+
+.product-info__wishlist-btn[aria-pressed="true"] {
+  color: var(--ecom-color-error);
+  border-color: var(--ecom-color-error);
+}
+
+.product-info__wishlist-btn[aria-pressed="true"] svg {
+  fill: var(--ecom-color-error);
+}
+
 .btn--outline-primary {
   background-color: transparent;
   color: var(--ecom-color-primary-500);

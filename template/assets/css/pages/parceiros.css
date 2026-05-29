@@ -1,0 +1,538 @@
+/* ============================================================
+   parceiros.css — Página de parceiros (LP format)
+   ============================================================ */
+
+/* ── Tipos de parceria ── */
+
+.partners-types {
+  background-color: var(--ecom-bg-page);
+}
+
+.partners-types__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--ecom-space-6);
+}
+
+@media (min-width: 768px) {
+  .partners-types__grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.partner-type-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: var(--ecom-space-8);
+  background-color: var(--ecom-bg-surface);
+  border-radius: var(--ecom-radius-2xl);
+  border: 1px solid var(--ecom-border-default);
+  overflow: hidden;
+  transition:
+    box-shadow var(--ecom-duration-fast) var(--ecom-ease-default),
+    transform var(--ecom-duration-fast) var(--ecom-ease-default),
+    border-color var(--ecom-duration-fast) var(--ecom-ease-default);
+}
+
+.partner-type-card--highlighted {
+  background-color: var(--ecom-color-secondary-900);
+  border-color: var(--ecom-color-secondary-700);
+}
+
+.partner-type-card--highlighted .partner-type-card__icon {
+  background-color: rgb(249 115 22 / 0.15);
+  color: var(--ecom-color-primary-400);
+}
+
+.partner-type-card--highlighted .partner-type-card__title {
+  color: var(--ecom-color-neutral-0);
+}
+
+.partner-type-card--highlighted .partner-type-card__text {
+  color: rgb(255 255 255 / 0.65);
+}
+
+.partner-type-card--highlighted .partner-type-card__badge {
+  background-color: var(--ecom-color-primary-500);
+  color: var(--ecom-color-neutral-0);
+}
+
+.partner-type-card--highlighted .partner-type-card__feature {
+  color: rgb(255 255 255 / 0.75);
+  border-color: rgb(255 255 255 / 0.08);
+}
+
+.partner-type-card--highlighted .partner-type-card__feature svg {
+  color: var(--ecom-color-primary-400);
+}
+
+.partner-type-card:hover:not(.partner-type-card--highlighted) {
+  box-shadow: var(--ecom-shadow-lg);
+  transform: translateY(-3px);
+  border-color: var(--ecom-color-primary-200);
+}
+
+.partner-type-card__badge {
+  display: inline-flex;
+  align-self: flex-start;
+  padding: var(--ecom-space-1) var(--ecom-space-3);
+  background-color: var(--ecom-color-primary-50);
+  color: var(--ecom-color-primary-700);
+  border-radius: var(--ecom-radius-full);
+  font-size: var(--ecom-text-xs);
+  font-weight: var(--ecom-font-semibold);
+  margin-bottom: var(--ecom-space-5);
+}
+
+.partner-type-card__icon {
+  width: 3.5rem;
+  height: 3.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--ecom-color-primary-50);
+  border-radius: var(--ecom-radius-xl);
+  color: var(--ecom-color-primary-600);
+  margin-bottom: var(--ecom-space-5);
+}
+
+.partner-type-card__icon svg {
+  width: 1.75rem;
+  height: 1.75rem;
+}
+
+.partner-type-card__title {
+  font-size: var(--ecom-text-xl);
+  font-weight: var(--ecom-font-bold);
+  color: var(--ecom-text-primary);
+  margin-bottom: var(--ecom-space-3);
+}
+
+.partner-type-card__text {
+  font-size: var(--ecom-text-sm);
+  color: var(--ecom-text-secondary);
+  line-height: var(--ecom-leading-relaxed);
+  flex: 1;
+  margin-bottom: var(--ecom-space-6);
+}
+
+.partner-type-card__features {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--ecom-space-3);
+}
+
+.partner-type-card__feature {
+  display: flex;
+  align-items: center;
+  gap: var(--ecom-space-3);
+  font-size: var(--ecom-text-sm);
+  color: var(--ecom-text-secondary);
+  padding-bottom: var(--ecom-space-3);
+  border-bottom: 1px solid var(--ecom-border-default);
+}
+
+.partner-type-card__feature:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.partner-type-card__feature svg {
+  width: 1.125rem;
+  height: 1.125rem;
+  color: var(--ecom-color-success);
+  flex-shrink: 0;
+}
+
+/* ── Logo grid de parceiros/fabricantes ── */
+
+.partners-logos {
+  background-color: var(--ecom-bg-surface);
+}
+
+.partners-logos__grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--ecom-space-4);
+}
+
+@media (min-width: 480px) {
+  .partners-logos__grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (min-width: 768px) {
+  .partners-logos__grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .partners-logos__grid {
+    grid-template-columns: repeat(5, 1fr);
+  }
+}
+
+.partner-logo-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--ecom-space-3);
+  padding: var(--ecom-space-6) var(--ecom-space-4);
+  background-color: var(--ecom-bg-page);
+  border-radius: var(--ecom-radius-xl);
+  border: 1px solid var(--ecom-border-default);
+  text-align: center;
+  transition:
+    box-shadow var(--ecom-duration-fast) var(--ecom-ease-default),
+    border-color var(--ecom-duration-fast) var(--ecom-ease-default),
+    transform var(--ecom-duration-fast) var(--ecom-ease-default);
+}
+
+.partner-logo-card:hover {
+  box-shadow: var(--ecom-shadow-md);
+  border-color: var(--ecom-color-primary-300);
+  transform: translateY(-2px);
+}
+
+.partner-logo-card__img {
+  max-height: 2.75rem;
+  width: auto;
+  object-fit: contain;
+  filter: grayscale(1);
+  opacity: 0.6;
+  transition:
+    filter var(--ecom-duration-normal) var(--ecom-ease-default),
+    opacity var(--ecom-duration-normal) var(--ecom-ease-default);
+}
+
+.partner-logo-card:hover .partner-logo-card__img {
+  filter: grayscale(0);
+  opacity: 1;
+}
+
+.partner-logo-card__name {
+  font-size: var(--ecom-text-xs);
+  font-weight: var(--ecom-font-semibold);
+  color: var(--ecom-text-secondary);
+}
+
+.partner-logo-card__type {
+  font-size: var(--ecom-text-xs);
+  color: var(--ecom-text-muted);
+}
+
+/* ── Benefícios de ser parceiro ── */
+
+.partners-benefits {
+  background-color: var(--ecom-color-secondary-900);
+  padding-block: var(--ecom-space-16);
+}
+
+.partners-benefits .section__subtitle {
+  color: var(--ecom-color-primary-400);
+}
+
+.partners-benefits .section__title {
+  color: var(--ecom-color-neutral-0);
+}
+
+.partners-benefits .section__description {
+  color: rgb(255 255 255 / 0.65);
+}
+
+.partners-benefits__layout {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--ecom-space-10);
+  align-items: center;
+}
+
+@media (min-width: 1024px) {
+  .partners-benefits__layout {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.partners-benefits__list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--ecom-space-5);
+}
+
+.benefit-item {
+  display: flex;
+  gap: var(--ecom-space-4);
+  align-items: flex-start;
+}
+
+.benefit-item__icon {
+  width: 2.75rem;
+  height: 2.75rem;
+  background-color: rgb(249 115 22 / 0.15);
+  border-radius: var(--ecom-radius-xl);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--ecom-color-primary-400);
+  flex-shrink: 0;
+}
+
+.benefit-item__icon svg {
+  width: 1.375rem;
+  height: 1.375rem;
+}
+
+.benefit-item__title {
+  font-size: var(--ecom-text-base);
+  font-weight: var(--ecom-font-bold);
+  color: var(--ecom-color-neutral-0);
+  margin-bottom: var(--ecom-space-1);
+}
+
+.benefit-item__text {
+  font-size: var(--ecom-text-sm);
+  color: rgb(255 255 255 / 0.6);
+  line-height: var(--ecom-leading-relaxed);
+}
+
+.partners-benefits__visual {
+  position: relative;
+}
+
+.partners-benefits__visual-card {
+  padding: var(--ecom-space-8);
+  background-color: rgb(255 255 255 / 0.05);
+  border: 1px solid rgb(255 255 255 / 0.1);
+  border-radius: var(--ecom-radius-2xl);
+}
+
+.partners-benefits__visual-stat {
+  display: flex;
+  align-items: center;
+  gap: var(--ecom-space-4);
+  padding: var(--ecom-space-5);
+  background-color: rgb(255 255 255 / 0.07);
+  border-radius: var(--ecom-radius-xl);
+  margin-bottom: var(--ecom-space-4);
+}
+
+.partners-benefits__visual-stat:last-child {
+  margin-bottom: 0;
+}
+
+.partners-benefits__visual-stat-icon {
+  width: 3rem;
+  height: 3rem;
+  background-color: var(--ecom-color-primary-500);
+  border-radius: var(--ecom-radius-xl);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--ecom-color-neutral-0);
+  flex-shrink: 0;
+}
+
+.partners-benefits__visual-stat-icon svg {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+.partners-benefits__visual-stat-number {
+  font-size: var(--ecom-text-2xl);
+  font-weight: var(--ecom-font-bold);
+  color: var(--ecom-color-neutral-0);
+  line-height: 1;
+}
+
+.partners-benefits__visual-stat-label {
+  font-size: var(--ecom-text-xs);
+  color: rgb(255 255 255 / 0.55);
+}
+
+/* ── Processo de Parceria ── */
+
+.partners-process {
+  background-color: var(--ecom-bg-page);
+}
+
+.partners-process__steps {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--ecom-space-6);
+  position: relative;
+}
+
+@media (min-width: 768px) {
+  .partners-process__steps {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .partners-process__steps {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .partners-process__steps::before {
+    content: '';
+    position: absolute;
+    top: 2.25rem;
+    left: calc(12.5% + 1.75rem);
+    right: calc(12.5% + 1.75rem);
+    height: 2px;
+    background: linear-gradient(
+      90deg,
+      var(--ecom-color-primary-300),
+      var(--ecom-color-primary-500)
+    );
+    z-index: 0;
+  }
+}
+
+.process-step {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  padding: var(--ecom-space-6);
+  background-color: var(--ecom-bg-surface);
+  border-radius: var(--ecom-radius-2xl);
+  border: 1px solid var(--ecom-border-default);
+}
+
+.process-step__number {
+  width: 3.5rem;
+  height: 3.5rem;
+  border-radius: var(--ecom-radius-full);
+  background-color: var(--ecom-color-primary-500);
+  color: var(--ecom-color-neutral-0);
+  font-size: var(--ecom-text-lg);
+  font-weight: var(--ecom-font-bold);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-inline: auto;
+  margin-bottom: var(--ecom-space-5);
+}
+
+.process-step__title {
+  font-size: var(--ecom-text-base);
+  font-weight: var(--ecom-font-bold);
+  color: var(--ecom-text-primary);
+  margin-bottom: var(--ecom-space-2);
+}
+
+.process-step__text {
+  font-size: var(--ecom-text-sm);
+  color: var(--ecom-text-secondary);
+  line-height: var(--ecom-leading-relaxed);
+}
+
+/* ── Formulário de parceria ── */
+
+.partners-form-section {
+  background-color: var(--ecom-bg-page);
+}
+
+.partners-form-layout {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--ecom-space-10);
+  align-items: start;
+}
+
+@media (min-width: 1024px) {
+  .partners-form-layout {
+    grid-template-columns: 45fr 55fr;
+    gap: var(--ecom-space-16);
+  }
+}
+
+/* Checklist de benefícios */
+.partners-form-checklist {
+  list-style: none;
+  padding: 0;
+  margin: var(--ecom-space-8) 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--ecom-space-3);
+}
+
+.partners-form-checklist__item {
+  display: flex;
+  align-items: center;
+  gap: var(--ecom-space-3);
+  font-size: var(--ecom-text-sm);
+  font-weight: var(--ecom-font-medium);
+  color: var(--ecom-text-secondary);
+}
+
+.partners-form-checklist__item svg {
+  width: 1.125rem;
+  height: 1.125rem;
+  color: var(--ecom-color-success);
+  flex-shrink: 0;
+}
+
+/* Contato alternativo */
+.partners-form-contact {
+  padding-top: var(--ecom-space-6);
+  border-top: 1px solid var(--ecom-border-default);
+}
+
+.partners-form-contact__label {
+  font-size: var(--ecom-text-sm);
+  color: var(--ecom-text-muted);
+  margin-bottom: var(--ecom-space-3);
+}
+
+/* Card do formulário */
+.partners-form-card {
+  background-color: var(--ecom-bg-surface);
+  border-radius: var(--ecom-radius-2xl);
+  border: 1px solid var(--ecom-border-default);
+  padding: var(--ecom-space-8);
+  box-shadow: var(--ecom-shadow-lg);
+}
+
+/* Grid de linha dupla nos inputs */
+.partners-form__row {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0 var(--ecom-space-4);
+}
+
+@media (min-width: 600px) {
+  .partners-form__row {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Select herda o estilo de input */
+select.contact-form__input {
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%236b7280' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right var(--ecom-space-3) center;
+  padding-right: var(--ecom-space-10);
+  cursor: pointer;
+}
+
+/* Aviso de privacidade abaixo do botão */
+.partners-form__privacy {
+  font-size: var(--ecom-text-xs);
+  color: var(--ecom-text-muted);
+  text-align: center;
+  margin-top: var(--ecom-space-3);
+}
+
+.partners-form__privacy a {
+  color: var(--ecom-color-primary-600);
+  text-decoration: underline;
+}

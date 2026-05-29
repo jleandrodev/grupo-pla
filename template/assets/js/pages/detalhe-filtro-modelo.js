@@ -5,6 +5,7 @@
 import { init as initGallery } from '../components/product-gallery.js';
 import { init as initQuantity } from '../components/quantity-input.js';
 import { init as initCartManager } from '../components/cart-manager.js';
+import { init as initWishlist } from '../components/wishlist-manager.js';
 import { init as initMobileMenu } from '../components/mobile-drawer.js';
 import { init as initSearchModal } from '../components/search-modal.js';
 
@@ -12,6 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initGallery();
   initQuantity();
   initCartManager();
+  initWishlist();
   initMobileMenu();
   initSearchModal();
   initProductTabs();

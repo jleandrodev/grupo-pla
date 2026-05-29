@@ -192,6 +192,54 @@
   padding-inline: 0.25rem;
 }
 
+/* ── WISHLIST BUTTON ── */
+
+.header-wishlist {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.75rem;
+  height: 2.75rem;
+  background-color: var(--ecom-color-secondary-700);
+  border-radius: var(--ecom-radius-lg);
+  color: var(--ecom-color-neutral-0);
+  text-decoration: none;
+  transition: background-color var(--ecom-duration-fast) var(--ecom-ease-default);
+}
+
+.header-wishlist:hover {
+  background-color: var(--ecom-color-secondary-600);
+}
+
+.header-wishlist--active,
+.header-wishlist--active:hover {
+  background-color: var(--ecom-color-primary-600);
+}
+
+.header-wishlist svg {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+.header-wishlist__count {
+  position: absolute;
+  top: -0.25rem;
+  right: -0.25rem;
+  background-color: var(--ecom-color-error);
+  color: var(--ecom-color-neutral-0);
+  font-size: 0.625rem;
+  font-weight: var(--ecom-font-bold);
+  min-width: 1.125rem;
+  height: 1.125rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--ecom-radius-full);
+  padding-inline: 0.25rem;
+  line-height: 1;
+}
+
 /* ── NAVBAR ── */
 
 .site-nav {
@@ -358,6 +406,176 @@
   .site-nav__link--active {
     border-left-color: var(--ecom-color-primary-500);
     border-bottom-color: transparent;
+  }
+}
+
+/* ── DESKTOP: base para transição suave ── */
+
+@media (min-width: 1024px) {
+  /* Fundo no site-header evita qualquer flash de branco */
+  .site-header {
+    background-color: var(--ecom-bg-dark);
+    /* Pre-set flex — sem troca de display no scroll */
+    display: flex;
+    flex-wrap: wrap;
+    align-items: stretch;
+    transition: box-shadow 300ms var(--ecom-ease-default);
+  }
+
+  /* Seções empilhadas normalmente (flex-wrap) */
+  .top-bar     { flex: 0 0 100%; }
+  .main-header { flex: 0 0 100%; }
+  .site-nav    { flex: 0 0 100%; }
+
+  /* Top-bar: colapsa suavemente com max-height */
+  .top-bar {
+    overflow: hidden;
+    max-height: 3rem;
+    opacity: 1;
+    transition:
+      max-height   280ms var(--ecom-ease-default),
+      opacity      200ms var(--ecom-ease-default),
+      padding-block 280ms var(--ecom-ease-default);
+  }
+
+  /* Main-header: anima padding e logo */
+  .main-header {
+    transition: padding-block 260ms var(--ecom-ease-default);
+  }
+
+  .main-header__logo img {
+    transition: height 260ms var(--ecom-ease-default);
+  }
+
+  /* Search: colapsa largura (max-width: 36rem já definido na base) */
+  .main-header__search {
+    transition:
+      max-width 260ms var(--ecom-ease-default),
+      opacity   200ms var(--ecom-ease-default);
+  }
+
+  /* ════════════════════════════════════════════════
+     ESTADO SCROLLED — header compacto
+     Layout: [Logo] ←→ [Nav links] ←→ [Ações]
+     Tudo dentro do container da página
+     ════════════════════════════════════════════════ */
+
+  .site-header--scrolled {
+    box-shadow: 0 2px 16px 0 rgb(0 0 0 / 0.5);
+  }
+
+  /* Top-bar colapsa suavemente */
+  .site-header--scrolled .top-bar {
+    max-height: 0;
+    opacity: 0;
+    padding-block: 0;
+  }
+
+  /* Main-header: 100% de largura */
+  .site-header--scrolled .main-header {
+    flex: 0 0 100%;
+    padding-block: var(--ecom-space-2);
+    background: transparent; /* fundo vem do .site-header */
+    position: relative;
+    z-index: 1; /* logo e ações acima do overlay da nav */
+  }
+
+  /* Inner container: logo esquerda, ações direita */
+  .site-header--scrolled .main-header__inner {
+    justify-content: space-between;
+    padding-inline: var(--ecom-container-pad-md);
+    position: relative;
+    z-index: 1;
+  }
+
+  .site-header--scrolled .main-header__logo img {
+    height: 1.875rem; /* ~30px, prop 160×40 → 120px largura */
+  }
+
+  /* Search: colapsa (já tem max-width: 36rem) */
+  .site-header--scrolled .main-header__search {
+    max-width: 0;
+    overflow: hidden;
+    opacity: 0;
+    pointer-events: none;
+    flex: none;
+  }
+
+  /* Ações: mostra WhatsApp + cart + wishlist + login */
+  .site-header--scrolled .main-header__actions {
+    display: flex;
+    gap: var(--ecom-space-2);
+    align-items: center;
+  }
+
+  /* Oculta o toggle de busca mobile (não faz sentido no sticky desktop) */
+  .site-header--scrolled .header__search-toggle {
+    display: none;
+  }
+
+  /* WhatsApp: só ícone no compact (mesmo tamanho dos outros botões) */
+  .site-header--scrolled .btn--whatsapp {
+    width: 2.75rem;
+    height: 2.75rem;
+    padding: 0;
+    font-size: 0;          /* esconde o texto */
+    justify-content: center;
+    border-radius: var(--ecom-radius-lg);
+    gap: 0;
+  }
+
+  .site-header--scrolled .btn--whatsapp svg {
+    width: 1.375rem;
+    height: 1.375rem;
+    flex-shrink: 0;
+  }
+
+  /* Site-nav: overlay sobre o espaço central do main-header.
+     clamp() garante alinhamento ao container em qualquer viewport:
+       min  = padding-left(32px) + logo(120px) + gap(24px) = 176px = 11rem
+       calc = container-offset + 11rem  (viewport-aware)
+     Direita:
+       min  = padding-right(32px) + 4 ícones×2.75rem + 3 gaps×0.5rem = 15rem
+       calc = container-offset + 15rem                                         */
+  .site-header--scrolled .site-nav {
+    position: absolute; /* relativo a .site-header (sticky = positioned) */
+    inset: 0;
+    display: flex;
+    align-items: center;
+    border-top: none;
+    background: transparent; /* não encobre logo nem ações */
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .site-header--scrolled .site-nav .container {
+    pointer-events: auto;
+    max-width: none;
+    margin: 0;
+    width: 100%;
+    padding-inline-start: clamp(
+      11rem,
+      calc((100vw - var(--ecom-container-max)) / 2 + 11rem),
+      99rem
+    );
+    padding-inline-end: clamp(
+      15rem,
+      calc((100vw - var(--ecom-container-max)) / 2 + 15rem),
+      99rem
+    );
+  }
+
+  .site-header--scrolled .site-nav__list {
+    justify-content: flex-start;
+    padding-block: 0;
+    height: 100%;
+    align-items: center;
+  }
+
+  .site-header--scrolled .site-nav__link {
+    height: 100%;
+    display: flex;
+    align-items: center;
   }
 }
 

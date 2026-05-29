@@ -203,6 +203,14 @@
   height: 1rem;
 }
 
+.product-card__wishlist--active {
+  color: var(--ecom-color-error);
+}
+
+.product-card__wishlist--active svg {
+  fill: currentColor;
+}
+
 /* ── PROMO BANNER (primeiro slot — apenas imagem) ── */
 
 .promo-banner {
