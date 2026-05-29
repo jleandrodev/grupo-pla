@@ -179,6 +179,12 @@
             </svg>
             <span class="header-cart__count" aria-hidden="true">0</span>
           </button>
+          <a href="./wishlist.html" class="header-wishlist" aria-label="Lista de desejos">
+            <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+            </svg>
+            <span class="header-wishlist__count" data-role="wishlist-count" aria-hidden="true" hidden>0</span>
+          </a>
           <button type="button" class="mobile-menu-toggle" aria-label="Abrir menu de navegação" aria-expanded="false"
             data-action="toggle-menu">
             <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
@@ -199,9 +205,9 @@
           <li><a href="categoria.html" class="site-nav__link">Peças</a></li>
           <li><a href="categoria.html" class="site-nav__link">Estoque</a></li>
           <li><a href="categoria.html" class="site-nav__link">Novos</a></li>
-          <li><a href="categoria.html" class="site-nav__link">Marcas</a></li>
+          <li><a href="marcas.html" class="site-nav__link">Marcas</a></li>
           <li><a href="locacao.html" class="site-nav__link">Locação</a></li>
-          <li><a href="#" class="site-nav__link">Meus Clientes</a></li>
+          <li><a href="nossos-clientes.html" class="site-nav__link">Nossos Clientes</a></li>
           <li><a href="contato.html" class="site-nav__link">Contato</a></li>
         </ul>
       </div>
@@ -239,9 +245,9 @@
         <li><a href="categoria.html" class="mobile-drawer__link">Peças</a></li>
         <li><a href="categoria.html" class="mobile-drawer__link">Estoque</a></li>
         <li><a href="categoria.html" class="mobile-drawer__link">Novos</a></li>
-        <li><a href="categoria.html" class="mobile-drawer__link">Marcas</a></li>
+        <li><a href="marcas.html" class="mobile-drawer__link">Marcas</a></li>
         <li><a href="locacao.html" class="mobile-drawer__link">Locação</a></li>
-        <li><a href="#" class="mobile-drawer__link">Meus Clientes</a></li>
+        <li><a href="nossos-clientes.html" class="mobile-drawer__link">Nossos Clientes</a></li>
         <li><a href="contato.html" class="mobile-drawer__link">Contato</a></li>
       </ul>
     </nav>
@@ -537,11 +543,12 @@
             <h3 class="footer-nav__title">Institucional</h3>
             <ul class="footer-nav__list" role="list">
               <li><a href="sobre-nos.html" class="footer-nav__link">Sobre nós</a></li>
+              <li><a href="nossos-clientes.html" class="footer-nav__link">Nossos Clientes</a></li>
+              <li><a href="parceiros.html" class="footer-nav__link">Parceiros</a></li>
               <li><a href="institucional.html#troca" class="footer-nav__link">Políticas de Troca</a></li>
               <li><a href="institucional.html#frete" class="footer-nav__link">Políticas de Frete</a></li>
               <li><a href="institucional.html#cookies" class="footer-nav__link">Políticas de Cookies</a></li>
               <li><a href="contato.html" class="footer-nav__link">Assistência técnica</a></li>
-              <li><a href="#" class="footer-nav__link">Blog</a></li>
             </ul>
           </nav>
 
@@ -552,7 +559,7 @@
               <li><a href="categoria.html" class="footer-nav__link">Peças</a></li>
               <li><a href="categoria.html" class="footer-nav__link">Estoque</a></li>
               <li><a href="categoria.html" class="footer-nav__link">Novos</a></li>
-              <li><a href="categoria.html" class="footer-nav__link">Marcas</a></li>
+              <li><a href="marcas.html" class="footer-nav__link">Marcas</a></li>
               <li><a href="locacao.html" class="footer-nav__link">Locação</a></li>
               <li><a href="contato.html" class="footer-nav__link">Contato</a></li>
             </ul>
@@ -700,6 +707,7 @@
 
   <script type="module" src="../assets/js/pages/404.js"></script>
 
+  <script src="../assets/js/components/sticky-header.js"></script>
 </body>
 
 </html>

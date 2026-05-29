@@ -1,0 +1,519 @@
+/* ============================================================
+   nossos-clientes.css — Página de clientes (LP format)
+   ============================================================ */
+
+/* ── Logo strip "Confiam no Grupo PLA" ── */
+
+.clients-trust-strip {
+  background-color: var(--ecom-bg-surface);
+  border-bottom: 1px solid var(--ecom-border-default);
+  padding-block: var(--ecom-space-10);
+}
+
+.clients-trust-strip__label {
+  text-align: center;
+  font-size: var(--ecom-text-xs);
+  font-weight: var(--ecom-font-semibold);
+  letter-spacing: var(--ecom-tracking-widest);
+  text-transform: uppercase;
+  color: var(--ecom-text-muted);
+  margin-bottom: var(--ecom-space-8);
+}
+
+.clients-trust-strip__logos {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: var(--ecom-space-6);
+}
+
+@media (min-width: 768px) {
+  .clients-trust-strip__logos {
+    gap: var(--ecom-space-10);
+  }
+}
+
+.trust-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--ecom-space-3) var(--ecom-space-5);
+  background-color: var(--ecom-bg-page);
+  border: 1px solid var(--ecom-border-default);
+  border-radius: var(--ecom-radius-lg);
+  opacity: 0.55;
+  transition:
+    opacity var(--ecom-duration-normal) var(--ecom-ease-default),
+    border-color var(--ecom-duration-normal) var(--ecom-ease-default),
+    box-shadow var(--ecom-duration-normal) var(--ecom-ease-default);
+  text-decoration: none;
+}
+
+.trust-logo:hover {
+  opacity: 1;
+  border-color: var(--ecom-color-primary-300);
+  box-shadow: var(--ecom-shadow-sm);
+}
+
+.trust-logo__img {
+  max-height: 2.25rem;
+  width: auto;
+  object-fit: contain;
+}
+
+/* Placeholder quando não tem imagem real */
+.trust-logo__text {
+  font-size: var(--ecom-text-xs);
+  font-weight: var(--ecom-font-bold);
+  color: var(--ecom-text-secondary);
+  letter-spacing: var(--ecom-tracking-wide);
+  white-space: nowrap;
+}
+
+/* ── Diferenciais "Por que nos escolhem" ── */
+
+.clients-why {
+  background-color: var(--ecom-bg-page);
+}
+
+.clients-why__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--ecom-space-6);
+}
+
+@media (min-width: 600px) {
+  .clients-why__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .clients-why__grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.why-card {
+  position: relative;
+  padding: var(--ecom-space-8);
+  background-color: var(--ecom-bg-surface);
+  border-radius: var(--ecom-radius-2xl);
+  border: 1px solid var(--ecom-border-default);
+  overflow: hidden;
+  transition:
+    box-shadow var(--ecom-duration-fast) var(--ecom-ease-default),
+    transform var(--ecom-duration-fast) var(--ecom-ease-default),
+    border-color var(--ecom-duration-fast) var(--ecom-ease-default);
+}
+
+.why-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(
+    90deg,
+    var(--ecom-color-primary-500),
+    var(--ecom-color-primary-300)
+  );
+  border-radius: var(--ecom-radius-lg) var(--ecom-radius-lg) 0 0;
+  opacity: 0;
+  transition: opacity var(--ecom-duration-fast) var(--ecom-ease-default);
+}
+
+.why-card:hover {
+  box-shadow: var(--ecom-shadow-lg);
+  transform: translateY(-3px);
+  border-color: var(--ecom-color-primary-200);
+}
+
+.why-card:hover::before {
+  opacity: 1;
+}
+
+.why-card__icon {
+  width: 3.5rem;
+  height: 3.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--ecom-color-primary-50);
+  border-radius: var(--ecom-radius-xl);
+  color: var(--ecom-color-primary-600);
+  margin-bottom: var(--ecom-space-5);
+}
+
+.why-card__icon svg {
+  width: 1.75rem;
+  height: 1.75rem;
+}
+
+.why-card__number {
+  font-size: var(--ecom-text-4xl);
+  font-weight: var(--ecom-font-bold);
+  color: var(--ecom-color-primary-500);
+  line-height: 1;
+  margin-bottom: var(--ecom-space-2);
+  letter-spacing: var(--ecom-tracking-tight);
+}
+
+.why-card__title {
+  font-size: var(--ecom-text-xl);
+  font-weight: var(--ecom-font-bold);
+  color: var(--ecom-text-primary);
+  margin-bottom: var(--ecom-space-3);
+}
+
+.why-card__text {
+  font-size: var(--ecom-text-sm);
+  color: var(--ecom-text-secondary);
+  line-height: var(--ecom-leading-relaxed);
+}
+
+/* ── Segmentos Atendidos ── */
+
+.clients-segments {
+  background-color: var(--ecom-bg-surface);
+}
+
+.segment-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--ecom-space-2);
+  justify-content: center;
+  margin-bottom: var(--ecom-space-10);
+}
+
+.segment-tab {
+  padding: var(--ecom-space-2) var(--ecom-space-5);
+  border-radius: var(--ecom-radius-full);
+  font-size: var(--ecom-text-sm);
+  font-weight: var(--ecom-font-semibold);
+  color: var(--ecom-text-secondary);
+  background-color: var(--ecom-bg-page);
+  border: 1.5px solid var(--ecom-border-default);
+  text-decoration: none;
+  transition: all var(--ecom-duration-fast) var(--ecom-ease-default);
+}
+
+.segment-tab:hover {
+  border-color: var(--ecom-color-primary-400);
+  color: var(--ecom-color-primary-600);
+  background-color: var(--ecom-color-primary-50);
+}
+
+.segment-tab--active {
+  background-color: var(--ecom-action-primary);
+  color: var(--ecom-text-on-primary);
+  border-color: var(--ecom-action-primary);
+}
+
+/* Client logo grid */
+
+.clients-logo-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--ecom-space-4);
+}
+
+@media (min-width: 480px) {
+  .clients-logo-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (min-width: 768px) {
+  .clients-logo-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .clients-logo-grid {
+    grid-template-columns: repeat(5, 1fr);
+  }
+}
+
+.client-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--ecom-space-3);
+  padding: var(--ecom-space-6) var(--ecom-space-4);
+  background-color: var(--ecom-bg-page);
+  border-radius: var(--ecom-radius-xl);
+  border: 1px solid var(--ecom-border-default);
+  text-align: center;
+  transition:
+    box-shadow var(--ecom-duration-fast) var(--ecom-ease-default),
+    border-color var(--ecom-duration-fast) var(--ecom-ease-default),
+    transform var(--ecom-duration-fast) var(--ecom-ease-default);
+}
+
+.client-card:hover {
+  box-shadow: var(--ecom-shadow-md);
+  border-color: var(--ecom-color-primary-300);
+  transform: translateY(-2px);
+}
+
+/* Filtro de segmentos — animação */
+.clients-logo-grid li {
+  transition: opacity var(--ecom-duration-fast) var(--ecom-ease-default),
+              transform var(--ecom-duration-fast) var(--ecom-ease-default);
+}
+
+.clients-logo-grid li[hidden] {
+  display: none;
+}
+
+/* Avatar retangular (simula logo) */
+.client-card__avatar {
+  width: 7rem;
+  height: 2.5rem;
+  border-radius: var(--ecom-radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: var(--ecom-text-xs);
+  font-weight: var(--ecom-font-bold);
+  letter-spacing: var(--ecom-tracking-wide);
+  color: var(--ecom-text-inverse);
+  flex-shrink: 0;
+}
+
+.client-card__avatar--orange { background-color: var(--ecom-color-primary-500); }
+.client-card__avatar--blue   { background-color: var(--ecom-color-secondary-700); }
+.client-card__avatar--green  { background-color: var(--ecom-color-success); }
+.client-card__avatar--slate  { background-color: var(--ecom-color-secondary-500); }
+.client-card__avatar--amber  { background-color: var(--ecom-color-warning); }
+
+.client-card__name {
+  font-size: var(--ecom-text-sm);
+  font-weight: var(--ecom-font-semibold);
+  color: var(--ecom-text-primary);
+  line-height: var(--ecom-leading-snug);
+}
+
+.client-card__sector {
+  font-size: var(--ecom-text-xs);
+  color: var(--ecom-text-muted);
+}
+
+/* ── Depoimentos (fundo escuro) ── */
+
+.clients-testimonials {
+  background-color: var(--ecom-color-secondary-900);
+  padding-block: var(--ecom-space-16);
+}
+
+.clients-testimonials .section__subtitle {
+  color: var(--ecom-color-primary-400);
+}
+
+.clients-testimonials .section__title {
+  color: var(--ecom-color-neutral-0);
+}
+
+.clients-testimonials .section__description {
+  color: rgb(255 255 255 / 0.65);
+}
+
+.clients-testimonials__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--ecom-space-6);
+}
+
+@media (min-width: 768px) {
+  .clients-testimonials__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .clients-testimonials__grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.client-testimonial {
+  display: flex;
+  flex-direction: column;
+  gap: var(--ecom-space-5);
+  padding: var(--ecom-space-8);
+  background-color: rgb(255 255 255 / 0.05);
+  border: 1px solid rgb(255 255 255 / 0.08);
+  border-radius: var(--ecom-radius-2xl);
+  transition:
+    background-color var(--ecom-duration-fast) var(--ecom-ease-default),
+    border-color var(--ecom-duration-fast) var(--ecom-ease-default);
+}
+
+.client-testimonial:hover {
+  background-color: rgb(255 255 255 / 0.09);
+  border-color: rgb(249 115 22 / 0.35);
+}
+
+.client-testimonial__quote-icon {
+  color: var(--ecom-color-primary-400);
+  width: 2.25rem;
+  height: 2.25rem;
+  flex-shrink: 0;
+}
+
+.client-testimonial__text {
+  font-size: var(--ecom-text-base);
+  color: rgb(255 255 255 / 0.85);
+  line-height: var(--ecom-leading-relaxed);
+  flex: 1;
+}
+
+.client-testimonial__stars {
+  display: flex;
+  gap: 2px;
+  color: var(--ecom-color-primary-400);
+}
+
+.client-testimonial__stars svg {
+  width: 1rem;
+  height: 1rem;
+  fill: currentColor;
+}
+
+.client-testimonial__author {
+  display: flex;
+  align-items: center;
+  gap: var(--ecom-space-3);
+  padding-top: var(--ecom-space-4);
+  border-top: 1px solid rgb(255 255 255 / 0.08);
+}
+
+.client-testimonial__initials {
+  width: 3rem;
+  height: 3rem;
+  border-radius: var(--ecom-radius-full);
+  background-color: var(--ecom-color-primary-600);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: var(--ecom-text-sm);
+  font-weight: var(--ecom-font-bold);
+  color: var(--ecom-color-neutral-0);
+  flex-shrink: 0;
+}
+
+.client-testimonial__name {
+  font-size: var(--ecom-text-sm);
+  font-weight: var(--ecom-font-bold);
+  color: var(--ecom-color-neutral-0);
+}
+
+.client-testimonial__role {
+  font-size: var(--ecom-text-xs);
+  color: rgb(255 255 255 / 0.5);
+}
+
+/* ── Seção CTA "Faça parte" ── */
+
+.clients-cta {
+  background-color: var(--ecom-bg-page);
+}
+
+.clients-cta__inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--ecom-space-8);
+  padding: var(--ecom-space-12) var(--ecom-space-10);
+  background: linear-gradient(
+    135deg,
+    var(--ecom-color-secondary-900) 0%,
+    var(--ecom-color-secondary-800) 60%,
+    var(--ecom-color-primary-900) 100%
+  );
+  border-radius: var(--ecom-radius-2xl);
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.clients-cta__inner::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -10%;
+  width: 30rem;
+  height: 30rem;
+  background: radial-gradient(circle, rgb(249 115 22 / 0.12) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+@media (min-width: 768px) {
+  .clients-cta__inner {
+    flex-direction: row;
+    text-align: left;
+  }
+}
+
+.clients-cta__content {
+  position: relative;
+  z-index: 1;
+}
+
+.clients-cta__subtitle {
+  display: inline-block;
+  font-size: var(--ecom-text-xs);
+  font-weight: var(--ecom-font-semibold);
+  letter-spacing: var(--ecom-tracking-widest);
+  text-transform: uppercase;
+  color: var(--ecom-color-primary-400);
+  margin-bottom: var(--ecom-space-3);
+}
+
+.clients-cta__title {
+  font-size: var(--ecom-text-2xl);
+  font-weight: var(--ecom-font-bold);
+  color: var(--ecom-color-neutral-0);
+  line-height: var(--ecom-leading-tight);
+  margin-bottom: var(--ecom-space-3);
+}
+
+@media (min-width: 768px) {
+  .clients-cta__title {
+    font-size: var(--ecom-text-3xl);
+  }
+}
+
+.clients-cta__text {
+  font-size: var(--ecom-text-base);
+  color: rgb(255 255 255 / 0.65);
+  line-height: var(--ecom-leading-relaxed);
+}
+
+.clients-cta__actions {
+  display: flex;
+  flex-direction: column;
+  gap: var(--ecom-space-3);
+  flex-shrink: 0;
+  position: relative;
+  z-index: 1;
+}
+
+@media (min-width: 480px) {
+  .clients-cta__actions {
+    flex-direction: row;
+  }
+}
+
+@media (min-width: 768px) {
+  .clients-cta__actions {
+    flex-direction: column;
+    min-width: 13rem;
+  }
+}

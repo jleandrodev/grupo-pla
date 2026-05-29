@@ -13,12 +13,14 @@ import { init as initFiltersSidebar } from '../components/filters-sidebar.js';
 import { init as initMobileMenu } from '../components/mobile-drawer.js';
 import { init as initSearchModal } from '../components/search-modal.js';
 import { init as initCartManager } from '../components/cart-manager.js';
+import { init as initWishlist } from '../components/wishlist-manager.js';
 
 document.addEventListener('DOMContentLoaded', () => {
   initFiltersSidebar();
   initMobileMenu();
   initSearchModal();
   initCartManager();
+  initWishlist();
   initSearch();
   initHeaderSearch();
 });

@@ -319,6 +319,12 @@
             </svg>
             <span class="header-cart__count" aria-hidden="true">0</span>
           </button>
+          <a href="./wishlist.html" class="header-wishlist" aria-label="Lista de desejos">
+            <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+            </svg>
+            <span class="header-wishlist__count" data-role="wishlist-count" aria-hidden="true" hidden>0</span>
+          </a>
           <a href="./minha-conta.html" class="header__action-btn" aria-label="Minha conta">
             <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
               <circle cx="12" cy="8" r="4"/>
@@ -346,9 +352,9 @@
           <li><a href="categoria.html" class="site-nav__link site-nav__link--active" aria-current="true">Peças</a></li>
           <li><a href="categoria.html" class="site-nav__link">Estoque</a></li>
           <li><a href="categoria.html" class="site-nav__link">Novos</a></li>
-          <li><a href="categoria.html" class="site-nav__link">Marcas</a></li>
+          <li><a href="marcas.html" class="site-nav__link">Marcas</a></li>
           <li><a href="locacao.html" class="site-nav__link">Locação</a></li>
-          <li><a href="#" class="site-nav__link">Meus Clientes</a></li>
+          <li><a href="nossos-clientes.html" class="site-nav__link">Nossos Clientes</a></li>
           <li><a href="contato.html" class="site-nav__link">Contato</a></li>
         </ul>
       </div>
@@ -386,9 +392,9 @@
         <li><a href="categoria.html" class="mobile-drawer__link">Peças</a></li>
         <li><a href="categoria.html" class="mobile-drawer__link">Estoque</a></li>
         <li><a href="categoria.html" class="mobile-drawer__link">Novos</a></li>
-        <li><a href="categoria.html" class="mobile-drawer__link">Marcas</a></li>
+        <li><a href="marcas.html" class="mobile-drawer__link">Marcas</a></li>
         <li><a href="locacao.html" class="mobile-drawer__link">Locação</a></li>
-        <li><a href="#" class="mobile-drawer__link">Meus Clientes</a></li>
+        <li><a href="nossos-clientes.html" class="mobile-drawer__link">Nossos Clientes</a></li>
         <li><a href="contato.html" class="mobile-drawer__link">Contato</a></li>
       </ul>
     </nav>
@@ -688,13 +694,25 @@
                 Adicionar ao Carrinho
               </button>
               <a href="https://wa.me/5511999990000?text=Olá! Tenho interesse no Filtro de Ar Completo Valmit RE/EURO 210600 (REF: 210600)"
-                class="btn btn--outline-primary btn--lg" target="_blank" rel="noopener noreferrer">
+                class="btn btn--whatsapp btn--lg" target="_blank" rel="noopener noreferrer">
                 <svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
                   <path
                     d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z" />
                 </svg>
                 Pedir via WhatsApp
               </a>
+              <button type="button"
+                class="btn btn--outline btn--lg product-info__wishlist-btn"
+                data-action="toggle-wishlist"
+                data-product-id="210600"
+                data-product-name="Filtro de Ar Completo Valmit RE/EURO 210600"
+                aria-pressed="false"
+                aria-label="Salvar Filtro de Ar Completo Valmit na lista de desejos">
+                <svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+                </svg>
+                Salvar na Lista de Desejos
+              </button>
             </div>
 
             <!-- Informação de Frete -->
@@ -790,49 +808,65 @@
           <!-- Painel: Especificações -->
           <div role="tabpanel" id="tab-especificacoes" aria-labelledby="tab-btn-especificacoes"
             class="product-tabs__panel" hidden>
-            <table class="product-tabs__specs">
-              <caption class="sr-only">Especificações técnicas do Filtro de Ar Completo Valmit RE/EURO 210600</caption>
-              <tbody>
-                <tr>
-                  <th scope="row">Referência</th>
-                  <td>210600</td>
-                </tr>
-                <tr>
-                  <th scope="row">Marca</th>
-                  <td>Valmit</td>
-                </tr>
-                <tr>
-                  <th scope="row">Compatibilidade</th>
-                  <td>John Deere 5000 Series</td>
-                </tr>
-                <tr>
-                  <th scope="row">Tipo</th>
-                  <td>Filtro de Ar Completo</td>
-                </tr>
-                <tr>
-                  <th scope="row">Modelo</th>
-                  <td>RE/EURO 210600</td>
-                </tr>
-                <tr>
-                  <th scope="row">Material</th>
-                  <td>Papel filtrante de alta eficiência com carcaça metálica</td>
-                </tr>
-                <tr>
-                  <th scope="row">Condição</th>
-                  <td>Novo</td>
-                </tr>
-                <tr>
-                  <th scope="row">Garantia</th>
-                  <td>6 meses de garantia de fábrica</td>
-                </tr>
-              </tbody>
-            </table>
+            <h3 class="product-tabs__specs-heading">Especificações Técnicas</h3>
+            <div class="product-tabs__specs-wrapper">
+              <table class="product-tabs__specs">
+                <caption class="sr-only">Especificações técnicas do Filtro de Ar Completo Valmit RE/EURO 210600</caption>
+                <tbody>
+                  <tr>
+                    <th scope="row">Referência</th>
+                    <td>210600</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Marca</th>
+                    <td>Valmit</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Compatibilidade</th>
+                    <td>John Deere 5000 Series</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Tipo</th>
+                    <td>Filtro de Ar Completo</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Modelo</th>
+                    <td>RE/EURO 210600</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Material</th>
+                    <td>Papel filtrante de alta eficiência com carcaça metálica</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Dimensões (Ø ext. × alt.)</th>
+                    <td>215 mm × 320 mm</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Eficiência de filtração</th>
+                    <td>99,5% para partículas ≥ 5 µm</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Norma</th>
+                    <td>ISO 5011 / SAE J726</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Condição</th>
+                    <td>Novo</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Garantia</th>
+                    <td>6 meses de garantia de fábrica</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
           </div>
 
           <!-- Painel: Entrega e Devolução -->
           <div role="tabpanel" id="tab-entrega" aria-labelledby="tab-btn-entrega"
             class="product-tabs__panel" hidden>
             <div class="product-tabs__content">
+
               <div class="product-tabs__delivery-item">
                 <svg class="product-tabs__delivery-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                   stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
@@ -845,9 +879,51 @@
                 <div>
                   <p class="product-tabs__delivery-title">Prazo de entrega</p>
                   <p class="product-tabs__delivery-text">Pedidos confirmados até as 14h são despachados no mesmo dia
-                    útil. O prazo de entrega varia de 3 a 7 dias úteis dependendo da região.</p>
+                    útil. Rastreamento disponível por e-mail e SMS assim que o produto for coletado pela
+                    transportadora.</p>
                 </div>
               </div>
+
+              <div class="product-tabs__delivery-table-wrapper">
+                <h4 class="product-tabs__delivery-subtitle">Estimativa de entrega por região</h4>
+                <table class="product-tabs__delivery-table">
+                  <thead>
+                    <tr>
+                      <th>Região</th>
+                      <th>Prazo estimado</th>
+                      <th>Frete</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>Sudeste (SP, RJ, MG, ES)</td>
+                      <td>2 a 4 dias úteis</td>
+                      <td>Grátis acima de R$ 500</td>
+                    </tr>
+                    <tr>
+                      <td>Sul (PR, SC, RS)</td>
+                      <td>3 a 5 dias úteis</td>
+                      <td>Grátis acima de R$ 500</td>
+                    </tr>
+                    <tr>
+                      <td>Centro-Oeste</td>
+                      <td>4 a 6 dias úteis</td>
+                      <td>Calculado no checkout</td>
+                    </tr>
+                    <tr>
+                      <td>Nordeste</td>
+                      <td>5 a 8 dias úteis</td>
+                      <td>Calculado no checkout</td>
+                    </tr>
+                    <tr>
+                      <td>Norte</td>
+                      <td>7 a 12 dias úteis</td>
+                      <td>Calculado no checkout</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
               <div class="product-tabs__delivery-item">
                 <svg class="product-tabs__delivery-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                   stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
@@ -857,9 +933,22 @@
                 <div>
                   <p class="product-tabs__delivery-title">Frete grátis</p>
                   <p class="product-tabs__delivery-text">Frete grátis para pedidos acima de R$ 500,00 para todo o
-                    Brasil. Trabalhamos com transportadoras parceiras que garantem agilidade e segurança.</p>
+                    Brasil. Trabalhamos com transportadoras parceiras especializadas em peças agrícolas que garantem
+                    agilidade e segurança no transporte.</p>
                 </div>
               </div>
+
+              <div class="product-tabs__payment">
+                <h4 class="product-tabs__delivery-subtitle">Formas de pagamento aceitas</h4>
+                <ul class="product-tabs__payment-list">
+                  <li>Pix — 5% de desconto</li>
+                  <li>Boleto bancário — 5% de desconto</li>
+                  <li>Cartão de crédito em até 12x sem juros</li>
+                  <li>Cartão de débito</li>
+                  <li>Transferência bancária</li>
+                </ul>
+              </div>
+
               <div class="product-tabs__delivery-item">
                 <svg class="product-tabs__delivery-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                   stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
@@ -869,10 +958,22 @@
                 <div>
                   <p class="product-tabs__delivery-title">Política de devolução</p>
                   <p class="product-tabs__delivery-text">Você pode solicitar a troca ou devolução em até 30 dias após
-                    o recebimento do produto. O item deve estar em sua embalagem original, sem sinais de uso. Entre em
-                    contato pelo nosso WhatsApp ou pela área Minha Conta.</p>
+                    o recebimento do produto. O item deve estar em sua embalagem original, sem sinais de uso ou
+                    instalação.</p>
                 </div>
               </div>
+
+              <div class="product-tabs__return-steps">
+                <h4 class="product-tabs__delivery-subtitle">Como solicitar devolução</h4>
+                <ol class="product-tabs__return-list">
+                  <li>Acesse a área <strong>Minha Conta</strong> e selecione o pedido que deseja devolver.</li>
+                  <li>Clique em <strong>Solicitar Devolução</strong> e informe o motivo.</li>
+                  <li>Nossa equipe entrará em contato em até 2 dias úteis para confirmar e agendar a coleta.</li>
+                  <li>Após inspeção do produto, o reembolso é processado em até 7 dias úteis no método de
+                    pagamento original.</li>
+                </ol>
+              </div>
+
             </div>
           </div>
 
@@ -1201,11 +1302,12 @@
             <h3 class="footer-nav__title">Institucional</h3>
             <ul class="footer-nav__list" role="list">
               <li><a href="sobre-nos.html" class="footer-nav__link">Sobre nós</a></li>
+              <li><a href="nossos-clientes.html" class="footer-nav__link">Nossos Clientes</a></li>
+              <li><a href="parceiros.html" class="footer-nav__link">Parceiros</a></li>
               <li><a href="institucional.html#troca" class="footer-nav__link">Políticas de Troca</a></li>
               <li><a href="institucional.html#frete" class="footer-nav__link">Políticas de Frete</a></li>
               <li><a href="institucional.html#cookies" class="footer-nav__link">Políticas de Cookies</a></li>
               <li><a href="contato.html" class="footer-nav__link">Assistência técnica</a></li>
-              <li><a href="#" class="footer-nav__link">Blog</a></li>
             </ul>
           </nav>
 
@@ -1216,7 +1318,7 @@
               <li><a href="categoria.html" class="footer-nav__link">Peças</a></li>
               <li><a href="categoria.html" class="footer-nav__link">Estoque</a></li>
               <li><a href="categoria.html" class="footer-nav__link">Novos</a></li>
-              <li><a href="categoria.html" class="footer-nav__link">Marcas</a></li>
+              <li><a href="marcas.html" class="footer-nav__link">Marcas</a></li>
               <li><a href="locacao.html" class="footer-nav__link">Locação</a></li>
               <li><a href="contato.html" class="footer-nav__link">Contato</a></li>
             </ul>
@@ -1358,6 +1460,7 @@
   <!-- JS ao final do body — progressive enhancement apenas -->
   <script type="module" src="../assets/js/pages/detalhe-peca.js"></script>
 
+  <script src="../assets/js/components/sticky-header.js"></script>
 </body>
 
 </html>
