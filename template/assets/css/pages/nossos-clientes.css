@@ -517,3 +517,90 @@
     min-width: 13rem;
   }
 }
+
+/* ── SATISFAÇÃO DOS CLIENTES (foto + data + texto) ── */
+
+.satisfaction__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--ecom-space-6);
+  margin-top: var(--ecom-space-8);
+}
+
+@media (min-width: 600px) {
+  .satisfaction__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .satisfaction__grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.satisfaction-card {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  background-color: var(--ecom-bg-surface);
+  border: 1px solid var(--ecom-border-default);
+  border-radius: var(--ecom-radius-xl);
+  box-shadow: var(--ecom-shadow-sm);
+  transition:
+    transform var(--ecom-duration-normal) var(--ecom-ease-default),
+    box-shadow var(--ecom-duration-normal) var(--ecom-ease-default),
+    border-color var(--ecom-duration-normal) var(--ecom-ease-default);
+}
+
+.satisfaction-card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--ecom-shadow-lg);
+  border-color: var(--ecom-color-primary-200);
+}
+
+.satisfaction-card__figure {
+  margin: 0;
+  aspect-ratio: 3 / 2;
+  overflow: hidden;
+  background-color: var(--ecom-bg-surface-alt);
+}
+
+.satisfaction-card__photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform var(--ecom-duration-slow) var(--ecom-ease-default);
+}
+
+.satisfaction-card:hover .satisfaction-card__photo {
+  transform: scale(1.04);
+}
+
+.satisfaction-card__body {
+  display: flex;
+  flex-direction: column;
+  gap: var(--ecom-space-3);
+  padding: var(--ecom-space-5);
+}
+
+.satisfaction-card__date {
+  display: inline-flex;
+  align-items: center;
+  align-self: flex-start;
+  padding: var(--ecom-space-1) var(--ecom-space-3);
+  background-color: var(--ecom-color-primary-50);
+  color: var(--ecom-action-primary);
+  border-radius: var(--ecom-radius-full);
+  font-size: var(--ecom-text-sm);
+  font-weight: var(--ecom-font-semibold);
+  letter-spacing: var(--ecom-tracking-wide);
+}
+
+.satisfaction-card__text {
+  margin: 0;
+  color: var(--ecom-text-secondary);
+  font-size: var(--ecom-text-base);
+  line-height: var(--ecom-leading-relaxed);
+}

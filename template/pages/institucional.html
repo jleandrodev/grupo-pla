@@ -50,6 +50,7 @@
   <link rel="stylesheet" href="../assets/css/tokens.css">
   <link rel="stylesheet" href="../assets/css/base.css">
   <link rel="stylesheet" href="../assets/css/layout.css">
+  <link rel="stylesheet" href="../assets/css/components/bottom-nav.css">
   <link rel="stylesheet" href="../assets/css/components/buttons.css">
   <link rel="stylesheet" href="../assets/css/components/header.css">
   <link rel="stylesheet" href="../assets/css/components/mobile-drawer.css">
@@ -115,7 +116,7 @@
   </script>
 </head>
 
-<body>
+<body class="has-bottom-nav">
 
   <!-- Skip link -->
   <a class="skip-link" href="#main-content">Pular para o conteúdo</a>
@@ -878,6 +879,15 @@
   <script type="module" src="../assets/js/pages/institucional.js"></script>
 
   <script src="../assets/js/components/sticky-header.js"></script>
+  <!-- Barra de navegação fixa inferior (mobile) -->
+  <nav class="bottom-nav" aria-label="Navegação rápida">
+    <a class="bottom-nav__item" href="./index.html"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9.5 12 3l9 6.5V21a1 1 0 0 1-1 1h-5v-7H9v7H4a1 1 0 0 1-1-1z"/></svg><span>Início</span></a>
+    <button class="bottom-nav__item" type="button" data-action="toggle-search"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.35-4.35"/></svg><span>Buscar</span></button>
+    <a class="bottom-nav__item" href="./wishlist.html"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg><span class="bottom-nav__badge" data-role="wishlist-count" hidden>0</span><span>Favoritos</span></a>
+    <a class="bottom-nav__item" href="./minha-conta.html"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></svg><span>Conta</span></a>
+    <button class="bottom-nav__item" type="button" data-action="toggle-menu"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg><span>Menu</span></button>
+  </nav>
+
 </body>
 
 </html>

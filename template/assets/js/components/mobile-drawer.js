@@ -21,11 +21,14 @@ let isOpen    = false;
 function init(root = document) {
   drawerEl  = root.getElementById(DRAWER_ID);
   overlayEl = root.getElementById(OVERLAY_ID);
-  toggleBtn = root.querySelector(`[data-action="${TOGGLE_ACTION}"]`);
+
+  // Todos os gatilhos de abertura (hambúrguer do header + item "Menu" da barra inferior).
+  const toggleBtns = root.querySelectorAll(`[data-action="${TOGGLE_ACTION}"]`);
+  toggleBtn = toggleBtns[0]; // referência p/ bookkeeping de aria-expanded/foco
 
   if (!drawerEl || !toggleBtn) return;
 
-  toggleBtn.addEventListener('click', toggleDrawer);
+  toggleBtns.forEach(btn => btn.addEventListener('click', toggleDrawer));
   document.addEventListener('keydown', onKeydown);
 
   root.querySelectorAll(`[data-action="${CLOSE_ACTION}"]`).forEach(el => {
